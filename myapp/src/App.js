@@ -12,7 +12,7 @@ import ShoppingCartPage from "./components/Pages/ShoppingCartPage";
 
 export default function App() {
   return (
-    <div>
+    <div className="app_container">
       <Header />
       <Routes>
         <Route path="/" element={<HomePage />} />

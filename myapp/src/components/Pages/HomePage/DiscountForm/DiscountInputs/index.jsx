@@ -1,19 +1,11 @@
 import { useForm } from "react-hook-form";
 import s from "../DiscountForm.module.css";
 
-export default function DiscountInputs() {
+export default function DiscountInputs({ handleSubmit, onSubmit }) {
   let {
     register,
-    handleSubmit,
     formState: { errors },
-    reset,
-    watch,
   } = useForm({ mode: "onChange" });
-
-  let onSubmit = (data) => {
-    console.log(data);
-    reset();
-  };
 
   let name_input = register("name", {
     required: "Name is required",
@@ -22,7 +14,7 @@ export default function DiscountInputs() {
       message: "Minimum first name length - 3 characters",
     },
     pattern: {
-      value: /^[A-ZA-Я]/g,
+      value: /^[A-ZA-Я]/i, // Исправил регулярное выражение
       message: "The name must begin with a capital letter",
     },
   });
@@ -38,7 +30,7 @@ export default function DiscountInputs() {
       message: "Maximum phone number length - 13 characters",
     },
     pattern: {
-      value: /^\+\d\s\d{3}\s\d{3}\s\d{2}\s\d{2}$/g,
+      value: /^\+\d\s\d{3}\s\d{3}\s\d{2}\s\d{2}$/i, // Исправил регулярное выражение
       message: "The phone number must start with +",
     },
   });
@@ -52,13 +44,40 @@ export default function DiscountInputs() {
   });
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
-      <div>
+    <div>
+      <div className={s.inputs_div}>
         <label>
-          <input {...name_input} className={s.errors?.name && "inp_error"} placeholder="Name"/>
+          <input
+            {...name_input}
+            className={s.errors?.name && "inp_error"}
+            placeholder="Name"
+          />
         </label>
         {errors.name && <p style={{ color: "red" }}>{errors.name.message}</p>}
+
+        <label>
+          <input
+            {...number_input}
+            className={s.errors?.number && "inp_error"}
+            placeholder="Phone number"
+          />
+        </label>
+        {errors.number && (
+          <p style={{ color: "red" }}>{errors.number.message}</p>
+        )}
+
+        <label>
+          <input
+            {...email_input}
+            className={s.errors?.email && "inp_error"}
+            placeholder="Email"
+          />
+        </label>
+        {errors.email && <p style={{ color: "red" }}>{errors.email.message}</p>}
       </div>
-    </form>
+      <button type="submit" onClick={handleSubmit(onSubmit)} className={s.btn_discount}>
+        Get a discount
+      </button>
+    </div>
   );
 }
