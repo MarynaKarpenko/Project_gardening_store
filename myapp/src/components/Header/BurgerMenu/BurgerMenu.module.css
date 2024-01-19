@@ -1,0 +1,35 @@
+.menu{
+    overflow: hidden;
+}
+
+.nav_menu{
+    display: flex;
+    flex-direction: column;
+    color: var(--txt-black, #282828);
+}
+
+.nav_ul{
+    font-weight: 500;
+    font-size: 24px;
+}
+
+.menu_img{
+    width: 44px;
+    height: 44px;
+}
+
+.menu_cros{
+    display: none;
+}
+
+.link_menu{
+    text-decoration: none;
+    color: var(--txt-black, #282828);
+}
+
+@media(max-width: 480px) {
+    .nav_menu {
+        display: fixed;
+        position: absolute;
+    }
+}

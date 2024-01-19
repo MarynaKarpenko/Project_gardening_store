@@ -1,0 +1,70 @@
+.home_picture_container {
+    position: relative;
+}
+
+.home_picture {
+    width: 100vw;
+    height: 600px;
+    position: relative;
+    object-fit: cover;
+    margin-left: -40px;
+}
+
+.text_amaying {
+    color: var(--txt-white, #FFF);
+    font-weight: 700;
+    font-size: 96px;
+    position: absolute;
+    top: 80px;
+    left: 0px;
+}
+
+.btn_home_picture {
+    border-radius: var(--radius-small, 6px);
+    background: var(--green, #393);
+    color: var(--txt-white, #FFF);
+    font-weight: 600;
+    font-size: 20px;
+    padding: 16px 56px;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    bottom: 215px;
+    left: 0px;
+}
+
+@media (max-width: 1000px) {
+    .text_amaying {
+        font-size: 90px;
+    }
+
+    .btn_home_picture {
+        bottom: 70px;
+    }
+}
+
+@media (max-width: 768px) {
+    .text_amaying {
+        font-size: 68px;
+    }
+
+    .btn_home_picture {
+        bottom: 150px;
+    }
+}
+
+@media (max-width: 480px) {
+    .text_amaying {
+        font-size: 60px;
+    }
+
+    .btn_home_picture {
+        bottom: 180px;
+    }
+}
+
+@media (max-width: 360px) {
+    .text_amaying {
+        font-size: 52px;
+    }
+}

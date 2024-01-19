@@ -1,0 +1,40 @@
+<svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="44" height="44" fill="#D0D0D0"/>
+<g id="menu open_480" clip-path="url(#clip0_280_1136)">
+<rect width="480" height="1066.67" transform="translate(-416 -12)" fill="white"/>
+<g id="&#208;&#154;&#208;&#190;&#209;&#128;&#208;&#183;&#208;&#184;&#208;&#189;&#208;&#176;_480" clip-path="url(#clip1_280_1136)">
+<rect width="480" height="2227" transform="translate(-416 -12)" fill="white"/>
+<g id="01_header">
+<mask id="path-1-inside-1_280_1136" fill="white">
+<path d="M-416 -12H64V56H-416V-12Z"/>
+</mask>
+<path d="M-416 -12H64V56H-416V-12Z" fill="white"/>
+<path d="M64 55H-416V57H64V55Z" fill="#DDDDDD" mask="url(#path-1-inside-1_280_1136)"/>
+<g id="menu">
+<path id="Vector" d="M6 22H38" stroke="#282828" stroke-width="3" stroke-linecap="square" stroke-linejoin="round"/>
+<path id="Vector_2" d="M6 12H38" stroke="#282828" stroke-width="3" stroke-linecap="square" stroke-linejoin="round"/>
+<path id="Vector_3" d="M6 32H38" stroke="#282828" stroke-width="3" stroke-linecap="square" stroke-linejoin="round"/>
+</g>
+</g>
+</g>
+<rect id="&#208;&#183;&#208;&#176;&#209;&#130;&#208;&#181;&#208;&#188;&#208;&#189;&#208;&#181;&#208;&#189;&#208;&#184;&#208;&#181; &#209;&#132;&#208;&#190;&#208;&#189;&#208;&#176;" x="-416" y="-12" width="480" height="1066.67" fill="black" fill-opacity="0.1"/>
+<g id="open menu" clip-path="url(#clip2_280_1136)">
+<rect id="bg" x="-218" y="-12" width="282" height="1067" fill="white"/>
+<g id="ic x">
+<path id="Vector_4" d="M33.0004 10.9999L11.0004 32.9999" stroke="#282828" stroke-width="3.66667" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Vector_5" d="M11.0004 10.9999L33.0004 32.9999" stroke="#282828" stroke-width="3.66667" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+</g>
+</g>
+<defs>
+<clipPath id="clip0_280_1136">
+<rect width="480" height="1066.67" fill="white" transform="translate(-416 -12)"/>
+</clipPath>
+<clipPath id="clip1_280_1136">
+<rect width="480" height="2227" fill="white" transform="translate(-416 -12)"/>
+</clipPath>
+<clipPath id="clip2_280_1136">
+<rect width="282" height="1067" fill="white" transform="translate(-218 -12)"/>
+</clipPath>
+</defs>
+</svg>

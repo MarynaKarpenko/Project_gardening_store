@@ -1,0 +1,54 @@
+.header_wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: -40px;
+    margin-right: -40px;
+    padding-bottom: 30px;
+}
+
+.line {
+    border-bottom: 1px solid var(--grey-divider, #DDD);
+    width: 1440px;
+    margin-left: -40px;
+}
+
+.logo {
+    width: 70px;
+    height: 70px;
+    margin-left: 40px;
+}
+
+.menu_wrapper {
+    display: flex;
+    gap: 32px;
+}
+
+.link {
+    color: var(--txt-black, #282828);
+    font-weight: 500;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+.icon_shoppeng {
+    width: 48px;
+    height: 48px;
+    margin-right: 40px;
+}
+
+@media(max-width: 480px) {
+    .menu_wrapper {
+        display: none;
+    }
+
+    .logo {
+        width: 44px;
+        height: 44px;
+    }
+
+    .icon_shoppeng {
+        width: 32px;
+        height: 32px;
+    }
+}

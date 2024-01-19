@@ -1,0 +1,10 @@
+.map_div {
+    margin-top: 32px;
+    border-radius: var(--radius-big, 12px);
+}
+
+@media(max-width: 1000px) {
+    .map_div {
+        margin-top: 20px;
+    }
+}

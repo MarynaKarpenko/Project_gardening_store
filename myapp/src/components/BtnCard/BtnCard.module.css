@@ -1,0 +1,21 @@
+.btn_cads {
+    padding: 8px 16px;
+    border-radius: var(--radius-small, 6px);
+    border: 1px solid var(--grey-divider, #DDD);
+    color: var(--txt-grey, #8B8B8B);
+    font-weight: 500;
+    font-size: 16px;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.activeButton {
+    color: var(--txt-black, #282828);
+}
+
+@media(max-width: 1000px) {
+    .btn_cads {
+        margin-top: 60px;
+        margin-bottom: 32px;
+    }
+}

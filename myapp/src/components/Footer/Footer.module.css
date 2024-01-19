@@ -1,0 +1,22 @@
+.contact_h1 {
+    margin-bottom: 40px;
+}
+
+@media (max-width: 1000px) {
+    .footer_wrapper {
+        padding: 60px 20px;
+    }
+}
+
+@media (max-width: 768x) {
+    .contact_h1 {
+        font-size: 54px;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer_wrapper {
+        padding: 56px 20px;
+    }
+}
+
