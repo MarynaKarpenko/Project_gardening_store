@@ -1,33 +1,41 @@
-import { Link } from "react-router-dom"
-import iconMenu from "../Icons/IconMenu.svg"
-import iconCros from "../Icons/IconCros.svg"
-import s from "./BurgerMenu.module.css"
+import React, { useState } from "react";
+import burgerIcon from "../Icons/BurgerMenu.svg";
+import crossIcon from "../Icons/IconCross.svg";
+import s from "./BurgerMenu.module.css";
+import { Link } from "react-router-dom";
 
-export default function BurgerMenu(){
-    return(
-        <div className={s.menu}>
-            <nav className={s.nav_menu}>
-            <img src={iconMenu} className={s.menu_img} alt=""></img>
-                <img src={iconCros} className={s.menu_cros} alt=""></img>
-        <ul className={s.nav_ul}>
-            <a><Link to={"/"} className={s.link_menu}>
-                    <p>Main Page</p>
-                </Link>
-            </a>
-            <a><Link to={"/categories"} className={s.link_menu}>
-                    <p>Categories</p>
-                </Link>
-            </a>
-            <a><Link to={"/products"} className={s.link_menu}>
-                    <p>All products</p>
-                </Link>
-            </a>
-            <a><Link to={"/sales"} className={s.link_menu}>
-                    <p>All sales</p>
-                </Link>
-            </a>
-        </ul>
-            </nav>
+export default function BurgerMenu() {
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen);
+  };
+
+  return (
+    <div className={s.icons_menu_cross_div}>
+      <div onClick={toggleMenu}>
+        <img
+          src={menuOpen ? crossIcon : burgerIcon}
+          alt=""
+          className={s.burger_icon}
+        />
+      </div>
+      {menuOpen && (
+        <div className={s.menu_content}>
+          <Link to={"/"} className={s.link}>
+            <p>Main Page</p>
+          </Link>
+          <Link to={"/categories"} className={s.link}>
+            <p>Categories</p>
+          </Link>
+          <Link to={"/products"} className={s.link}>
+            <p>All products</p>
+          </Link>
+          <Link to={"/sales"} className={s.link}>
+            <p>All sales</p>
+          </Link>
         </div>
-    )
+      )}
+    </div>
+  );
 }

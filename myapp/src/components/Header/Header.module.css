@@ -7,21 +7,26 @@
     padding-bottom: 30px;
 }
 
+
+.menu_wrapper {
+    display: flex;
+    gap: 20px;
+}
+
+.shop_menu{
+    display: flex;
+    align-items: end;
+}
+
 .line {
     border-bottom: 1px solid var(--grey-divider, #DDD);
     width: 1440px;
-    margin-left: -40px;
 }
 
 .logo {
     width: 70px;
     height: 70px;
     margin-left: 40px;
-}
-
-.menu_wrapper {
-    display: flex;
-    gap: 32px;
 }
 
 .link {
@@ -31,13 +36,12 @@
     text-decoration: none;
 }
 
-.icon_shoppeng {
+.icon_shop {
     width: 48px;
     height: 48px;
-    margin-right: 40px;
 }
 
-@media(max-width: 480px) {
+@media (max-width: 480px) {
     .menu_wrapper {
         display: none;
     }
@@ -47,7 +51,8 @@
         height: 44px;
     }
 
-    .icon_shoppeng {
+    .icon_shop,
+    .burger_icon {
         width: 32px;
         height: 32px;
     }

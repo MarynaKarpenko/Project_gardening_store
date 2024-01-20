@@ -1,6 +1,7 @@
+import React from "react";
 import { Link } from "react-router-dom";
 import logo from "./Logo/logo.png";
-import icon from "./Icons/IconShop.svg";
+import iconShop from "./Icons/IconShop.svg";
 import s from "./Header.module.css";
 import BurgerMenu from "./BurgerMenu";
 
@@ -23,17 +24,15 @@ export default function Header() {
           <Link to={"/products"} className={s.link}>
             <p>All products</p>
           </Link>
-          {/* <Link to={"/product/:id"}>
-                    <p>Product</p>
-                </Link> */}
           <Link to={"/sales"} className={s.link}>
             <p>All sales</p>
           </Link>
         </div>
-        <div>
+        <div className={s.shop_menu}>
           <Link to={"/shopping-cart"}>
-            <img src={icon} alt="" className={s.icon_shoppeng}></img>
+            <img src={iconShop} alt="" className={s.icon_shop}></img>
           </Link>
+          <BurgerMenu />
         </div>
       </div>
       <div className={s.line}></div>
