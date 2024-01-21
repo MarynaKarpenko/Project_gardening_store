@@ -1,22 +1,22 @@
-import s from './HomePage.module.css'
+import s_home_page from "./HomePage.module.css";
 import BtnBanner from "./BtnBanner";
 import BtnAllCategories from "../../BtnCard/BtnAllCategories";
-import HomeCategories from './HomeCategories';
-import DiscountForm from './DiscountForm';
+import DiscountForm from "./DiscountForm";
+import CategoryContainer from "../CategoriesPage/CategoryContainer";
 
 export default function HomePage() {
   return (
     <div>
       <BtnBanner />
       <div>
-        <div className={s.title_container}>
-          <h1 className={s.categories_h1}>Categories</h1>
-          <div className={s.line}></div>
+        <div className={s_home_page.title_container}>
+          <h1 className={s_home_page.categories_h1}>Categories</h1>
+          <div className={s_home_page.line}></div>
           <BtnAllCategories />
         </div>
-        <HomeCategories />
+        <CategoryContainer limitItems={4} />
       </div>
-      <DiscountForm/>
+      <DiscountForm />
       <h1>Sale</h1>
     </div>
   );

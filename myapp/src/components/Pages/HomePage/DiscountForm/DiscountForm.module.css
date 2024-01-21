@@ -1,10 +1,10 @@
 .form_wrapper {
-    width: auto;
+    width: 100%;
     height: auto;
     padding: 32px 32px 0px;
     margin-top: 80px;
     margin-bottom: 80px;
-    display: inline-flex;
+    display: flex;
     flex-direction: column;
     align-items: center;
     border-radius: var(--radius-big, 12px);
@@ -22,19 +22,26 @@
 
 .inform_inputs {
     display: flex;
+    justify-content: space-between;
     gap: 16px;
+    overflow: hidden;
 }
 
 .inputs_div {
     display: flex;
     flex-direction: column;
     gap: 16px;
+    flex-grow: 1;
 }
 
+.img_discount {
+    width: 748px;
+    max-width: 100%;
+}
 
 input {
     width: 516px;
-    height: 58px;
+    height: auto;
     padding: 16px 32px;
     display: flex;
     align-items: center;
@@ -62,6 +69,7 @@ input:focus {
 
 .btn_discount {
     width: 516px;
+    height: auto;
     margin-top: 32px;
     padding: 16px 32px;
     display: flex;
@@ -74,3 +82,71 @@ input:focus {
     font-weight: 600;
     font-size: 20px;
 }
+
+@media(max-width: 1000px) {
+    .form_wrapper {
+        padding-right: 20px;
+        padding-left: 0;
+    }
+
+    .img_discount {
+        width: 470px;
+        object-fit: cover;
+    }
+
+    input {
+        width: 450px;
+        box-sizing: border-box;
+    }
+
+    .btn_discount {
+        width: 450px;
+        margin-bottom: 20px;
+    }
+}
+
+@media(max-width: 768px) {
+    input {
+        width: 334px;
+    }
+
+    .btn_discount {
+        width: 334px;
+        margin-bottom: 32px;
+    }
+
+    .form_text {
+        font-size: 56px;
+    }
+
+    .img_discount {
+        width: 352px;
+    }
+}
+
+@media(max-width: 480px) {
+    .form_wrapper{
+        padding: 24px 20px 0px;
+    }
+    .inform_inputs {
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        input{
+            width: 100%;
+        }
+
+        .btn_discount{
+            width: 100%;
+            margin: 0;
+        }
+    
+        .img_discount {
+            width: 100%;
+            max-width: none;
+            order: 2;
+        }
+}
+
+@media(max-width: 360px) {}

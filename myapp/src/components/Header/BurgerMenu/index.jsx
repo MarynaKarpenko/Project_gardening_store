@@ -12,8 +12,8 @@ export default function BurgerMenu() {
   };
 
   return (
-    <div className={s.icons_menu_cross_div}>
-      <div onClick={toggleMenu}>
+    <div className={s.burgerMenuContainer}>
+      <div className={s.icons_menu_cross_div} onClick={toggleMenu}>
         <img
           src={menuOpen ? crossIcon : burgerIcon}
           alt=""

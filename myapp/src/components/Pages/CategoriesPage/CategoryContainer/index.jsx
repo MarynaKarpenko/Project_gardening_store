@@ -1,34 +1,39 @@
-import { useEffect, useState } from "react";
-import s from "../Categories.module.css";
-import { Link } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import s_categories from "../Categories.module.css";
+import CategoryItem from "../CategoryItem";
 
-export default function CategoryContainer() {
+const BASE_URL = "http://localhost:3333";
+
+export default function CategoryContainer({ limitItems }) {
   const [categories, setCategories] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch("http://localhost:3333/categories/all")
+    fetch(`${BASE_URL}/categories/all`)
       .then((res) => res.json())
-      .then((data) => setCategories(data));
+      .then((data) => {
+        setCategories(data);
+        setLoading(false);
+      })
+      .catch((error) => {
+        console.error("Error fetching categories:", error);
+        setLoading(false);
+      });
   }, []);
 
+  const displayedCategories = limitItems
+    ? categories.slice(0, limitItems)
+    : categories;
+
   return (
-    <div className={s.categories_page}>
-      {categories.map((elem) => (
-        <div key={elem.id} className={s.categories_set}>
-          <Link to={`/products`}>
-            <img
-              src={`http://localhost:3333${elem.image}`}
-              alt={elem.title}
-              className={s.category_image}
-            />
-          </Link>
-          <p>
-            <Link to={`/products`} className={s.category_title}>
-              {elem.title}
-            </Link>
-          </p>
-        </div>
-      ))}
+    <div className={s_categories.categories_page}>
+      {loading ? (
+        <p>Loading categories...</p>
+      ) : (
+        displayedCategories.map((elem) => (
+          <CategoryItem key={elem.id} category={elem} />
+        ))
+      )}
     </div>
   );
 }

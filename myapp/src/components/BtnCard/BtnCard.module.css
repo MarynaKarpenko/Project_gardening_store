@@ -19,3 +19,9 @@
         margin-bottom: 32px;
     }
 }
+
+@media(max-width: 360px) {
+    .btn_cads {
+        display: none;
+    }
+}

@@ -1,15 +1,19 @@
 import { Link } from "react-router-dom";
 import s from "./BtnBanner.module.css";
-import img from "../Pictures/img.jpg";
+import Amazing_img from "../Pictures/Amazing_img.jpg";
 
 export default function BtnBanner() {
   return (
-    <div className={s.home_picture_container}>
-      <img src={img} alt="" className={s.home_picture}></img>
-      <h2 className={s.text_amaying}>Amazing Discounts on Garden Products!</h2>
+    <figure className={s.home_picture_container}>
+      <img
+        src={Amazing_img}
+        alt="Amazing Discounts on Garden Products!"
+        className={s.home_picture}
+      />
+      <h2 className={s.text_amazing}>Amazing Discounts on Garden Products!</h2>
       <Link to={"/sales"}>
         <button className={s.btn_home_picture}>Check out</button>
       </Link>
-    </div>
+    </figure>
   );
 }

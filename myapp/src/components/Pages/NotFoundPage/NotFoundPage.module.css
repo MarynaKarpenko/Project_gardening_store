@@ -12,7 +12,7 @@
     height: 270px;
 }
 
-.h1_not_found {
+.heading {
     margin-top: 32px;
     margin-bottom: 16px;
     color: var(--txt-black, #282828);
@@ -45,7 +45,7 @@
         height: 240px;
     }
 
-    .h1_not_found {
+    .heading {
         font-size: 56px;
     }
 }
@@ -56,7 +56,7 @@
         height: 162px;
     }
 
-    .h1_not_found {
+    .heading {
         font-size: 48px;
     }
 
@@ -71,7 +71,7 @@
         height: 118px;
     }
 
-    .h1_not_found {
+    .heading {
         font-size: 40px;
     }
 }

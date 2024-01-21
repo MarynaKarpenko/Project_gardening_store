@@ -5,36 +5,40 @@
 .home_picture {
     width: 100vw;
     height: 600px;
-    position: relative;
-    object-fit: cover;
     margin-left: -40px;
+    position: relative;
+    object-fit: cover;  
 }
 
-.text_amaying {
-    color: var(--txt-white, #FFF);
-    font-weight: 700;
-    font-size: 96px;
-    position: absolute;
+.text_amazing {
     top: 80px;
     left: 0px;
+    position: absolute;
+    color: var(--txt-white, #FFF);
+    font-weight: 700;
+    font-size: 96px;    
 }
 
 .btn_home_picture {
+    left: 0px;
+    bottom: 215px;
+    padding: 16px 56px;
+    position: absolute;
     border-radius: var(--radius-small, 6px);
     background: var(--green, #393);
     color: var(--txt-white, #FFF);
     font-weight: 600;
     font-size: 20px;
-    padding: 16px 56px;
     border: none;
-    cursor: pointer;
-    position: absolute;
-    bottom: 215px;
-    left: 0px;
+    cursor: pointer;  
 }
 
 @media (max-width: 1000px) {
-    .text_amaying {
+    .home_picture{
+        margin-left: -20px;
+    }
+
+    .text_amazing {
         font-size: 90px;
     }
 
@@ -44,7 +48,7 @@
 }
 
 @media (max-width: 768px) {
-    .text_amaying {
+    .text_amazing {
         font-size: 68px;
     }
 
@@ -54,17 +58,20 @@
 }
 
 @media (max-width: 480px) {
-    .text_amaying {
+    .text_amazing {
         font-size: 60px;
     }
 
     .btn_home_picture {
-        bottom: 180px;
+        bottom: 155px;
     }
 }
 
 @media (max-width: 360px) {
-    .text_amaying {
+    .text_amazing {
         font-size: 52px;
+    }
+    .btn_home_picture {
+        bottom: 185px;
     }
 }

@@ -1,6 +1,20 @@
+import React from "react";
 import iconInst from "./Icons/IconsInst.svg";
 import iconWatsApp from "./Icons/IconsWatsApp.svg";
 import s from "./Contact.module.css";
+
+const commonStyles = {
+  contact: s.contact,
+}
+
+const socials = [
+  {
+    name: "Instagram",
+    link: "https://www.instagram.com/startainstitute/",
+    icon: iconInst,
+  },
+  { name: "WhatsApp", link: "#", icon: iconWatsApp },
+]
 
 export default function Contact() {
   return (
@@ -17,15 +31,15 @@ export default function Contact() {
         <div className={s.socials_div}>
           <p>Socials</p>
           <h4>
-            <a
-              href="https://www.instagram.com/startainstitute/"
-              className={s.instagram}
-            >
-              <img src={iconInst} alt=""></img>
-            </a>
-            <a>
-              <img src={iconWatsApp} alt="" className={s.contact}></img>
-            </a>
+            {socials.map((social) => (
+              <a
+                key={social.name}
+                href={social.link}
+                className={commonStyles.contact}
+              >
+                <img src={social.icon} alt={social.name} />
+              </a>
+            ))}
           </h4>
         </div>
       </div>
@@ -37,7 +51,7 @@ export default function Contact() {
               href="geo:0,0?q=Linkstraße 2, 8 OG, 10 785, Berlin, Deutschland"
               className={s.contact}
             >
-              Linkstraße 2, 8 OG, 10 785, Berlin, Deutschland
+              Linkstraße 2, 8 OG, 10 785, Berlin, Deutschland
             </a>
           </h4>
         </div>
@@ -49,5 +63,5 @@ export default function Contact() {
         </div>
       </div>
     </div>
-  );
+  )
 }
