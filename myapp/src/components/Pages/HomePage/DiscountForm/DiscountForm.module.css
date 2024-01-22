@@ -85,6 +85,8 @@ input:focus {
 
 @media(max-width: 1000px) {
     .form_wrapper {
+        margin-top: 60px;
+        margin-bottom: 60px;
         padding-right: 20px;
         padding-left: 0;
     }
@@ -125,28 +127,43 @@ input:focus {
 }
 
 @media(max-width: 480px) {
-    .form_wrapper{
+    .form_wrapper {
+        margin-top: 56px;
+        margin-bottom: 56px;
         padding: 24px 20px 0px;
     }
-    .inform_inputs {
-            flex-direction: column;
-            align-items: center;
-        }
-        
-        input{
-            width: 100%;
-        }
 
-        .btn_discount{
-            width: 100%;
-            margin: 0;
-        }
-    
-        .img_discount {
-            width: 100%;
-            max-width: none;
-            order: 2;
-        }
+    .inform_inputs {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    input {
+        width: 400px;
+    }
+
+    .btn_discount {
+        width: 400px;
+        margin: 0;
+    }
+
+    .img_discount {
+        width: 100%;
+        max-width: none;
+        order: 2;
+    }
 }
 
-@media(max-width: 360px) {}
+@media(max-width: 360px) {
+    input {
+        width: 280px;
+    }
+
+    .btn_discount {
+        width: 280px;
+    }
+
+    .form_text {
+        font-size: 40px;
+    }
+}

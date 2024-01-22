@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import burgerIcon from "../Icons/BurgerMenu.svg";
-import crossIcon from "../Icons/IconCross.svg";
+import burgerIcon from "../../Icons/BurgerMenu.svg";
+import crossIcon from "../../Icons/IconCross.svg";
 import s from "./BurgerMenu.module.css";
 import { Link } from "react-router-dom";
 

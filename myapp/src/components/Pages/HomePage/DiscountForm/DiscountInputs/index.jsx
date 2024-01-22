@@ -1,4 +1,3 @@
-import { useForm } from "react-hook-form";
 import s_discount_input from "../DiscountForm.module.css";
 
 export default function DiscountInputs({ register, errors }) {

@@ -11,7 +11,10 @@ export default function CategoryItem({ category }) {
 
   return (
     <div className={s_categories.categories_set}>
-      <Link to={`/products`} className={s_categories.category_link}>
+      <Link
+        to={`/products/${category.id}`}
+        className={s_categories.category_link}
+      >
         <img
           src={`${BASE_URL}${category.image || ""}`}
           alt={category.title || "Category"}

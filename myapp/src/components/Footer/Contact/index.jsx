@@ -1,6 +1,6 @@
 import React from "react";
-import iconInst from "./Icons/IconsInst.svg";
-import iconWatsApp from "./Icons/IconsWatsApp.svg";
+import iconInst from "../../Icons/IconsInst.svg";
+import iconWatsApp from "../../Icons/IconsWatsApp.svg";
 import s from "./Contact.module.css";
 
 const commonStyles = {
@@ -13,8 +13,8 @@ const socials = [
     link: "https://www.instagram.com/startainstitute/",
     icon: iconInst,
   },
-  { name: "WhatsApp", link: "#", icon: iconWatsApp },
-]
+  { name: "WhatsApp", link: "https://web.whatsapp.com/", icon: iconWatsApp },
+];
 
 export default function Contact() {
   return (

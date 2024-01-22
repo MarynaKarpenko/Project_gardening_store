@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import s from "./BtnBanner.module.css";
-import Amazing_img from "../Pictures/Amazing_img.jpg";
+import Amazing_img from "../../../Media/Amazing_img.jpg";
 
 export default function BtnBanner() {
   return (

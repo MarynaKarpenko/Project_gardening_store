@@ -1,5 +1,5 @@
 import s_discount_form from "./DiscountForm.module.css";
-import img_discount_form from "../Pictures/Discount_image.png";
+import img_discount_form from "../../../Media/Discount_image.png";
 import DiscountInputs from "./DiscountInputs";
 import { useForm } from "react-hook-form";
 

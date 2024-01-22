@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import logo from "./Logo/logo.png";
-import iconShop from "./Icons/IconShop.svg";
+import logo from "../Icons/logo.png";
+import iconShop from "../Icons/IconShop.svg";
 import BurgerMenu from "./BurgerMenu";
 import s from "./Header.module.css";
 
