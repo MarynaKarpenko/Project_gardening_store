@@ -13,7 +13,6 @@ const сomponent = () => {
   if (error) {
     return <div>Error: {error}</div>;
   }
-
   return (
     <div>
       {data ? <div>{JSON.stringify(data)}</div> : <div>Loading...</div>}

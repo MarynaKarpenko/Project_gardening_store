@@ -1,7 +1,7 @@
 import { useLocation } from "react-router-dom";
-import CategoryContainer from "./CategoryContainer";
 import BtnCategories from "../../BtnCard/BtnCategories";
 import BtnMainPage from "../../BtnCard/BtnMainPage";
+import CategoryContainer from "../../CategoryContainer"
 import s from "./Categories.module.css";
 
 export default function CategoriesPage() {

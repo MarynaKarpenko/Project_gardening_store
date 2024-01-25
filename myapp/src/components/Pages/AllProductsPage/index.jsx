@@ -1,25 +1,26 @@
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { getAllProducts } from "../../store/actions/actions";
 import ProductsContainer from "../../ProductsContainer";
 import Filter from "../../Filter/index";
 import BtnMainPage from "../../BtnCard/BtnMainPage";
 import BtnCategories from "../../BtnCard/BtnCategories";
 import BtnAllProducts from "../../BtnCard/BtnAllProducts";
 import s from "./AllProductsPage.module.css";
+import {fetchAllProducts} from "../../../Async/request"
 
 export default function AllProductsPage() {
+
   const location = useLocation();
   const dispatch = useDispatch();
   const [checked, setChecked] = useState(false);
   const handleChange = () => setChecked(!checked);
 
   useEffect(() => {
-    dispatch(getAllProducts());
-  }, []);
+    fetchAllProducts(dispatch);
+  }, [dispatch]);
 
-  const all_products_state = useSelector((state) => state.allProducts);
+  const all_products = useSelector((state) => state.allProducts);
 
   return (
     <div className={s.home_wrapper}>
@@ -32,7 +33,7 @@ export default function AllProductsPage() {
       </div>
       <h1>All Products</h1>
       <Filter />
-      <ProductsContainer products={all_products_state} />
+      <ProductsContainer products={all_products} />
     </div>
   );
 }

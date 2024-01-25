@@ -1,5 +1,5 @@
 import { createStore, applyMiddleware, combineReducers } from "redux";
-import { thunk } from "redux-thunk"; // Import as a named export
+import { thunk } from "redux-thunk"; 
 import {
   allProductsReducer,
   filterByPriceAction,

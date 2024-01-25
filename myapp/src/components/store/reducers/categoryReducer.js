@@ -1,5 +1,3 @@
-import thunk from "redux-thunk";
-
 const initialState = {
   data: null,
   error: null,

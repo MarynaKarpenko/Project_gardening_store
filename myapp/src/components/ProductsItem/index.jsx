@@ -11,6 +11,7 @@ export default function ProductItem({
   discont_price,
   image,
 }) {
+  console.log("Product in ProductItem:", { id, title, price, discont_price, image });
   const discount = Math.round(((price - discont_price) / price) * 100);
 
   return (

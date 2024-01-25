@@ -1,0 +1,13 @@
+.categories_page {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    padding-top: 40px;
+}
+
+@media(max-width: 1000px) {
+    .categories_page {
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+}

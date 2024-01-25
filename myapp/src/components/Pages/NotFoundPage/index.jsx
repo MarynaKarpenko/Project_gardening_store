@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import img_404 from "../../Media/404.png";
+import img_404 from "../../Media/404.svg";
 import s_404 from "./NotFoundPage.module.css";
 
 export default function NotFoundPage() {

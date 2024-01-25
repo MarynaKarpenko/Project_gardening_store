@@ -7,13 +7,10 @@
     font-family: 'Montserrat', sans-serif;
 }
 
-body {
-    overflow-x: hidden;
-}
-
 .app_container{
     max-width: 1440px;
-    margin: auto;
+    margin: 0 auto;
+    overflow-x: hidden;
 }
 
 h1 {
@@ -21,6 +18,8 @@ h1 {
     font-weight: 700;
     font-size: 64px;
 }
+
+
 
 @media(max-width: 1000px) {
     .app_container {
