@@ -1,5 +1,4 @@
 .form_wrapper {
-    width: 100%;
     height: auto;
     padding: 32px 32px 0px;
     margin-top: 80px;
@@ -7,6 +6,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: space-between;
     border-radius: var(--radius-big, 12px);
     background: linear-gradient(261deg, #0B710B 32.63%, #393 98.96%);
     gap: 24px;
@@ -17,14 +17,12 @@
     font-weight: 700;
     font-size: 64px;
     text-align: center;
-    align-self: stretch;
 }
 
 .inform_inputs {
     display: flex;
     justify-content: space-between;
     gap: 16px;
-    overflow: hidden;
 }
 
 .inputs_div {
@@ -39,8 +37,8 @@
     max-width: 100%;
 }
 
-input {
-    width: 516px;
+label input {
+    width: 100%;
     height: auto;
     padding: 16px 32px;
     display: flex;
@@ -55,20 +53,20 @@ input {
     font-size: 20px;
 }
 
-input::placeholder {
+label input::placeholder {
     color: var(--txt-white, #FFF);
     font-weight: 500;
     font-size: 20px;
 }
 
-input:focus {
+label input:focus {
     color: var(--txt-white, #FFF);
     font-weight: 500;
     font-size: 20px;
 }
 
 .btn_discount {
-    width: 516px;
+    width: 100%;
     height: auto;
     margin-top: 32px;
     padding: 16px 32px;
@@ -96,24 +94,14 @@ input:focus {
         object-fit: cover;
     }
 
-    input {
-        width: 450px;
-        box-sizing: border-box;
-    }
 
     .btn_discount {
-        width: 450px;
         margin-bottom: 20px;
     }
 }
 
 @media(max-width: 768px) {
-    input {
-        width: 334px;
-    }
-
     .btn_discount {
-        width: 334px;
         margin-bottom: 32px;
     }
 
@@ -138,12 +126,7 @@ input:focus {
         align-items: center;
     }
 
-    input {
-        width: 400px;
-    }
-
     .btn_discount {
-        width: 400px;
         margin: 0;
     }
 
@@ -155,14 +138,6 @@ input:focus {
 }
 
 @media(max-width: 360px) {
-    input {
-        width: 280px;
-    }
-
-    .btn_discount {
-        width: 280px;
-    }
-
     .form_text {
         font-size: 40px;
     }

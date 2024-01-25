@@ -1,20 +1,19 @@
 .header_wrapper {
+    margin: 30px 40px 30px 40px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding-bottom: 30px;
 }
 
 .menu_wrapper {
     display: flex;
+    align-items: center;
     gap: 32px;
 }
 
 .line {
     border-bottom: 1px solid var(--grey-divider, #DDD);
-    max-width: 1440px;
     width: 100vw;
-    margin-left: -40px;
 }
 
 .logo {

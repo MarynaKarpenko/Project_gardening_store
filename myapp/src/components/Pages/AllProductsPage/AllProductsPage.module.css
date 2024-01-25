@@ -1,0 +1,30 @@
+.home_wrapper{
+    margin: 0 40px 0 40px;
+}
+
+.btn_container {
+    display: flex;
+    align-items: center;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.line {
+    width: 16px;
+    height: 1px;
+    background: #DDD;
+}
+
+@media(max-width: 768px) {
+    .btn_container {
+        margin-top: 32px;
+        margin-bottom: 32px;
+    }
+}
+
+@media(max-width: 480px) {
+    .btn_container, 
+    .line {
+        display: none;
+    }
+}

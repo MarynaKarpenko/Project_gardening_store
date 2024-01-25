@@ -8,9 +8,12 @@
 }
 
 body {
+    overflow-x: hidden;
+}
+
+.app_container{
     max-width: 1440px;
-    margin: 30px 40px 80px 40px;
-    overflow-x: hidden;  
+    margin: auto;
 }
 
 h1 {
@@ -20,13 +23,13 @@ h1 {
 }
 
 @media(max-width: 1000px) {
-    body {
+    .app_container {
         margin: 30px 20px 60px 20px;
     }
 }
 
 @media(max-width: 780px) {
-    body {
+    .app_container {
         margin: 20px 20px 60px 20px;
     }
 
@@ -36,7 +39,7 @@ h1 {
 }
 
 @media(max-width: 480px) {
-    body {
+    .app_container {
         margin: 12px 20px 56px 20px;
     }
 

@@ -1,16 +1,15 @@
-const LOAD_ALL_PRODUCTS = "[ALL_PRODUCTS_PAGE]  LOAD_ALL_PRODUCTS";
-const PRODUCTS_WITH_DISCOUNT = "[ALL_PRODUCTS_PAGE]PRODUCTS_WITH_DISCOUNT";
-
+const LOAD_ALL_PRODUCTS = "[ALL_PRODUCTS_PAGE] LOAD_ALL_PRODUCTS";
+const TOGGLE_DISCOUNT = "[ALL_PRODUCTS_PAGE] TOGGLE_DISCOUNT";
 const FILTER_BY_PRICE = "[ALL_PRODUCTS_PAGE] FILTER_BY_PRICE";
-const PRODUCTS_SORT = "[ALL_PRODUCTS_PAGE]PRODUCTS_SORT";
+const SORT_PRODUCTS = "[ALL_PRODUCTS_PAGE] SORT_PRODUCTS";
 
 export const loadAllProductsAction = (payload) => ({
   type: LOAD_ALL_PRODUCTS,
   payload,
 });
 
-export const allProductsWithDiscountAction = (payload) => ({
-  type: PRODUCTS_WITH_DISCOUNT,
+export const toggleDiscountAction = (payload) => ({
+  type: TOGGLE_DISCOUNT,
   payload,
 });
 
@@ -20,25 +19,25 @@ export const filterByPriceAction = (payload) => ({
 });
 
 export const sortProductsAction = (payload) => ({
-  type: PRODUCTS_SORT,
+  type: SORT_PRODUCTS,
   payload,
 });
 
-const realPrice = ({ price, discont_price }) => {
-  if (discont_price === null) {
+const calculateRealPrice = ({ price, discount_price }) => {
+  if (discount_price === null) {
     return price;
   } else {
-    return discont_price;
+    return discount_price;
   }
 };
 
 export const allProductsReducer = (state = [], action) => {
   if (action.type === LOAD_ALL_PRODUCTS) {
     return action.payload;
-  } else if (action.type === PRODUCTS_WITH_DISCOUNT) {
+  } else if (action.type === TOGGLE_DISCOUNT) {
     if (action.payload) {
       return state.map((el) => {
-        if (el.discont_price !== null) {
+        if (el.discount_price !== null) {
           el.show_by_discount = true;
         } else {
           el.show_by_discount = false;
@@ -61,15 +60,18 @@ export const allProductsReducer = (state = [], action) => {
       }
       return el;
     });
-  } else if (action.type === PRODUCTS_SORT) {
+  } else if (action.type === SORT_PRODUCTS) {
     if (+action.payload === 1) {
-      state.sort((a, b) => realPrice(a) - realPrice(b));
+      return [...state].sort(
+        (a, b) => calculateRealPrice(a) - calculateRealPrice(b)
+      );
     } else if (+action.payload === 2) {
-      state.sort((a, b) => realPrice(b) - realPrice(a));
+      return [...state].sort(
+        (a, b) => calculateRealPrice(b) - calculateRealPrice(a)
+      );
     } else if (+action.payload === 3) {
-      state.sort((a, b) => a.title.localeCompare(b.title));
+      return [...state].sort((a, b) => a.title.localeCompare(b.title));
     }
-    return [...state];
   } else {
     return state;
   }

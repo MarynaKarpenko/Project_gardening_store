@@ -1,18 +1,18 @@
 .home_picture_container {
     position: relative;
+    width: 100%;
 }
 
 .home_picture {
     width: 100vw;
     height: 600px;
-    margin-left: -40px;
     position: relative;
     object-fit: cover;  
 }
 
 .text_amazing {
     top: 80px;
-    left: 0px;
+    left: 40px;
     position: absolute;
     color: var(--txt-white, #FFF);
     font-weight: 700;
@@ -20,7 +20,7 @@
 }
 
 .btn_home_picture {
-    left: 0px;
+    left: 40px;
     bottom: 215px;
     padding: 16px 56px;
     position: absolute;

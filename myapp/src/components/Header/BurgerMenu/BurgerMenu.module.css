@@ -10,7 +10,7 @@
 
 .menu_content {
     width: 282px;
-    height: 1067px;
+    height: 100vh;
     padding-left: 32px;
     padding-right: 20px;
     display: flex;

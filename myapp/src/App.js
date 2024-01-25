@@ -9,6 +9,8 @@ import NotFoundPage from "./components/Pages/NotFoundPage";
 import ProductPage from "./components/Pages/ProductPage";
 import ShoppingCartPage from "./components/Pages/ShoppingCartPage";
 import AllProductsPage from "./components/Pages/AllProductsPage";
+import ToolEquipmentPage from "./components/Pages/ToolEquimentPage";
+
 
 export default function App() {
   return (
@@ -19,8 +21,9 @@ export default function App() {
         <Route path="/categories" element={<CategoriesPage />} />
         <Route path="/products" element={<AllProductsPage />} />
         <Route path="/product/:id" element={<ProductPage />} />
-        <Route path="/shopping-cart" element={<ShoppingCartPage />} />
+        <Route path="/products/:categoryName" element={<ToolEquipmentPage />} />
         <Route path="/sales" element={<DiscountsPage />} />
+        <Route path="/shopping-cart" element={<ShoppingCartPage />} />
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
       <Footer />

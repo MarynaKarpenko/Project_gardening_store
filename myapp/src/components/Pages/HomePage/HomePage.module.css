@@ -1,6 +1,11 @@
+.content{
+    margin: 0 40px 0 40px;
+}
+
 .title_container{
     display: flex;
     align-items: center;
+    justify-content: center;
     justify-content: space-between;
     margin-top: 80px;
     margin-bottom: 40px;

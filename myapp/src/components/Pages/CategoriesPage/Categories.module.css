@@ -1,5 +1,5 @@
 .categories_div {
-    padding-bottom: 80px;
+    margin: 0 40px 80px 40px;
 }
 
 .categories_page {
@@ -84,7 +84,8 @@
         font-size: 18px;
     }
 
-    .btn_container {
+    .btn_container, 
+    .line {
         display: none;
     }
 
