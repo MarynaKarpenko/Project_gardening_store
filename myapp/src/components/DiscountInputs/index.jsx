@@ -64,7 +64,7 @@ export default function DiscountInputs({ register, errors }) {
             undefined,
             setName
           )}
-          className={(errors.name || showErrorMessage) && s.inp_error}
+          className={errors.name || showErrorMessage ? s.inp_error : undefined}
         />
       </label>
       {(errors.name || showErrorMessage) && (
@@ -83,7 +83,7 @@ export default function DiscountInputs({ register, errors }) {
             13,
             setNumber
           )}
-          className={(errors.number || showErrorMessage) && s.inp_error}
+          className={errors.name || showErrorMessage ? s.inp_error : undefined}
         />
       </label>
       {(errors.number || showErrorMessage) && (
@@ -102,7 +102,7 @@ export default function DiscountInputs({ register, errors }) {
             undefined,
             setEmail
           )}
-          className={(errors.email || showErrorMessage) && s.inp_error}
+          className={errors.name || showErrorMessage ? s.inp_error : undefined}
         />
       </label>
       {(errors.email || showErrorMessage) && (

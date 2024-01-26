@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import "./App.css";
 import CategoriesPage from "./components/Pages/CategoriesPage";
 import DiscountsPage from "./components/Pages/DiscountsPage";
