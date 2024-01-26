@@ -4,16 +4,10 @@ import s from "./CategoryItem.module.css";
 
 const BASE_URL = "http://localhost:3333";
 
-export default function CategoryItem({ category }) {
-  if (!category) {
-    return null;
-  }
-
-  const categoryUrl = `/categories/${encodeURIComponent(category.title)}`;
-
+export default function CategoryItem({ category }) { 
   return (
     <div className={s.categories_set}>
-      <Link to={categoryUrl} className={s.category_link}>
+      <Link to={"/categories/:id"} className={s.category_link}>
         <img
           src={`${BASE_URL}${category.image || ""}`}
           alt={category.title || "Category"}

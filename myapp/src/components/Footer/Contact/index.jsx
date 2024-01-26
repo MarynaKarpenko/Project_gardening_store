@@ -37,7 +37,7 @@ export default function Contact() {
                 href={social.link}
                 className={commonStyles.contact}
               >
-                <img src={social.icon} alt={social.name} />
+                <img src={social.icon} alt={social.name} className={s.instagram}/>
               </a>
             ))}
           </h4>
@@ -58,7 +58,7 @@ export default function Contact() {
         <div className={s.hours_div}>
           <p>Working Hours</p>
           <h4>
-            <a className={s.working_hours}>24 hours a day</a>
+            <p className={s.working_hours}>24 hours a day</p>
           </h4>
         </div>
       </div>

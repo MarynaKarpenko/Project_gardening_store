@@ -39,6 +39,7 @@ export default function Filter({
               name="checkbox"
               onClick={handleChange}
               onChange={filterBySale}
+              className={s.checked}
             />
           </div>
         )}

@@ -28,10 +28,11 @@
     text-decoration: none;
 }
 
-.shop_menu {
-    display: flex;
-    justify-content: end;
+.active_link{
+    color: var(--green, #393);
 }
+
+
 
 .icon_shop {
     width: 48px;

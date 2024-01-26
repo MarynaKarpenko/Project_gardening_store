@@ -10,6 +10,7 @@
     border-radius: var(--radius-big, 12px);
     background: linear-gradient(261deg, #0B710B 32.63%, #393 98.96%);
     gap: 24px;
+    overflow: hidden;
 }
 
 .form_text {

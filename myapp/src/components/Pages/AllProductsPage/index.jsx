@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import ProductsContainer from "../../ProductsContainer";
@@ -13,8 +13,6 @@ export default function AllProductsPage() {
 
   const location = useLocation();
   const dispatch = useDispatch();
-  const [checked, setChecked] = useState(false);
-  const handleChange = () => setChecked(!checked);
 
   useEffect(() => {
     fetchAllProducts(dispatch);

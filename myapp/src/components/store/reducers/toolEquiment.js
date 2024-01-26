@@ -1,15 +1,15 @@
 const ActionTypes = {
-  LOAD_TOOL_EQUIMENT: "[TOOL_EQUIMENT_PAGE] LOAD_TOOL_EQUIMENT",
-  TOGGLE_DISCOUNT: "[TOOL_EQUIMENT_PAGE] TOGGLE_DISCOUNT",
-  FILTER_BY_PRICE: "[TOOL_EQUIMENT_PAGE] FILTER_BY_PRICE",
-  SORT_PRODUCTS: "[TOOL_EQUIMENT_PAGE] SORT_PRODUCTS",
+  LOAD_TOOLL_EQUIMENT: "[TOOLL_EQUIMENT_PAGE] LOAD_TOOL_EQUIMENT",
+  TOGGLE_DISCOUNT: "[TOOLL_EQUIMENT_PAGE] TOGGLE_DISCOUNT",
+  FILTER_BY_PRICE: "[TOOLL_EQUIMENT_PAGE] FILTER_BY_PRICE",
+  SORT_PRODUCTS: "[TOOLL_EQUIMENT_PAGE] SORT_PRODUCTS",
 };
 
 const calculateRealPrice = ({ price, discont_price }) =>
   discont_price === null ? price : discont_price;
 
 export const loadProductsByCategoryAction = (payload) => ({
-  type: ActionTypes.LOAD_TOOL_EQUIMENT,
+  type: ActionTypes.LOAD_TOOLL_EQUIMENT,
   payload,
 });
 
@@ -60,7 +60,7 @@ const sortProducts = (state, payload) => {
 
 export const productsByCategoryReducer = (state = [], action) => {
   switch (action.type) {
-    case ActionTypes.LOAD_TOOL_EQUIMENT:
+    case ActionTypes.LOAD_TOOLL_EQUIMENT:
         console.log("Data loaded:", action.payload);
       return action.payload;
     case ActionTypes.TOGGLE_DISCOUNT:

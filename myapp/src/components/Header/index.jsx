@@ -1,11 +1,12 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import logo from "../Icons/logo.svg";
 import iconShop from "../Icons/IconShop.svg";
 import BurgerMenu from "./BurgerMenu";
 import s from "./Header.module.css";
 
 export default function Header() {
+  const location = useLocation();
   return (
     <>
       <div>
@@ -16,16 +17,36 @@ export default function Header() {
             </Link>
           </div>
           <div className={s.menu_wrapper}>
-            <Link to={"/"} className={s.link}>
+            <Link
+              to={"/"}
+              className={`${s.link} ${
+                location.pathname === "/" ? s.active_link : ""
+              }`}
+            >
               <p>Main Page</p>
             </Link>
-            <Link to={"/categories"} className={s.link}>
+            <Link
+              to={"/categories"}
+              className={`${s.link} ${
+                location.pathname === "/categories" ? s.active_link : ""
+              }`}
+            >
               <p>Categories</p>
             </Link>
-            <Link to={"/products"} className={s.link}>
+            <Link
+              to={"/products"}
+              className={`${s.link} ${
+                location.pathname === "/products" ? s.active_link : ""
+              }`}
+            >
               <p>All products</p>
             </Link>
-            <Link to={"/sales"} className={s.link}>
+            <Link
+              to={"/sales"}
+              className={`${s.link} ${
+                location.pathname === "/sales" ? s.active_link : ""
+              }`}
+            >
               <p>All sales</p>
             </Link>
           </div>

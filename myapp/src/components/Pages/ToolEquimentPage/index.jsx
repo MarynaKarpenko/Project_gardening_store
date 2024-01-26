@@ -9,16 +9,16 @@ import { useEffect } from "react";
 import { fetchProductsByCategory } from "../../../Async/request";
 import ProductsContainer from "../../ProductsContainer";
 
-export default function ToolEquipmentPage() {
+export default function ToolEquipmentPage({category}) {
 
   const location = useLocation();
   const dispatch = useDispatch();
-  const { name } = useParams();
+  const { id } = useParams();
   const products_by_categiry = useSelector((state) => state.productsByCategory);
 
   useEffect(() => {
-    fetchProductsByCategory(name, dispatch);
-  }, [dispatch, name]);
+    fetchProductsByCategory(dispatch, id);
+  }, [dispatch], id);
   
   return (
     <div>
@@ -28,10 +28,10 @@ export default function ToolEquipmentPage() {
         <BtnCategories />
         <div className={s.line}></div>
         <BtnToolsAndEquipment
-          active={location.pathname === "/categories/:name"}
+          active={location.pathname === "/categories/:id"}
         />
       </div>
-      <h1>Tools and equipment</h1>
+      <h1>{category.title}</h1>
       <Filter />
       <ProductsContainer products={products_by_categiry} />
     </div>

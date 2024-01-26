@@ -3,20 +3,20 @@ import { loadProductsByCategoryAction } from "../components/store/reducers/toolE
 
 const BASE_URL = "http://localhost:3333";
 
-export const getCategories = async (dispatch) => {
+export const fetchCategories = async () => {
   try {
     const response = await fetch(`${BASE_URL}/categories/all`);
     const data = await response.json();
-    dispatch({ type: "FETCH_SUCCESS", payload: data });
+    return data;
   } catch (error) {
-    dispatch({ type: "FETCH_ERROR", payload: error.message });
+    console.error("Error fetching categories:", error);
+    throw error;
   }
 };
 
 export const fetchProductsByCategory = async (dispatch) => {
   try {
-    const response = await fetch(`${BASE_URL}/categories/:name`);
-    console.log("Data from API:", response);
+    const response = await fetch(`${BASE_URL}/categories/:id`);
     const data = await response.json();
     dispatch(loadProductsByCategoryAction(data));
   } catch (error) {

@@ -1,0 +1,49 @@
+.btn_discount {
+    width: 516px;
+    height: auto;
+    margin-top: 32px;
+    margin-bottom: 20px;
+    padding: 16px 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: var(--radius-small, 6px);
+    background: var(--white, #FFF);
+    border: none;
+    color: var(--txt-black, #282828);
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.btn_discount:hover{
+        background: var(--black, #282828);
+        color: var(--txt-white, #FFF);
+}
+
+.btn_active{
+    background: var(--light-grey, #F1F3F4);
+    color: var(--green, #393);
+}
+
+.btn_discount:active{
+    background: var(--light-grey, #F1F3F4);
+    color: var(--green, #393);
+}
+
+@media(max-width: 1000px) {
+    .btn_discount {
+        margin-bottom: 20px;
+    }
+}
+
+@media(max-width: 768px) {
+    .btn_discount {
+        margin-bottom: 32px;
+    }
+}
+
+@media(max-width: 480px) {
+    .btn_discount {
+        margin: 0;
+    }
+}

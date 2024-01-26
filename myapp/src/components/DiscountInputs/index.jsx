@@ -1,8 +1,21 @@
-import React from "react";
-import s from "./DiscountInputs.module.css"
+import React, { useState } from "react";
+import s from "./DiscountInputs.module.css";
+import BtnDiscount from "../BtnCard/BtnDiscount";
 
 export default function DiscountInputs({ register, errors }) {
-  const getInputProps = (name, placeholder, pattern, minLength, maxLength) => ({
+  const [name, setName] = useState("");
+  const [number, setNumber] = useState("");
+  const [email, setEmail] = useState("");
+  const [showErrorMessage, setShowErrorMessage] = useState(false);
+
+  const getInputProps = (
+    name,
+    placeholder,
+    pattern,
+    minLength,
+    maxLength,
+    setValue
+  ) => ({
     ...register(name, {
       required: `${placeholder} is required`,
       minLength: {
@@ -16,17 +29,49 @@ export default function DiscountInputs({ register, errors }) {
       pattern,
     }),
     placeholder,
+    onChange: (e) => {
+      setValue(e.target.value);
+      setShowErrorMessage(false);
+    },
+    onBlur: () => setShowErrorMessage(true),
   });
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+
+    if (!name || !number || !email) {
+      setShowErrorMessage(true);
+      return;
+    }
+
+    const requestData = {
+      name,
+      number,
+      email,
+    };
+    console.log("Sent data:", requestData);
+  };
 
   return (
     <div className={s.inputs_div}>
       <label>
         <input
-          {...getInputProps("name", "Name", /^[A-ZA-Я]/i, 3, undefined)}
-          className={errors.name && s.inp_error}
+          {...getInputProps(
+            "name",
+            "Name",
+            /^[A-ZA-Я]/i,
+            3,
+            undefined,
+            setName
+          )}
+          className={(errors.name || showErrorMessage) && s.inp_error}
         />
       </label>
-      {errors.name && <p className={s.error_message}>{errors.name.message}</p>}
+      {(errors.name || showErrorMessage) && (
+        <p className={`${s.error_message} ${s.error_text_color}`}>
+          {showErrorMessage ? "Enter your details" : errors.name.message}
+        </p>
+      )}
 
       <label>
         <input
@@ -35,13 +80,16 @@ export default function DiscountInputs({ register, errors }) {
             "Phone number",
             /^\+\d\s\d{3}\s\d{3}\s\d{2}\s\d{2}$/i,
             10,
-            13
+            13,
+            setNumber
           )}
-          className={errors.number && s.inp_error}
+          className={(errors.number || showErrorMessage) && s.inp_error}
         />
       </label>
-      {errors.number && (
-        <p className={s.error_message}>{errors.number.message}</p>
+      {(errors.number || showErrorMessage) && (
+        <p className={`${s.error_message} ${s.error_text_color}`}>
+          {showErrorMessage ? "Enter your details" : errors.number.message}
+        </p>
       )}
 
       <label>
@@ -51,18 +99,18 @@ export default function DiscountInputs({ register, errors }) {
             "Email",
             /^\S+@\S+\.\S+$/,
             undefined,
-            undefined
+            undefined,
+            setEmail
           )}
-          className={errors.email && s.inp_error}
+          className={(errors.email || showErrorMessage) && s.inp_error}
         />
       </label>
-      {errors.email && (
-        <p className={s.error_message}>{errors.email.message}</p>
+      {(errors.email || showErrorMessage) && (
+        <p className={`${s.error_message} ${s.error_text_color}`}>
+          {showErrorMessage ? "Enter your details" : errors.email.message}
+        </p>
       )}
-
-      <button type="submit" className={s.btn_discount}>
-        Get a discount
-      </button>
+      <BtnDiscount onSubmit={handleSubmit} />
     </div>
   );
 }

@@ -29,6 +29,16 @@
     border: 1px solid var(--grey-divider, #DDD);
 }
 
+.filter_sale input:checked+p {
+    border-radius: var(--radius-small, 6px);
+    background: var(--green, #393);
+}
+
+.filter_sale input:checked+p::before {
+    border-radius: var(--radius-small, 6px);
+    border: 1px solid var(--grey-divider, #DDD);
+}
+
 .filter_form input {
     width: 112px;
     padding: 8px 16px;

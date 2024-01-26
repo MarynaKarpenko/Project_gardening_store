@@ -1,24 +1,23 @@
 import React, { useEffect, useState } from "react";
 import s from "./CategoryContainer.module.css";
 import CategoryItem from "../CategoryItem"
-
-const BASE_URL = "http://localhost:3333";
+import { fetchCategories } from "../../Async/request";
 
 export default function CategoryContainer({ limitItems }) {
   const [categories, setCategories] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch(`${BASE_URL}/categories/all`)
-      .then((res) => res.json())
-      .then((data) => {
+    const fetchData = async () => {
+      try {
+        const data = await fetchCategories();
         setCategories(data);
         setLoading(false);
-      })
-      .catch((error) => {
-        console.error("Error fetching categories:", error);
+      } catch (error) {
         setLoading(false);
-      });
+      }
+    };
+    fetchData();
   }, []);
 
   const displayedCategories = limitItems
