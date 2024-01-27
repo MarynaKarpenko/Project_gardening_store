@@ -3,11 +3,13 @@ import ProductItem from "../ProductsItem";
 import s from "./ProductsContainer.module.css";
 
 export default function ProductsContainer({ products }) {
-  console.log("Products in ProductsContainer:", products);
   return (
     <div className={s.products_container}>
-      {products &&
-        products.map((item) => <ProductItem key={item.id} {...item} />)}
+      {products
+        .filter((el) => el.show_by_discount && el.show_by_price)
+        .map((item) => (
+          <ProductItem key={item.id} {...item} />
+        ))}
     </div>
   );
 }

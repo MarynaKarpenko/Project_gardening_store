@@ -14,18 +14,18 @@ import MainPage from "./components/Pages/MainPage";
 export default function App() {
   return (
     <div className="app_container">
-        <Header />
-        <Routes>
-          <Route path="/" element={<MainPage />} />
-          <Route path="/categories" element={<CategoriesPage />} />
-          <Route path="/products" element={<AllProductsPage />} />
-          <Route path="/sales" element={<DiscountsPage />} />
-          <Route path="/categories/:id" element={<ToolEquipmentPage />} />
-          <Route path="/product/:id" element={<ProductPage />} />
-          <Route path="/shopping-cart" element={<ShoppingCartPage />} />
-          <Route path="*" element={<NotFoundPage />} />
-        </Routes>
-        <Footer />
+      <Header />
+      <Routes>
+        <Route path="/" element={<MainPage />} />
+        <Route path="/categories" element={<CategoriesPage />} />
+        <Route path="/products" element={<AllProductsPage />} />
+        <Route path="/sales" element={<DiscountsPage />} />
+        <Route path="/categories/:name" element={<ToolEquipmentPage />} />
+        <Route path="/product/:productId" element={<ProductPage />} />
+        <Route path="/shopping-cart" element={<ShoppingCartPage />} />
+        <Route path="*" element={<NotFoundPage />} />
+      </Routes>
+      <Footer />
     </div>
   );
 }

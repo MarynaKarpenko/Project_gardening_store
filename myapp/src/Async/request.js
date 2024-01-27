@@ -1,40 +1,109 @@
-import { loadAllProductsAction } from "../components/store/reducers/allProductsReduser";
-import { loadProductsByCategoryAction } from "../components/store/reducers/toolEquiment";
+import {BASE_URL} from "../config"
+import { loadAllProductsAction } from "../store/reducers/allProductsReducer";
+import { sendOrderAction } from "../store/reducers/cartReducer";
+import { loadCategoriesAction } from "../store/reducers/categoriesReducer";
+import { loadNameOfCategoryAction } from "../store/reducers/categoryReducer";
+import { loadProductsByCategoryAction } from "../store/reducers/productsByCategoryReducer";
+import { loadProductsAction } from "../store/reducers/productsWithDiscountReducer";
+import { loadSingleProductAction } from "../store/reducers/singleProductReducer";
 
-const BASE_URL = "http://localhost:3333";
-
-export const fetchCategories = async () => {
-  try {
-    const response = await fetch(`${BASE_URL}/categories/all`);
-    const data = await response.json();
-    return data;
-  } catch (error) {
-    console.error("Error fetching categories:", error);
-    throw error;
-  }
+export const fechCategories = async (dispatch) => {
+  const link = `${BASE_URL}/categories/all`;
+  const resp = await fetch(link);
+  const data = await resp.json();
+  dispatch(loadCategoriesAction(data));
 };
 
-export const fetchProductsByCategory = async (dispatch) => {
-  try {
-    const response = await fetch(`${BASE_URL}/categories/:id`);
-    const data = await response.json();
-    dispatch(loadProductsByCategoryAction(data));
-  } catch (error) {
-    console.error("Error fetching products:", error);
-  }
+export const fechProductsByCategory = (element) => {
+  return (dispatch) =>
+    fetch(`${BASE_URL}/categories/${element}`)
+      .then((res) => res.json())
+      .then((json) => {
+        if (json.data) {
+          // Проверяем, что json.data определено
+          const data = json.data.map((el) => ({
+            ...el,
+            show_by_price: true,
+            show_by_discount: true,
+          }));
+
+          json.data = data;
+
+          dispatch(loadProductsByCategoryAction(json.data));
+        } else {
+          console.error("Data is undefined or null");
+          // Можно добавить код обработки ситуации, когда данные не определены
+        }
+      })
+      .catch((error) => {
+        console.error("Error fetching data:", error);
+        // Обработка ошибки при запросе данных
+      });
 };
 
-export const fetchAllProducts = async (dispatch) => {
-  try {
-    const response = await fetch(`${BASE_URL}/products/all`);
-    const data = await response.json();
-    const new_data = data.map((el) => ({
+export const fechNameOfCategory = (element) => {
+  return (dispatch) =>
+    fetch(`${BASE_URL}/categories/${element}`)
+      .then((res) => res.json())
+      .then((json) => dispatch(loadNameOfCategoryAction(json.category)));
+};
+
+export const fechAllProducts = async (dispatch) => {
+  const link = `${BASE_URL}/products/all`;
+  const resp = await fetch(link);
+  const data = await resp.json();
+  const new_data = data.map((el) => ({
+    ...el,
+    show_by_price: true,
+    show_by_discount: true,
+  }));
+  dispatch(loadAllProductsAction(new_data));
+};
+
+export const fechSalesProducts = async (dispatch) => {
+  const link = `${BASE_URL}/products/all`;
+  const resp = await fetch(link);
+  const data = await resp.json();
+  const new_data = data
+    .filter((el) => el.discont_price !== null)
+    .map((el) => ({
       ...el,
       show_by_price: true,
       show_by_discount: true,
     }));
-    dispatch(loadAllProductsAction(new_data));
-  } catch (error) {
-    console.error("Error fetching products:", error);
-  }
+  dispatch(loadProductsAction(new_data));
+};
+
+export const fechSingleProduct = (element) => {
+  return (dispatch) =>
+    fetch(`${BASE_URL}/products/${element}`)
+      .then((res) => res.json())
+      .then((json) => dispatch(loadSingleProductAction(json)));
+};
+
+export const sendOrder = (body) => {
+  return (dispatch) => {
+    fetch(`${BASE_URL}/order/send`, {
+      method: "POST",
+      body: JSON.stringify(body),
+      headers: {
+        "Content-Type": "application/json;charset=utf-8",
+      },
+    })
+      .then((res) => res.json())
+      .then((json) => dispatch(sendOrderAction(json)))
+      .then(alert("order is accepted"));
+  };
+};
+
+export const fechDiscount = (body) => {
+  fetch(`${BASE_URL}/sale/send`, {
+    method: "POST",
+    body: JSON.stringify(body),
+    headers: {
+      "Content-Type": "application/json;charset=utf-8",
+    },
+  })
+    .then((res) => res.json())
+    .then(alert("your discount is 5%"));
 };

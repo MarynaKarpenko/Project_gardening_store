@@ -3,7 +3,7 @@ import s from "./MainPage.module.css";
 import BtnAllCategories from "../../BtnCard/BtnAllCategories";
 import Banner from "../../Banner";
 import DiscountForm from "../../DiscountForm";
-import CategoryContainer from "../../CategoryContainer";
+import CategoriesPage from "../CategoriesPage";
 
 export default function MainPage() {
   return (
@@ -19,7 +19,7 @@ export default function MainPage() {
               <div className={s.line}></div>
               <BtnAllCategories />
             </div>
-            <CategoryContainer limitItems={4} />
+            <CategoriesPage limitItems={4} />
           </div>
           <DiscountForm />
           <h1>Sale</h1>

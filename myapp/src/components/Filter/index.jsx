@@ -53,9 +53,9 @@ export default function Filter({
           className={s.filter_select}
         >
           <option value="default">by default</option>
-          <option value="min_price">min price</option>
-          <option value="max_price">max price</option>
-          <option value="by_name">by name</option>
+          <option value="1">min price</option>
+          <option value="2">max price</option>
+          <option value="3">by name</option>
         </select>
       </div>
     </div>
