@@ -1,8 +1,7 @@
 import React from "react";
-import { useDispatch } from "react-redux";
-import {addToCartAction} from "../../store/reducers/cartReducer"
 import {BASE_URL} from "../../config"
 import s from "./SingleProduct.module.css"
+import BtnAddToCart from "../BtnCard/BtnAddToCart";
 
 export default function SingleProduct({
   id,
@@ -14,9 +13,6 @@ export default function SingleProduct({
 }) {
     
   const discount = Math.round(100 - (discont_price / price) * 100);
-  const dispatch = useDispatch();
-  const add_to_cart = () =>
-    dispatch(addToCartAction({ id, title, price, discont_price, image }));
 
   return (
     <div>
@@ -47,9 +43,7 @@ export default function SingleProduct({
               </div>
             )}
           </div>
-          <div className={s.add_cart} onClick={add_to_cart}>
-            To cart
-          </div>
+          <BtnAddToCart/>
           <div className={s.description}>
             <p>Description</p>
             <p>{description}</p>

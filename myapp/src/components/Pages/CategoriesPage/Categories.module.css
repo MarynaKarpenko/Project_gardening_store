@@ -2,15 +2,6 @@
     margin: 0 40px 80px 40px;
 }
 
-.categories_set {
-    width: 100%;
-    height: auto;
-    display: flex;
-    align-items: center;
-    text-align: center;
-    gap: 16px;
-}
-
 .btn_container {
     display: flex;
     align-items: center;
@@ -28,10 +19,6 @@
     .categories_div {
         padding-bottom: 60px;
     }
-
-    .categories_set {
-        width: 306px;
-    }
 }
 
 @media(max-width: 768px) {
@@ -42,14 +29,6 @@
 }
 
 @media(max-width: 480px) {
-    .categories_set {
-        width: 210px;
-    }
-
-    .category_title {
-        font-size: 18px;
-    }
-
     .btn_container, 
     .line {
         display: none;

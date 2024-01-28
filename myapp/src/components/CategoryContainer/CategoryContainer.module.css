@@ -1,13 +1,9 @@
-.categories_page {
+.categories_container {
     display: flex;
-    flex-direction: row;
-    gap: 30px;
+    justify-content: center;
     padding-top: 40px;
 }
 
-@media(max-width: 1000px) {
-    .categories_page {
-        flex-wrap: wrap;
-        gap: 20px;
-    }
+.container_link {
+    text-decoration: none;
 }

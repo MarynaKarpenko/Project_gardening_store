@@ -20,24 +20,19 @@ export const fechProductsByCategory = (element) => {
       .then((res) => res.json())
       .then((json) => {
         if (json.data) {
-          // Проверяем, что json.data определено
           const data = json.data.map((el) => ({
             ...el,
             show_by_price: true,
             show_by_discount: true,
           }));
-
           json.data = data;
-
           dispatch(loadProductsByCategoryAction(json.data));
         } else {
           console.error("Data is undefined or null");
-          // Можно добавить код обработки ситуации, когда данные не определены
         }
       })
       .catch((error) => {
         console.error("Error fetching data:", error);
-        // Обработка ошибки при запросе данных
       });
 };
 

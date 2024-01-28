@@ -1,11 +1,34 @@
-import React from "react";
+import React, { useEffect } from "react";
 import s from "./MainPage.module.css";
 import BtnAllCategories from "../../BtnCard/BtnAllCategories";
 import Banner from "../../Banner";
 import DiscountForm from "../../DiscountForm";
 import CategoriesPage from "../CategoriesPage";
+import { useDispatch, useSelector } from "react-redux";
+import { fechCategories, fechSalesProducts } from "../../../Async/request";
+import ProductsContainer from "../../ProductsContainer"
+import CategoryContainer from "../../CategoryContainer";
 
 export default function MainPage() {
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(fechCategories);
+    dispatch(fechSalesProducts);
+  }, []);
+  const categories_state = useSelector((state) => state.catalog);
+
+  const categories = categories_state.filter(({ id }) => id <= 4);
+
+  const salesProducts = useSelector((state) => state.productsWithdiscount);
+
+  const getRandom = () =>
+    Math.round(Math.random() * (salesProducts.length - 1));
+
+  const randomState = salesProducts
+    .map((el) => ({ ...el, random: getRandom() }))
+    .sort((a, b) => a.random - b.random)
+    .filter((el, i) => i < 4);
+
   return (
     <div>
       <div className={s.banner}>
@@ -19,10 +42,11 @@ export default function MainPage() {
               <div className={s.line}></div>
               <BtnAllCategories />
             </div>
-            <CategoriesPage limitItems={4} />
           </div>
+          <CategoryContainer categories={categories} />
           <DiscountForm />
           <h1>Sale</h1>
+          <ProductsContainer products={randomState} />
         </div>
       </div>
     </div>

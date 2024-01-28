@@ -1,8 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
 import s from "./ProductsItem.module.css";
 import {BASE_URL} from "../../config"
+import BtnAddToCart from "../BtnCard/BtnAddToCart";
 
 export default function ProductItem({
   id,
@@ -13,8 +13,6 @@ export default function ProductItem({
 }) {
   const discount = Math.round(100 - (discont_price / price) * 100);
 
-
-  
   return (
     <div className={s.products_item_wrapper}>
       <Link to={`/product/${id}`} className={s.products_link}>
@@ -24,9 +22,8 @@ export default function ProductItem({
             alt={title}
             className={s.products_img}
           />
-          
         </div>
-
+<BtnAddToCart/>
         <div className={s.products_information}>
           <h3 className={s.products_title}>{title}</h3>
           <div className={s.price_container}>
