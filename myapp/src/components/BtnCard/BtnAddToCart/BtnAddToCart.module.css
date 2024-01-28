@@ -1,0 +1,20 @@
+.add_btn {
+    padding: 16px 32px;
+    width: 284px;
+    position: absolute;
+    left: 16px;
+    bottom: 154px;
+    border: none;
+    border-radius: var(--radius-small, 6px);
+    background: var(--green, #393);
+    color: var(--txt-white, #FFF);
+    font-size: 20px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.add_btn:hover {
+    transition: 0.5s;
+    background: var(--black, #282828);
+}

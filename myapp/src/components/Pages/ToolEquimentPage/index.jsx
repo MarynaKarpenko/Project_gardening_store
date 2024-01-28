@@ -1,13 +1,17 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useParams } from "react-router-dom";
+import { useLocation, useParams } from "react-router-dom";
 import s from "./ToolEquimentPage.module.css";
 import { fechNameOfCategory, fechProductsByCategory } from "../../../Async/request";
 import { filterByPriceAction, productsWithDiscountAction, sortProductsAction } from "../../../store/reducers/productsByCategoryReducer";
 import Filter from "../../Filter"
 import ProductsContainer from "../../ProductsContainer";
+import BtnMainPage from "../../BtnCard/BtnMainPage";
+import BtnCategories from "../../BtnCard/BtnCategories";
+import BtnToolsAndEquipment from "../../BtnCard/BtnToolsAndEquipment";
 
 export default function ToolEquipmentPage() {
+  const location = useLocation();
   const { name } = useParams();
   const dispatch = useDispatch();
   useEffect(() => {
@@ -32,6 +36,15 @@ export default function ToolEquipmentPage() {
   };
   return (
     <div>
+      <div className={s.btn_container}>
+        <BtnMainPage />
+        <div className={s.line}></div>
+        <BtnCategories />
+        <div className={s.line}></div>
+        <BtnToolsAndEquipment
+          active={location.pathname === `/categories/${name}`}
+        />
+      </div>
       <h2 className={s.title}>{title}</h2>
       <Filter
         filterBySale={filterBySale}

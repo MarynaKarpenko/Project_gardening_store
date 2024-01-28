@@ -91,7 +91,7 @@ export const sendOrder = (body) => {
   };
 };
 
-export const fechDiscount = (body) => {
+export const getDiscount = (body) => {
   fetch(`${BASE_URL}/sale/send`, {
     method: "POST",
     body: JSON.stringify(body),
@@ -102,3 +102,4 @@ export const fechDiscount = (body) => {
     .then((res) => res.json())
     .then(alert("your discount is 5%"));
 };
+

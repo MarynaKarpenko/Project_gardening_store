@@ -1,6 +1,6 @@
 import React from "react";
 import s from "./CategoryItem.module.css";
-import {BASE_URL} from "../../config";
+import { BASE_URL } from "../../config";
 import { Link } from "react-router-dom";
 
 export default function CategoryItem({ id, title, image }) {
@@ -13,7 +13,7 @@ export default function CategoryItem({ id, title, image }) {
           className={s.category_image}
         />
         <div className={s.text_container}>
-          <p className={s.category_text}>{title}</p>
+          <p>{title}</p>
         </div>
       </Link>
     </div>

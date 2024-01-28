@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import s from "./ProductsItem.module.css";
-import {BASE_URL} from "../../config"
+import { BASE_URL } from "../../config";
 import BtnAddToCart from "../BtnCard/BtnAddToCart";
 
 export default function ProductItem({
@@ -23,7 +23,9 @@ export default function ProductItem({
             className={s.products_img}
           />
         </div>
-<BtnAddToCart/>
+        <div className={s.add_btn}>
+          <BtnAddToCart />
+        </div>
         <div className={s.products_information}>
           <h3 className={s.products_title}>{title}</h3>
           <div className={s.price_container}>

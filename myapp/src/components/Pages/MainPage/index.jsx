@@ -8,6 +8,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { fechCategories, fechSalesProducts } from "../../../Async/request";
 import ProductsContainer from "../../ProductsContainer"
 import CategoryContainer from "../../CategoryContainer";
+import BtnAllSales from "../../BtnCard/BtnAllSales";
 
 export default function MainPage() {
   const dispatch = useDispatch();
@@ -45,7 +46,11 @@ export default function MainPage() {
           </div>
           <CategoryContainer categories={categories} />
           <DiscountForm />
-          <h1>Sale</h1>
+          <div className={s.title_container}>
+            <h1 className={s.categories_h1}>Sale</h1>
+            <div className={s.line}></div>
+            <BtnAllSales />
+          </div>
           <ProductsContainer products={randomState} />
         </div>
       </div>
