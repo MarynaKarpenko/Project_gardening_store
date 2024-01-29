@@ -34,13 +34,15 @@ export default function Filter({
         ) : (
           <div className={s.filter_sale}>
             <p>Discounted items</p>
-            <input
-              type="checkbox"
-              name="checkbox"
-              onClick={handleChange}
-              onChange={filterBySale}
-              className={s.checked}
-            />
+            <span className={s.span_input}>
+              <input
+                type="checkbox"
+                name="checkbox"
+                onClick={handleChange}
+                onChange={filterBySale}
+                className={s.checked}
+              />
+            </span>
           </div>
         )}
       </div>

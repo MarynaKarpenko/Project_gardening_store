@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, {useState} from "react";
 import s from "./BtnDiscount.module.css";
 
 export default function BtnDiscount({ onSubmit }) {
@@ -6,20 +6,9 @@ export default function BtnDiscount({ onSubmit }) {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-
-    onSubmit(event);
     setButtonState("Request Submitted");
+    onSubmit(event);
   };
-
-  useEffect(() => {
-    if (buttonState === "Request Submitted") {
-      const timeoutId = setTimeout(() => {
-        setButtonState("normal");
-      }, 5000);
-
-      return () => clearTimeout(timeoutId);
-    }
-  }, [buttonState]);
 
   return (
     <div>

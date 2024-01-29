@@ -13,19 +13,17 @@
     color: var(--txt-black, #282828);
     font-weight: 600;
     font-size: 20px;
+    transition: 0.3s;
+    cursor: pointer;
 }
 
 .btn_discount:hover{
         background: var(--black, #282828);
         color: var(--txt-white, #FFF);
+        transition: 0.3s;
 }
 
 .btn_active{
-    background: var(--light-grey, #F1F3F4);
-    color: var(--green, #393);
-}
-
-.btn_discount:active{
     background: var(--light-grey, #F1F3F4);
     color: var(--green, #393);
 }

@@ -39,15 +39,21 @@ export const cartReducer = (state = [], action) => {
   } else if (action.type === REMOVE_CART) {
     return state.filter(({ id }) => id !== action.payload);
   } else if (action.type === CART_INCREMENT) {
-    state.find(({ id }) => id === action.payload).count++;
-    return [...state];
+    const updatedState = state.map((item) =>
+      item.id === action.payload && item.count !== undefined
+        ? { ...item, count: (item.count || 0) + 1 }
+        : item
+    );
+    return updatedState;
   } else if (action.type === CART_DECREMENT) {
     const product = state.find(({ id }) => id === action.payload);
-    if (product.count === 1) {
+    if (product && product.count === 1) {
       return state.filter((item) => item !== product);
-    } else {
+    } else if (product) {
       product.count--;
       return [...state];
+    } else {
+      return state;
     }
   } else if (action.type === SEND_ORDER) {
     console.log(action.payload);

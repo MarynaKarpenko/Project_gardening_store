@@ -19,6 +19,7 @@ label input {
     color: var(--txt-white, #FFF);
     font-weight: 500;
     font-size: 20px;
+    outline: none;
 }
 
 label input::placeholder {
@@ -28,7 +29,6 @@ label input::placeholder {
 }
 
 label input:focus {
-    color: var(--txt-white, #FFF);
     font-weight: 500;
     font-size: 20px;
 }

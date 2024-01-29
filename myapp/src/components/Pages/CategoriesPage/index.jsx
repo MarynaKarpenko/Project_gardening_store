@@ -21,7 +21,6 @@ export default function CategoriesPage() {
       <div className={s.btn_container}>
         <BtnMainPage />
         <div className={s.line}></div>
-
         <BtnCategories active={location.pathname.startsWith("/categories")} />
       </div>
 

@@ -38,6 +38,7 @@ export default function AllProductsPage() {
   const sort = (e) => {
     dispatch(sortProductsAction(e.target.value));
   };
+  
   return (
     <div className={s.home_wrapper}>
       <div className={s.btn_container}>
