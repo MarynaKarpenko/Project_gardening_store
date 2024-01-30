@@ -1,12 +1,10 @@
 import React from "react";
 import { useDispatch } from "react-redux";
 import {sendOrder} from "../../Async/request";
-import { useForm } from 'react-hook-form';
+import ShoppingInputs from "../ShoppingInputs"
 import s from "./ShoppingCalculation.module.css";
-import ShoppingInputs from "../ShoppingInputs";
 
 export default function ShoppingCalculation({ cart_state }) {
-
   const dispatch = useDispatch();
   const send_order = (e) => {
     e.preventDefault();
@@ -30,7 +28,7 @@ export default function ShoppingCalculation({ cart_state }) {
         </div>
       </div>
       <form className={s.form} onSubmit={send_order}>
-        
+        <ShoppingInputs/>
          
         <button>Order</button>
       </form>

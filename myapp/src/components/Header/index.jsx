@@ -7,6 +7,14 @@ import s from "./Header.module.css";
 
 export default function Header() {
   const location = useLocation();
+
+  const navLinks = [
+    { to: "/", text: "Main Page" },
+    { to: "/categories", text: "Categories" },
+    { to: "/products", text: "All products" },
+    { to: "/sales", text: "All sales" },
+  ];
+
   return (
     <>
       <div>
@@ -17,38 +25,17 @@ export default function Header() {
             </Link>
           </div>
           <div className={s.menu_wrapper}>
-            <Link
-              to={"/"}
-              className={`${s.link} ${
-                location.pathname === "/" ? s.active_link : ""
-              }`}
-            >
-              <p>Main Page</p>
-            </Link>
-            <Link
-              to={"/categories"}
-              className={`${s.link} ${
-                location.pathname === "/categories" ? s.active_link : ""
-              }`}
-            >
-              <p>Categories</p>
-            </Link>
-            <Link
-              to={"/products"}
-              className={`${s.link} ${
-                location.pathname === "/products" ? s.active_link : ""
-              }`}
-            >
-              <p>All products</p>
-            </Link>
-            <Link
-              to={"/sales"}
-              className={`${s.link} ${
-                location.pathname === "/sales" ? s.active_link : ""
-              }`}
-            >
-              <p>All sales</p>
-            </Link>
+            {navLinks.map(({ to, text }) => (
+              <Link
+                key={to}
+                to={to}
+                className={`${s.link} ${
+                  location.pathname === to ? s.active_link : ""
+                }`}
+              >
+                <p>{text}</p>
+              </Link>
+            ))}
           </div>
           <div className={s.shop_menu}>
             <Link to={"/shopping-cart"}>

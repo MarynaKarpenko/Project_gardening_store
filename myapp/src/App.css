@@ -7,7 +7,7 @@
     font-family: 'Montserrat', sans-serif;
 }
 
-.app_container{
+.app_wrapper {
     max-width: 1440px;
     margin: 0 auto;
     overflow-x: hidden;
@@ -22,26 +22,16 @@ h1 {
 
 
 @media(max-width: 1000px) {
-    .app_container {
-        margin: 30px 20px 60px 20px;
-    }
+
 }
 
 @media(max-width: 780px) {
-    .app_container {
-        margin: 20px 20px 60px 20px;
-    }
-
     h1 {
         font-size: 56px;
     }
 }
 
 @media(max-width: 480px) {
-    .app_container {
-        margin: 12px 20px 56px 20px;
-    }
-
     h1 {
         font-size: 48px;
     }

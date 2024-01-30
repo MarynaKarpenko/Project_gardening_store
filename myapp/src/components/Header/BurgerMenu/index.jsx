@@ -2,17 +2,24 @@ import React, { useState } from "react";
 import burgerIcon from "../../Icons/BurgerMenu.svg";
 import crossIcon from "../../Icons/IconCross.svg";
 import s from "./BurgerMenu.module.css";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
+
+const navLinks = [
+  { to: "/", text: "Main Page" },
+  { to: "/categories", text: "Categories" },
+  { to: "/products", text: "All products" },
+  { to: "/sales", text: "All sales" },
+];
 
 export default function BurgerMenu() {
   const [menuOpen, setMenuOpen] = useState(false);
-
+  const location = useLocation();
   const toggleMenu = () => {
-    setMenuOpen(!menuOpen);
+    setMenuOpen((prevMenuOpen) => !prevMenuOpen);
   };
 
   return (
-    <div className={s.burgerMenuContainer}>
+    <div className={`${s.burgerMenuContainer} ${menuOpen ? s.menu_open : ""}`}>
       <div className={s.icons_menu_cross_div} onClick={toggleMenu}>
         <img
           src={menuOpen ? crossIcon : burgerIcon}
@@ -22,18 +29,17 @@ export default function BurgerMenu() {
       </div>
       {menuOpen && (
         <div className={s.menu_content}>
-          <Link to={"/"} className={s.link}>
-            <p>Main Page</p>
-          </Link>
-          <Link to={"/categories"} className={s.link}>
-            <p>Categories</p>
-          </Link>
-          <Link to={"/products"} className={s.link}>
-            <p>All products</p>
-          </Link>
-          <Link to={"/sales"} className={s.link}>
-            <p>All sales</p>
-          </Link>
+          {navLinks.map(({ to, text }) => (
+            <Link
+              key={to}
+              to={to}
+              className={`${s.link} ${
+                location.pathname === to ? s.active_link : ""
+              }`}
+            >
+              <p>{text}</p>
+            </Link>
+          ))}
         </div>
       )}
     </div>

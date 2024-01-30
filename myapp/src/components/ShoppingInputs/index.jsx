@@ -5,10 +5,7 @@ import { useForm } from "react-hook-form";
 export default function ShoppingInputs() {
   let {
     register,
-    handleSubmit,
     formState: { errors },
-    reset,
-    watch,
   } = useForm({ mode: "onChange" });
 
   let name_input = register("name", {
@@ -85,7 +82,6 @@ export default function ShoppingInputs() {
         </label>
         {errors.email && <p style={{ color: "red" }}>{errors.email.message}</p>}
       </div>
-<ShoppingInputs/>
     </form>
   );
 }
