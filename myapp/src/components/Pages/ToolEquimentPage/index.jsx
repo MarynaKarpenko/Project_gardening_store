@@ -1,17 +1,14 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useLocation, useParams } from "react-router-dom";
-import s from "./ToolEquimentPage.module.css";
+import { useParams } from "react-router-dom";
 import { fechNameOfCategory, fechProductsByCategory } from "../../../Async/request";
 import { filterByPriceAction, productsWithDiscountAction, sortProductsAction } from "../../../store/reducers/productsByCategoryReducer";
 import Filter from "../../Filter"
 import ProductsContainer from "../../ProductsContainer";
-import BtnMainPage from "../../BtnCard/BtnMainPage";
-import BtnCategories from "../../BtnCard/BtnCategories";
-import BtnToolsAndEquipment from "../../BtnCard/BtnToolsAndEquipment";
+import Breadcrumbs from "../../UI/Breadcrumbs";
+import s from "./ToolEquimentPage.module.css";
 
 export default function ToolEquipmentPage() {
-  const location = useLocation();
   const { name } = useParams();
   const dispatch = useDispatch();
   useEffect(() => {
@@ -34,16 +31,17 @@ export default function ToolEquipmentPage() {
     const max_value = max_price.value || Infinity;
     dispatch(filterByPriceAction({ min_value, max_value }));
   };
+
+  const breadcrumbs = [
+    { label: "Main page", path: "/" },
+    { label: "Categories", path: "/categories" },
+    { label: `${title}`, path: `/categories/${name}`, active: true },
+  ];
+
   return (
     <div>
       <div className={s.btn_container}>
-        <BtnMainPage />
-        <div className={s.line}></div>
-        <BtnCategories />
-        <div className={s.line}></div>
-        <BtnToolsAndEquipment
-          active={location.pathname === `/categories/${name}`}
-        />
+        <Breadcrumbs breadcrumbs={breadcrumbs}/>
       </div>
       <h2 className={s.title}>{title}</h2>
       <Filter

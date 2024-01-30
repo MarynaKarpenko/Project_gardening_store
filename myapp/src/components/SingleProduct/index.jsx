@@ -9,11 +9,7 @@ import s from "./SingleProduct.module.css";
 import BtnAddToCart from "../BtnCard/BtnAddToCart";
 import iconPlus from "../Icons/Plus.svg";
 import iconMinus from "../Icons/Minus.svg";
-import { useLocation } from "react-router-dom";
-import BtnMainPage from "../BtnCard/BtnMainPage";
-import BtnCategories from "../BtnCard/BtnCategories";
-import BtnToolsAndEquipment from "../BtnCard/BtnToolsAndEquipment";
-import BtnSingleProduct from "../BtnCard/BtnSingleProduct";
+import Breadcrumbs from "../UI/Breadcrumbs";
 
 export default function SingleProduct({
   id,
@@ -24,7 +20,7 @@ export default function SingleProduct({
   image,
   count,
 }) {
-  const location = useLocation();
+
   const dispatch = useDispatch();
   const discount = Math.round(100 - (discont_price / price) * 100);
   const [counter, setCounter] = useState(count || 1);
@@ -41,18 +37,17 @@ export default function SingleProduct({
     }
   };
 
+  const breadcrumbs = [
+    { label: "Main page", path: "/" },
+    { label: "Categories", path: "/categories" },
+    { label: "Tools and equipment", path: "/categories/:name" },
+    { label: `${title}`, path: `/product/${id}`, active: true },
+  ];
+
   return (
     <div className={s.product_wrapper}>
       <div className={s.btn_container}>
-        <BtnMainPage />
-        <div className={s.line}></div>
-        <BtnCategories />
-        <div className={s.line}></div>
-        <BtnToolsAndEquipment />
-        <div className={s.line}></div>
-        <BtnSingleProduct
-          active={location.pathname.startsWith(`/product/${id}`)}
-        />
+        <Breadcrumbs breadcrumbs={breadcrumbs}/>
       </div>
 
       <div className={s.container}>

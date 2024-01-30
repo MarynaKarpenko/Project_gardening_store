@@ -1,5 +1,6 @@
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
+import { useSelector } from "react-redux";
 import logo from "../Icons/logo.svg";
 import iconShop from "../Icons/IconShop.svg";
 import BurgerMenu from "./BurgerMenu";
@@ -7,6 +8,8 @@ import s from "./Header.module.css";
 
 export default function Header() {
   const location = useLocation();
+  const productsInCart = useSelector((state) => state.cart);
+  const counter = productsInCart.reduce((acc, { count }) => acc + count, 0);
 
   const navLinks = [
     { to: "/", text: "Main Page" },
@@ -38,9 +41,12 @@ export default function Header() {
             ))}
           </div>
           <div className={s.shop_menu}>
+            <div className={s.cart}>
             <Link to={"/shopping-cart"}>
               <img src={iconShop} alt="" className={s.icon_shop} />
+              {counter > 0 ? <span>{counter}</span> : ""}
             </Link>
+            </div>
             <div className={s.burger_menu_container}>
               <BurgerMenu />
             </div>

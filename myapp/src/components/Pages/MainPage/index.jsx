@@ -1,14 +1,12 @@
 import React, { useEffect } from "react";
-import s from "./MainPage.module.css";
-import BtnAllCategories from "../../BtnCard/BtnAllCategories";
-import Banner from "../../Banner";
-import DiscountForm from "../../DiscountForm";
-import CategoriesPage from "../CategoriesPage";
 import { useDispatch, useSelector } from "react-redux";
 import { fechCategories, fechSalesProducts } from "../../../Async/request";
-import ProductsContainer from "../../ProductsContainer"
+import s from "./MainPage.module.css";
+import Banner from "../../Banner";
+import DiscountForm from "../../DiscountForm";
+import ProductsContainer from "../../ProductsContainer";
 import CategoryContainer from "../../CategoryContainer";
-import BtnAllSales from "../../BtnCard/BtnAllSales";
+import Breadcrumbs from "../../UI/Breadcrumbs";
 
 export default function MainPage() {
   const dispatch = useDispatch();
@@ -30,6 +28,12 @@ export default function MainPage() {
     .sort((a, b) => a.random - b.random)
     .filter((el, i) => i < 4);
 
+  const breadcrumbsCategories = [
+    { label: "All categories", path: "/categories" },
+  ];
+
+  const breadcrumbsSales = [{ label: "All sales", path: "/sales" }];
+
   return (
     <div>
       <div className={s.banner}>
@@ -41,7 +45,7 @@ export default function MainPage() {
             <div className={s.title_container}>
               <h1 className={s.categories_h1}>Categories</h1>
               <div className={s.line}></div>
-              <BtnAllCategories />
+              <Breadcrumbs breadcrumbs={breadcrumbsCategories} />
             </div>
           </div>
           <CategoryContainer categories={categories} />
@@ -49,7 +53,7 @@ export default function MainPage() {
           <div className={s.title_container}>
             <h1 className={s.categories_h1}>Sale</h1>
             <div className={s.line}></div>
-            <BtnAllSales />
+            <Breadcrumbs breadcrumbs={breadcrumbsSales} />
           </div>
           <ProductsContainer products={randomState} />
         </div>

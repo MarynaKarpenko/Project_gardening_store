@@ -1,3 +1,8 @@
+.btn_div {
+    display: flex;
+    align-items: center;
+}
+
 .btn_cads {
     padding: 8px 16px;
     border-radius: var(--radius-small, 6px);
@@ -7,21 +12,16 @@
     font-size: 16px;
     cursor: pointer;
     white-space: nowrap;
+    text-decoration: none;
 }
 
 .activeButton {
     color: var(--txt-black, #282828);
 }
 
-@media(max-width: 1000px) {
-    .btn_cads {
-        margin-top: 60px;
-        margin-bottom: 32px;
-    }
-}
-
-@media(max-width: 360px) {
-    .btn_cads {
-        display: none;
-    }
+.breadcrumbLine {
+    width: 16px;
+    height: 1px;
+    background: #DDD;
+    display: inline-block;
 }

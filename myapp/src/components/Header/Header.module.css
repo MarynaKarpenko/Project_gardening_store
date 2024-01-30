@@ -37,6 +37,27 @@
     height: 48px;
 }
 
+.cart {
+    position: relative;
+}
+
+.cart span {
+    position: absolute;
+    width: 26px;
+    height: 26px;
+    top: 0;
+    left: -10px;
+    color: var(--white, #FFF);
+    font-size: 12px;
+    font-weight: 600;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 1px solid #393;
+    background-color: var(--green, #393);;
+    border-radius: 20px;
+}
+
 .burger_menu_container {
     display: none;
 }

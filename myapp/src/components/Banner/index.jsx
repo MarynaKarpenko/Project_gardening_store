@@ -1,6 +1,6 @@
-import { Link } from "react-router-dom";
 import s from "./Banner.module.css";
 import Amazing_img from "../Media/Amazing.svg";
+import BtnCard, { ButtonTypes } from "../UI/BtnCard";
 
 export default function Banner() {
   return (
@@ -10,10 +10,12 @@ export default function Banner() {
         alt="Amazing Discounts on Garden Products!"
         className={s.home_picture}
       />
-      <h2 className={s.text_amazing}>Amazing Discounts on Garden Products!</h2>
-      <Link to={"/sales"}>
-        <button className={s.btn_home_picture}>Check out</button>
-      </Link>
+      <div className={s.text_and_btn}>
+        <h2 className={s.text_amazing}>
+          Amazing Discounts on Garden Products!
+        </h2>
+        <BtnCard type={ButtonTypes.CHECK_OUT} />
+      </div>
     </div>
   );
 }

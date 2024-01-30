@@ -1,18 +1,18 @@
+import React from "react";
 import { useEffect, useState } from "react";
-import { useLocation } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
+import { fechAllProducts } from "../../../Async/request";
+import {
+  allProductsWithDiscountAction,
+  filterByPriceAction,
+  sortProductsAction,
+} from "../../../store/reducers/allProductsReducer";
+import Breadcrumbs from "../../UI/Breadcrumbs";
 import ProductsContainer from "../../ProductsContainer";
 import Filter from "../../Filter/index";
-import BtnMainPage from "../../BtnCard/BtnMainPage";
-import BtnCategories from "../../BtnCard/BtnCategories";
-import BtnAllProducts from "../../BtnCard/BtnAllProducts";
 import s from "./AllProductsPage.module.css";
-import {fechAllProducts} from "../../../Async/request"
-import { allProductsWithDiscountAction, filterByPriceAction, sortProductsAction } from "../../../store/reducers/allProductsReducer";
 
 export default function AllProductsPage() {
-
-  const location = useLocation();
   const dispatch = useDispatch();
   const [checked, setChecked] = useState(false);
   const handleChange = () => setChecked(!checked);
@@ -38,15 +38,16 @@ export default function AllProductsPage() {
   const sort = (e) => {
     dispatch(sortProductsAction(e.target.value));
   };
-  
+
+  const breadcrumbs = [
+    { label: "Main page", path: "/" },
+    { label: "All products", path: "/products", active: true },
+  ];
+
   return (
     <div className={s.home_wrapper}>
       <div className={s.btn_container}>
-        <BtnMainPage />
-        <div className={s.line}></div>
-        <BtnCategories />
-        <div className={s.line}></div>
-        <BtnAllProducts active={location.pathname === "/products"} />
+        <Breadcrumbs breadcrumbs={breadcrumbs} />
       </div>
       <h1>All Products</h1>
       <Filter
