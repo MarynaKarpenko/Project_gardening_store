@@ -9,8 +9,6 @@ export default function Map() {
     <div style={mapStyles} className={s.map_div}>
       <iframe
         title="Google Map"
-        width="100%"
-        height="350"
         frameBorder="0"
         scrolling="no"
         marginHeight="0"

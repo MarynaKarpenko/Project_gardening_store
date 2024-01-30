@@ -1,43 +1,31 @@
-.wrapper_contacts {
-    display: flex;
-    flex-direction: column;
+.contact_info {
+    display: grid;
+    grid-template-columns: 59% 1fr;
+    grid-template-rows: repeat(2, auto);
     gap: 32px;
 }
 
-.contact_info,
-.address_info {
-    display: flex;
-    gap: 32px;
-}
-
-.contact_info>div,
-.address_info>div {
-    width: 780px;
-    height: auto;
+.contact_info div {
+    width: 100%;
+    height: 100%;
     padding: 32px;
     border-radius: var(--radius-big, 12px);
     background: var(--light-grey, #F1F3F4);
 }
 
-.contact_info>div>p,
-.address_info>div>p {
+.contact_info div p {
     padding-bottom: 16px;
     color: var(--txt-grey, #8B8B8B);
     font-weight: 500;
     font-size: 20px;
 }
 
-.contact_info>div>h4,
-.address_info>div>h4 {
+.contact_info div a,
+.working_hours {
+    text-decoration: none;
     color: var(--txt-black, #282828);
     font-weight: 600;
     font-size: 40px;
-}
-
-.contact_info>div>h4>a,
-.address_info>div>h4>a {
-    text-decoration: none;
-    color: var(--txt-black, #282828);
 }
 
 .instagram {
@@ -48,38 +36,38 @@
     cursor: pointer;
 }
 
-@media (max-width: 768px) {
-
-    .socials_div,
-    .hours_div {
-        width: auto;
+@media (max-width: 1000px) {
+    .contact_info {
+        display: grid;
+        grid-template-columns: 50% 1fr;
+        gap: 20px;
     }
+}
 
-    .telephone_div,
-    .address_div {
-        width: 415px;
+@media (max-width: 768px) {
+    .contact_info {
+        display: grid;
+        grid-template-columns: 59% 1fr;
     }
 }
 
 @media (max-width: 480px) {
-
-    .contact_info>div,
-    .address_info>div {
-        width: auto;
+    .contact_info {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(4, auto);
     }
 
-    .contact_info,
-    .address_info {
-        flex-direction: column;
+    .contact_info div {
+        padding: 24px 20px 24px 20px;
     }
 
-    .contact_info>div>p,
-    .address_info>div>p {
+    .contact_info div p {
         font-size: 18px;
     }
 
-    .contact_info>div>h4,
-    .address_info>div>h4 {
+    .contact_info div a,
+    .working_hours {
         font-size: 28px;
     }
 }

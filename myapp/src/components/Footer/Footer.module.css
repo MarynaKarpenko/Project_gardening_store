@@ -1,13 +1,27 @@
-.footer_wrapper{
-    margin: 0 40px 80px 40px;
+.footer_wrapper {
+    margin: 80px 40px 80px 40px;
 }
 
 .contact_h1 {
     margin-bottom: 40px;
 }
 
-@media (max-width: 768x) {
+@media (max-width: 1000px) {
+    .footer_wrapper {
+        margin: 60px 20px 60px 20px;
+    }
+
     .contact_h1 {
-        font-size: 54px;
+        margin-bottom: 32px;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer_wrapper {
+        margin: 56px 20px 56px 20px;
+    }
+
+    .contact_h1 {
+        margin-bottom: 24px;
     }
 }
