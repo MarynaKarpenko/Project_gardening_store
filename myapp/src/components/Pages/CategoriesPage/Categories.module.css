@@ -1,9 +1,9 @@
 .categories_div {
-    margin: 0 40px 80px 40px;
+    margin: 0 40px 0 40px;
 }
 
-.categories_name{
-    margin-bottom: 40px;
+.products_name {
+    padding-bottom: 40px;
 }
 
 .btn_container {
@@ -13,34 +13,24 @@
     margin-bottom: 40px;
 }
 
-.line {
-    width: 16px;
-    height: 1px;
-    background: #DDD;
-}
-
 @media(max-width: 1000px) {
     .categories_div {
-        padding-bottom: 60px;
+        margin: 0 20px 0 20px;
     }
-}
 
-@media(max-width: 768px) {
-    .btn_container {
-        margin-top: 32px;
-        margin-bottom: 32px;
+    .products_name {
+        padding-bottom: 32px;
     }
 }
 
 @media(max-width: 480px) {
-    .btn_container, 
-    .line {
-        display: none;
+    .products_name {
+        padding-top: 32px;
+        padding-bottom: 24px;
     }
 
-    .categories_div {
-        padding-top: 32px;
-        padding-bottom: 56px;
+    .btn_container {
+        display: none;
     }
 }
 

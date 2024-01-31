@@ -23,7 +23,7 @@ export default function CategoriesPage() {
       <div className={s.btn_container}>
         <Breadcrumbs breadcrumbs={breadcrumbs} />
       </div>
-      <h1 className={s.categories_name}>Categories</h1>
+      <h1 className={s.products_name}>Categories</h1>
       <div className={s.category_page}>
         <CategoryContainer categories={categories} />
       </div>

@@ -35,28 +35,24 @@ export default function MainPage() {
   const breadcrumbsSales = [{ label: "All sales", path: "/sales" }];
 
   return (
-    <div>
-      <div className={s.banner}>
-        <Banner />
-      </div>
-      <div className={s.container}>
-        <div className={s.content}>
-          <div className={s.home}>
-            <div className={s.title_container}>
-              <h1 className={s.categories_h1}>Categories</h1>
-              <div className={s.line}></div>
-              <Breadcrumbs breadcrumbs={breadcrumbsCategories} />
-            </div>
-          </div>
-          <CategoryContainer categories={categories} />
-          <DiscountForm />
+    <div className={s.container}>
+      <Banner />
+      <div className={s.content}>
+        <div className={s.home}>
           <div className={s.title_container}>
-            <h1 className={s.categories_h1}>Sale</h1>
+            <h1 className={s.categories_h1}>Categories</h1>
             <div className={s.line}></div>
-            <Breadcrumbs breadcrumbs={breadcrumbsSales} />
+            <Breadcrumbs breadcrumbs={breadcrumbsCategories} />
           </div>
-          <ProductsContainer products={randomState} />
         </div>
+        <CategoryContainer categories={categories} />
+        <DiscountForm />
+        <div className={s.title_container}>
+          <h1 className={s.categories_h1}>Sale</h1>
+          <div className={s.line}></div>
+          <Breadcrumbs breadcrumbs={breadcrumbsSales} />
+        </div>
+        <ProductsContainer products={randomState} />
       </div>
     </div>
   );

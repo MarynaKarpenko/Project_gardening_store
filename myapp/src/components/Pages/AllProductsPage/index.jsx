@@ -49,7 +49,7 @@ export default function AllProductsPage() {
       <div className={s.btn_container}>
         <Breadcrumbs breadcrumbs={breadcrumbs} />
       </div>
-      <h1>All Products</h1>
+      <h1 className={s.products_name}>All Products</h1>
       <Filter
         filterBySale={filterBySale}
         filterByPrice={filterByPrice}

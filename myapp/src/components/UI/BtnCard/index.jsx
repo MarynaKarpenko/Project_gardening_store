@@ -57,15 +57,14 @@ export default function BtnCard({
             : "Get a discount"}
         </button>
       )}
-
       {type === ButtonTypes.CHECK_OUT && (
         <Link to={"/sales"}>
-          <button>Check out</button>
+          <button className={s.btn_green}>Check out</button>
         </Link>
       )}
       {type === ButtonTypes.GO_HOME && (
         <Link to={"/"}>
-          <button className={s.btn_home_picture}>Go home</button>
+          <button className={s.btn_green}>Go home</button>
         </Link>
       )}
     </div>

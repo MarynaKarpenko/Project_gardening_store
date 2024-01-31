@@ -55,8 +55,8 @@ export default function Filter({
           className={s.filter_select}
         >
           <option value="default">by default</option>
-          <option value="1">min price</option>
-          <option value="2">max price</option>
+          <option value="1">price: low-high</option>
+          <option value="2">price: high-low</option>
           <option value="3">by name</option>
         </select>
       </div>

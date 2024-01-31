@@ -9,10 +9,10 @@
     margin-bottom: 40px;
 }
 
-.line {
-    width: 16px;
-    height: 1px;
-    background: #DDD;
+@media(max-width: 1000px) {
+    .home_wrapper {
+        margin: 0 20px 0 20px;
+    }
 }
 
 @media(max-width: 768px) {
@@ -23,8 +23,10 @@
 }
 
 @media(max-width: 480px) {
-    .btn_container, 
-    .line {
+    .products_name{
+        padding-top: 32px;
+    }
+    .btn_container {
         display: none;
     }
 }

@@ -9,12 +9,6 @@
     margin-bottom: 40px;
 }
 
-.line {
-    width: 16px;
-    height: 1px;
-    background: #DDD;
-}
-
 .container {
     display: grid;
     grid-template-columns: 61% 1fr;
@@ -131,4 +125,23 @@
     color: var(--txt-black, #282828);
     font-size: 20px;
     font-weight: 600;
+}
+
+@media(max-width: 1000px) {
+    .product_wrapper {
+        margin: 0 20px 0 20px;
+    }
+}
+
+@media(max-width: 768px) {
+    .btn_container {
+        margin-top: 32px;
+        margin-bottom: 32px;
+    }
+}
+
+@media(max-width: 480px) {
+    .btn_container {
+        display: none;
+    }
 }

@@ -1,25 +1,18 @@
-import { useNavigate } from "react-router-dom";
 import img_404 from "../../Media/404.svg";
-import s_404 from "./NotFoundPage.module.css";
+import s from "./NotFoundPage.module.css";
+import BtnCard, { ButtonTypes } from "../../UI/BtnCard";
 
 export default function NotFoundPage() {
-  const navigate = useNavigate();
 
   return (
-    <div className={s_404.page_not_found}>
-      <img
-        src={img_404}
-        alt="Page Not Found"
-        className={s_404.img_not_found}
-      ></img>
-      <h1 className={s_404.heading}>Page Not Found</h1>
-      <p className={s_404.p_not_found}>
+    <div className={s.page_not_found}>
+      <img src={img_404} alt="Page Not Found" className={s.img_not_found}></img>
+      <h1 className={s.heading}>Page Not Found</h1>
+      <p className={s.p_not_found}>
         We’re sorry, the page you requested could not be found.
       </p>
-      <p className={s_404.p_not_found}>Please go back to the homepage.</p>
-      <button onClick={() => navigate("/")} className={s_404.btn_not_found}>
-        Go Home
-      </button>
+      <p className={s.p_not_found_2}>Please go back to the homepage.</p>
+      <BtnCard type={ButtonTypes.GO_HOME} />
     </div>
   );
 }
