@@ -1,10 +1,12 @@
 import {BASE_URL} from "../config"
-import { loadAllProductsAction } from "../store/reducers/allProductsReducer";
+import {
+  loadAllProductsAction,
+  loadProductsByCategoryAction,
+  loadProductsAction,
+} from "../store/reducers/productsReducer";
 import { sendOrderAction } from "../store/reducers/cartReducer";
 import { loadCategoriesAction } from "../store/reducers/categoriesReducer";
 import { loadNameOfCategoryAction } from "../store/reducers/categoryReducer";
-import { loadProductsByCategoryAction } from "../store/reducers/productsByCategoryReducer";
-import { loadProductsAction } from "../store/reducers/productsWithDiscountReducer";
 import { loadSingleProductAction } from "../store/reducers/singleProductReducer";
 
 export const fechCategories = async (dispatch) => {

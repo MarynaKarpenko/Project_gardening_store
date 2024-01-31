@@ -6,7 +6,7 @@ import {
   allProductsWithDiscountAction,
   filterByPriceAction,
   sortProductsAction,
-} from "../../../store/reducers/allProductsReducer";
+} from "../../../store/reducers/productsReducer";
 import Breadcrumbs from "../../UI/Breadcrumbs";
 import ProductsContainer from "../../ProductsContainer";
 import Filter from "../../Filter/index";

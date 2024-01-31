@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { fechNameOfCategory, fechProductsByCategory } from "../../../Async/request";
-import { filterByPriceAction, productsWithDiscountAction, sortProductsAction } from "../../../store/reducers/productsByCategoryReducer";
+import { filterByPriceAction, productsWithDiscountAction, sortProductsAction } from "../../../store/reducers/productsReducer";
 import Filter from "../../Filter"
 import ProductsContainer from "../../ProductsContainer";
 import Breadcrumbs from "../../UI/Breadcrumbs";

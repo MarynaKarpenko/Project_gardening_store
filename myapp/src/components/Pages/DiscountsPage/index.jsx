@@ -4,7 +4,7 @@ import { fechSalesProducts } from "../../../Async/request";
 import {
   filterByPriceAction,
   sortProductsAction,
-} from "../../../store/reducers/productsWithDiscountReducer";
+} from "../../../store/reducers/productsReducer";
 import Breadcrumbs from "../../UI/Breadcrumbs";
 import Filter from "../../Filter"
 import ProductsContainer from "../../ProductsContainer"

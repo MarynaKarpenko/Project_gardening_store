@@ -1,18 +1,16 @@
 import { createStore, applyMiddleware, combineReducers } from "redux";
 import { thunk } from "redux-thunk";
 import { categoriesReducer } from "./reducers/categoriesReducer";
-import { productsByCategoryReducer } from "./reducers/productsByCategoryReducer";
-import { allProductsReducer } from "./reducers/allProductsReducer";
-import { productsWithDiscountReducer } from "./reducers/productsWithDiscountReducer";
+import { productsReducer } from "./reducers/productsReducer";
 import { singleProductReducer } from "./reducers/singleProductReducer";
 import { cartReducer } from "./reducers/cartReducer";
 import { categoryReducer } from "./reducers/categoryReducer";
 
 const rootReducer = combineReducers({
+  productsByCategory: productsReducer,
+  allProducts: productsReducer,
+  productsWithdiscount: productsReducer,
   catalog: categoriesReducer,
-  productsByCategory: productsByCategoryReducer,
-  allProducts: allProductsReducer,
-  productsWithdiscount: productsWithDiscountReducer,
   nameOfCategory: categoryReducer,
   singleProduct: singleProductReducer,
   cart: cartReducer,
