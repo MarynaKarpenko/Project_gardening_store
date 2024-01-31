@@ -14,7 +14,7 @@ export default function MainPage() {
     dispatch(fechCategories);
     dispatch(fechSalesProducts);
   }, []);
-  const categories_state = useSelector((state) => state.catalog);
+  const categories_state = useSelector((state) => state.categories);
 
   const categories = categories_state.filter(({ id }) => id <= 4);
 

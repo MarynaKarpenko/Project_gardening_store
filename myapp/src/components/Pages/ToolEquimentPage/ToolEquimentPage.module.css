@@ -1,11 +1,18 @@
+.category_wrapper {
+    margin: 0 40px 0 40px;
+}
+
 .btn_container {
     display: flex;
     align-items: center;
     margin-top: 40px;
     margin-bottom: 40px;
 }
-@media(max-width: 1000px) {
 
+@media(max-width: 1000px) {
+    .category_wrapper {
+        margin: 0 20px 0 20px;
+    }
 }
 
 @media(max-width: 768px) {
@@ -16,6 +23,10 @@
 }
 
 @media(max-width: 480px) {
+    .products_name {
+        padding-top: 32px;
+    }
+
     .btn_container {
         display: none;
     }

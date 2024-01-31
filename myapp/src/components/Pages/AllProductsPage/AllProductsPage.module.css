@@ -1,4 +1,4 @@
-.home_wrapper{
+.home_wrapper {
     margin: 0 40px 0 40px;
 }
 
@@ -23,9 +23,10 @@
 }
 
 @media(max-width: 480px) {
-    .products_name{
+    .products_name {
         padding-top: 32px;
     }
+
     .btn_container {
         display: none;
     }

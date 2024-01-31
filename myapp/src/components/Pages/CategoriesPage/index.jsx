@@ -7,7 +7,7 @@ import Breadcrumbs from "../../UI/Breadcrumbs";
 
 export default function CategoriesPage() {
   const dispatch = useDispatch();
-  const categories = useSelector((state) => state.catalog);
+  const categories = useSelector((state) => state.categories);
 
   useEffect(() => {
     dispatch(fechCategories);

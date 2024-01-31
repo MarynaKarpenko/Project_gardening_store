@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
-import {fechSingleProduct} from "../../../Async/request"
+import { fechSingleProduct } from "../../../Async/request";
 import SingleProduct from "../../SingleProduct";
 
 export default function ProductPage() {
@@ -11,10 +11,12 @@ export default function ProductPage() {
   useEffect(() => {
     dispatch(fechSingleProduct(productId));
   }, []);
-  
+
   return (
     <div>
-      {product.map((item) => <SingleProduct key={item.id} {...item} />)}
+      {product.map((item) => (
+        <SingleProduct key={item.id} {...item} />
+      ))}
     </div>
   );
 }

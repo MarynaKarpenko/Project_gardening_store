@@ -1,6 +1,6 @@
-.products_item_wrapper {
-    width: 316px;
-    height: 422px;
+.products_wrapper {
+    width: auto;
+    height: auto;
     position: relative;
     border-radius: var(--radius-big, 12px);
     border: 1px solid var(--grey-divider, #DDD);
@@ -11,27 +11,27 @@
     transition: opacity 0.3s, transform 0.3s;
     opacity: 0;
     position: absolute;
-    left: 16px;
+    display: flex;
+        justify-content: center;
+        align-items: center;
+    width: 100%;
+
     bottom: 154px;
     transition: 0.3s;
 }
 
-.products_item_wrapper:hover .add_btn {
+.products_wrapper:hover .add_btn {
     opacity: 1;
     transform: 0.3s;
-    background: var(--black, #282828);
-}
-
-.products_img_container {
-    width: auto;
-    height: 284px;
+    
 }
 
 .products_img {
     width: 100%;
     height: 284px;
-    display: block;
+    overflow: hidden;
     position: relative;
+    object-fit: cover;
     border-top-left-radius: var(--radius-big, 12px);
     border-top-right-radius: var(--radius-big, 12px);
     border-bottom: 1px solid var(--grey-divider, #DDD);
@@ -45,6 +45,10 @@
     margin: 0 32px 32px 32px;
 }
 
+.products_title_container {
+    margin-top: auto;
+}
+
 .products_title {
     padding-top: 20px;
     padding-bottom: 16px;
@@ -55,19 +59,15 @@
     overflow: hidden;
     text-overflow: ellipsis;
 }
-
-.price_container {
-    display: flex;
-    align-items: baseline;
-    gap: 16px;
+.products_title_container {
+    max-width: 185px;
+    /* Максимальная ширина контейнера с текстом */
+    overflow: hidden;
 }
-
 .real_price {
     color: var(--txt-black, #282828);
     font-size: 40px;
     font-weight: 600;
-    display: flex;
-    align-items: baseline;
 }
 
 .old_price {
@@ -96,4 +96,8 @@
     color: var(--txt-white, #FFF);
     font-size: 20px;
     font-weight: 600;
+}
+
+.price_container {
+    margin-top: auto;
 }

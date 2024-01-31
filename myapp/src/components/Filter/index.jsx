@@ -1,4 +1,6 @@
+import React, { useState } from "react";
 import s from "./Filter.module.css";
+import green from "../Media/Check.svg";
 
 export default function Filter({
   filterBySale,
@@ -7,7 +9,8 @@ export default function Filter({
   sale,
   handleChange,
 }) {
-  
+  const [isChecked, setIsChecked] = useState(false);
+
   return (
     <div className={s.filter_wrapper}>
       <div className={s.wrapper}>
@@ -34,15 +37,30 @@ export default function Filter({
         ) : (
           <div className={s.filter_sale}>
             <p>Discounted items</p>
-            <span className={s.span_input}>
-              <input
-                type="checkbox"
-                name="checkbox"
-                onClick={handleChange}
-                onChange={filterBySale}
-                className={s.checked}
-              />
-            </span>
+            <label className={s.checkbox_label}>
+              <span
+                className={
+                  isChecked
+                    ? `${s.checked} ${s.checkbox_container}`
+                    : s.checkbox_container
+                }
+              >
+                {isChecked && (
+                  <img
+                    src={green}
+                    alt="Checkmark"
+                    className={s.checkbox_image}
+                  />
+                )}
+                <input
+                  type="checkbox"
+                  name="checkbox"
+                  onClick={handleChange}
+                  onChange={filterBySale}
+                  className={s.hidden_checkbox}
+                />
+              </span>
+            </label>
           </div>
         )}
       </div>

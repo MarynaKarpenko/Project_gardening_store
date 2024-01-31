@@ -6,8 +6,8 @@ import {
   sortProductsAction,
 } from "../../../store/reducers/productsReducer";
 import Breadcrumbs from "../../UI/Breadcrumbs";
-import Filter from "../../Filter"
-import ProductsContainer from "../../ProductsContainer"
+import Filter from "../../Filter";
+import ProductsContainer from "../../ProductsContainer";
 import s from "./DiscountsPage.module.css";
 
 export default function DiscountsPage() {
@@ -39,7 +39,7 @@ export default function DiscountsPage() {
       <div className={s.btn_container}>
         <Breadcrumbs breadcrumbs={breadcrumbs} />
       </div>
-      <h1>Discounted items</h1>
+      <h1 className={s.products_name}>Discounted items</h1>
       <Filter sale={true} filterByPrice={filterByPrice} sort={sort} />
       <ProductsContainer products={products} />
     </div>

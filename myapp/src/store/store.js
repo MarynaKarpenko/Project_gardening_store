@@ -10,7 +10,7 @@ const rootReducer = combineReducers({
   productsByCategory: productsReducer,
   allProducts: productsReducer,
   productsWithdiscount: productsReducer,
-  catalog: categoriesReducer,
+  categories: categoriesReducer,
   nameOfCategory: categoryReducer,
   singleProduct: singleProductReducer,
   cart: cartReducer,

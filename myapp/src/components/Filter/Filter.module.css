@@ -5,6 +5,32 @@
     align-items: center;
 }
 
+.checkbox_container {
+    background-color: green;
+}
+
+/* .checkbox_label {
+    display: flex;
+    align-items: center;
+}
+
+.checkbox_container {
+    position: relative;
+}
+
+.checked {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.checkbox_image {
+    display: block;
+    width: 100%;
+        height: 100%;
+} */
+
 .wrapper,
 .filter_price,
 .filter_sale,

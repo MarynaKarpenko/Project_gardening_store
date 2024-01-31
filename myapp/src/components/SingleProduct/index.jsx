@@ -6,10 +6,10 @@ import {
   cartIncrAction,
 } from "../../store/reducers/cartReducer";
 import s from "./SingleProduct.module.css";
-import BtnAddToCart from "../BtnCard/BtnAddToCart";
 import iconPlus from "../Icons/Plus.svg";
 import iconMinus from "../Icons/Minus.svg";
 import Breadcrumbs from "../UI/Breadcrumbs";
+import BtnCard, { ButtonTypes } from "../UI/BtnCard";
 
 export default function SingleProduct({
   id,
@@ -20,7 +20,6 @@ export default function SingleProduct({
   image,
   count,
 }) {
-
   const dispatch = useDispatch();
   const discount = Math.round(100 - (discont_price / price) * 100);
   const [counter, setCounter] = useState(count || 1);
@@ -40,14 +39,14 @@ export default function SingleProduct({
   const breadcrumbs = [
     { label: "Main page", path: "/" },
     { label: "Categories", path: "/categories" },
-    { label: "Tools and equipment", path: "/categories/:name" },
+    { label: "All products", path: "/products" },
     { label: `${title}`, path: `/product/${id}`, active: true },
   ];
 
   return (
     <div className={s.product_wrapper}>
       <div className={s.btn_container}>
-        <Breadcrumbs breadcrumbs={breadcrumbs}/>
+        <Breadcrumbs breadcrumbs={breadcrumbs} />
       </div>
 
       <div className={s.container}>
@@ -76,18 +75,19 @@ export default function SingleProduct({
           </div>
 
           <div className={s.buttons}>
-            <button onClick={handleDecrement} className={s.btn_counter}>
-              <img src={iconMinus} className={s.icons} alt="Minus" />
-            </button>
-            <p className={s.counter}>{counter}</p>
-            <button onClick={handleIncrement} className={s.btn_counter}>
-              <img src={iconPlus} className={s.icons} alt="Plus" />
-            </button>
-            <div className={s.buttun_add_to_card}>
-              <BtnAddToCart />
+            <div className={s.btn_plus_minus}>
+              <button onClick={handleDecrement} className={s.btn_counter}>
+                <img src={iconMinus} alt="Minus" />
+              </button>
+              <p className={s.counter}>{counter}</p>
+              <button onClick={handleIncrement} className={s.btn_counter}>
+                <img src={iconPlus} alt="Plus" />
+              </button>
+            </div>
+            <div className={s.add_to_card}>
+              <BtnCard type={ButtonTypes.ADD_TO_CART} />
             </div>
           </div>
-
           <div className={s.description}>
             <h3>Description</h3>
             <p>{description}</p>

@@ -7,9 +7,17 @@
     cursor: pointer;
 }
 
-.btn_green{
+.btn_green, .add_btn{
     background: var(--green, #393);
     color: var(--txt-white, #FFF);
+}
+
+.add_btn {
+width: 100%;
+}
+
+.add_btn:hover {
+    background: var(--black, #282828);
 }
 
 /* .card_btn:hover {
