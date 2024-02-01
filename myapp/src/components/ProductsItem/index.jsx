@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import s from "./ProductsItem.module.css";
 import { BASE_URL } from "../../config";
 import BtnCard, { ButtonTypes } from "../UI/BtnCard";
+import { addToCartAction } from "../../store/reducers/cartReducer";
+import { useDispatch } from "react-redux";
 
 export default function ProductItem({
   id,
@@ -11,7 +13,12 @@ export default function ProductItem({
   discont_price,
   image,
 }) {
+  const dispatch = useDispatch();
   const discount = Math.round(100 - (discont_price / price) * 100);
+  const handleAddToCart = (e) => {
+    e.preventDefault();
+    dispatch(addToCartAction({ id, title, price, discont_price, image }));
+  };
 
   return (
     <div className={s.products_wrapper}>
@@ -21,7 +28,7 @@ export default function ProductItem({
           alt={title}
           className={s.products_img}
         />
-        <div className={s.add_btn}>
+        <div className={s.add_btn} onClick={handleAddToCart}>
           <BtnCard type={ButtonTypes.ADD_TO_CART} />
         </div>
 

@@ -72,10 +72,11 @@ export default function Filter({
           onChange={sort}
           className={s.filter_select}
         >
-          <option value="default">by default</option>
+          <option value="0">by default</option>
           <option value="1">price: low-high</option>
           <option value="2">price: high-low</option>
           <option value="3">by name</option>
+          <option value="4">newest</option>
         </select>
       </div>
     </div>

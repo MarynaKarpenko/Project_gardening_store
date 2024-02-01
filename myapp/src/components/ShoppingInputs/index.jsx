@@ -45,7 +45,7 @@ export default function ShoppingInputs() {
   });
 
   return (
-    <form className={s.inputs_div}>
+    <div className={s.inputs_div}>
       <div>
         <label>
           <input
@@ -82,6 +82,6 @@ export default function ShoppingInputs() {
         </label>
         {errors.email && <p style={{ color: "red" }}>{errors.email.message}</p>}
       </div>
-    </form>
+    </div>
   );
 }

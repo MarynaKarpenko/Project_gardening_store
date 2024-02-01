@@ -6,7 +6,7 @@ import Breadcrumbs from "../UI/Breadcrumbs";
 import s from "./ShoppingContainer.module.css";
 
 export default function ShoppingContainer() {
-  const cartState = useSelector((state) => state.cart);
+  const cart_state = useSelector((state) => state.cart);
   const breadcrumbs = [{ label: "Back to the store", path: "/products" }];
 
   return (
@@ -18,14 +18,14 @@ export default function ShoppingContainer() {
       </div>
       <div className={s.flex_container}>
         <div className={s.cart}>
-          {cartState.map((el) => (
+          {cart_state.map((el) => (
             <ShoppingItem key={el.id} {...el} />
           ))}
         </div>
-        {cartState.length === 0 ? (
+        {cart_state.length === 0 ? (
           ""
         ) : (
-          <ShoppingCalculation cart_state={cartState} />
+          <ShoppingCalculation cart_state={cart_state} />
         )}
       </div>
     </div>

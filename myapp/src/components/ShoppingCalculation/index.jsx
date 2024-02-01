@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux";
 import {sendOrder} from "../../Async/request";
 import ShoppingInputs from "../ShoppingInputs"
 import s from "./ShoppingCalculation.module.css";
+import BtnCard, { ButtonTypes } from "../UI/BtnCard";
 
 export default function ShoppingCalculation({ cart_state }) {
   const dispatch = useDispatch();
@@ -19,18 +20,18 @@ export default function ShoppingCalculation({ cart_state }) {
 
   return (
     <div className={s.container}>
-      <h3>Order details</h3>
+      <h3 className={s.h3_order}>Order details</h3>
       <div className={s.total_price}>
-        <p>Total</p>
+        <p className={s.total_p}>Total</p>
         <div>
-          <p>{totalPrice.toFixed(2)}</p>
-          <p>$</p>
+          <p className={s.total_sum}>${totalPrice.toFixed(2)}</p>
         </div>
       </div>
       <form className={s.form} onSubmit={send_order}>
-        <ShoppingInputs/>
-         
-        <button>Order</button>
+        <ShoppingInputs />
+        <div className={s.order_btn}>
+          <BtnCard key="order-btn" type={ButtonTypes.ORDER} />
+        </div>
       </form>
     </div>
   );

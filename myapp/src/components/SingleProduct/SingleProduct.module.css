@@ -173,3 +173,9 @@
         font-size: 28px;
     }
 }
+
+@media(max-width: 360px) {
+    .container {
+            grid-template-columns: 1fr;
+        }
+}

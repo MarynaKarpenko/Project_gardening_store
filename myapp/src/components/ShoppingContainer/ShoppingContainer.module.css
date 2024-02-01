@@ -20,9 +20,21 @@
     background: #DDD;
 }
 
+.flex_container {
+    display: grid;
+    grid-template-columns: 59% 1fr;
+    gap: 32px;
+}
+
+
 @media(max-width: 1000px) {
     .cart_wrapper {
         margin: 0 20px 0 20px;
+    }
+
+    .flex_container {
+        grid-template-columns: 50% 1fr;
+        gap: 20px;
     }
 }
 
@@ -30,6 +42,11 @@
     .btn_container {
         margin-top: 32px;
         margin-bottom: 32px;
+    }
+
+    .flex_container {
+        grid-template-columns: 1fr;
+        gap: 20px;
     }
 }
 

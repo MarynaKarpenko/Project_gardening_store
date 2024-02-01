@@ -139,3 +139,5 @@ export const sortProductsAction = (payload) => ({
   type: PRODUCTS_SORT_DISCOUNTS,
   payload,
 });
+
+

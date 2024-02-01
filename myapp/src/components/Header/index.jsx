@@ -42,7 +42,7 @@ export default function Header() {
           </div>
           <div className={s.shop_menu}>
             <div className={s.cart}>
-            <Link to={"/shopping-cart"}>
+            <Link to={"/cart"}>
               <img src={iconShop} alt="" className={s.icon_shop} />
               {counter > 0 ? <span>{counter}</span> : ""}
             </Link>

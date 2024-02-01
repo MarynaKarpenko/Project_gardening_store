@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { BASE_URL } from "../../config";
 import { useDispatch } from "react-redux";
 import {
+  addToCartAction,
   cartDecrAction,
   cartIncrAction,
 } from "../../store/reducers/cartReducer";
@@ -36,6 +37,11 @@ export default function SingleProduct({
     }
   };
 
+  const handleAddToCart = (e) => {
+    e.preventDefault();
+    dispatch(addToCartAction({ id, title, price, discont_price, image }));
+  };
+
   const breadcrumbs = [
     { label: "Main page", path: "/" },
     { label: "Categories", path: "/categories" },
@@ -53,6 +59,7 @@ export default function SingleProduct({
         <div className={s.image}>
           <img src={`${BASE_URL}/${image}`} alt={title} />
         </div>
+
         <div className={s.info}>
           <h3>{title}</h3>
 
@@ -73,7 +80,6 @@ export default function SingleProduct({
               </div>
             )}
           </div>
-
           <div className={s.buttons}>
             <div className={s.btn_plus_minus}>
               <button onClick={handleDecrement} className={s.btn_counter}>
@@ -84,7 +90,7 @@ export default function SingleProduct({
                 <img src={iconPlus} alt="Plus" />
               </button>
             </div>
-            <div className={s.add_to_card}>
+            <div className={s.add_to_card} onClick={handleAddToCart}>
               <BtnCard type={ButtonTypes.ADD_TO_CART} />
             </div>
           </div>

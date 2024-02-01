@@ -21,7 +21,7 @@ export default function App() {
           <Route path="/sales" element={<DiscountsPage />} />
           <Route path="/categories/:name" element={<ToolEquipmentPage />} />
           <Route path="/product/:productId" element={<ProductPage />} />
-          <Route path="/shopping-cart" element={<ShoppingCartPage />} />
+          <Route path="/cart" element={<ShoppingCartPage />} />
           <Route path="*" element={<NotFoundPage />} />
         </Route>
       </Routes>

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import { addToCartAction } from "../../../store/reducers/cartReducer";
+import { addToCartAction, sendOrderAction } from "../../../store/reducers/cartReducer";
 import s from "./BtnCard.module.css";
 import { Link } from "react-router-dom";
 
@@ -24,11 +24,6 @@ export default function BtnCard({
   const dispatch = useDispatch();
   const [buttonState, setButtonState] = useState("normal");
 
-  const handleAddToCart = (e) => {
-    e.preventDefault();
-    dispatch(addToCartAction({ id, title, price, discont_price, image }));
-  };
-
   const handleDiscountSubmit = async (event) => {
     event.preventDefault();
     setButtonState("Request Submitted");
@@ -38,8 +33,14 @@ export default function BtnCard({
   return (
     <div className={s.card_btn}>
       {type === ButtonTypes.ADD_TO_CART && (
-        <button className={s.add_btn} onClick={handleAddToCart}>
+        <button className={s.add_btn} >
           Add to cart
+        </button>
+      )}
+
+      {type === ButtonTypes.ORDER && (
+        <button className={s.add_btn}>
+          Order
         </button>
       )}
 
