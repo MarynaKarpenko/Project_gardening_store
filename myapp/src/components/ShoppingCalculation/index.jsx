@@ -1,9 +1,9 @@
 import React from "react";
 import { useDispatch } from "react-redux";
 import {sendOrder} from "../../Async/request";
-import ShoppingInputs from "../ShoppingInputs"
 import s from "./ShoppingCalculation.module.css";
 import BtnCard, { ButtonTypes } from "../UI/BtnCard";
+import Inputs from "../UI/Inputs";
 
 export default function ShoppingCalculation({ cart_state }) {
   const dispatch = useDispatch();
@@ -12,6 +12,9 @@ export default function ShoppingCalculation({ cart_state }) {
     dispatch(sendOrder({ message: "order send" }));
     e.target.reset();
   };
+
+    const totalItems = cart_state.reduce((acc, { count }) => acc + count, 0);
+
   const totalPrice = cart_state.reduce(
     (acc, { price, discont_price, count }) =>
       acc + count * (discont_price || price),
@@ -21,14 +24,19 @@ export default function ShoppingCalculation({ cart_state }) {
   return (
     <div className={s.container}>
       <h3 className={s.h3_order}>Order details</h3>
+      <div className={s.total_items}>
+        <p className={s.total_items_sum}>{totalItems}</p>
+        <p>items</p>
+      </div>
       <div className={s.total_price}>
         <p className={s.total_p}>Total</p>
         <div>
           <p className={s.total_sum}>${totalPrice.toFixed(2)}</p>
         </div>
       </div>
+
       <form className={s.form} onSubmit={send_order}>
-        <ShoppingInputs />
+        <Inputs styleType="style2" />
         <div className={s.order_btn}>
           <BtnCard key="order-btn" type={ButtonTypes.ORDER} />
         </div>

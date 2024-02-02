@@ -1,8 +1,8 @@
 import React from "react";
-import s from "./ShoppingInputs.module.css"
+import s from "./Inputs.module.css";
 import { useForm } from "react-hook-form";
 
-export default function ShoppingInputs() {
+export default function Inputs({ styleType }) {
   let {
     register,
     formState: { errors },
@@ -44,27 +44,29 @@ export default function ShoppingInputs() {
     },
   });
 
+  const inputStyle = styleType === "style1" ? s.style1 : s.style2;
+
   return (
-    <div className={s.inputs_div}>
+    <div className={`${s.inputs_div} ${inputStyle}`}>
       <div>
-        <label>
+        <label className={s.label}>
           <input
             type="text"
             placeholder="Name"
             {...name_input}
-            className={errors.name && "inp_error"}
+            className={`${errors.name && "inp_error"} ${inputStyle}`}
           />
         </label>
         {errors.name && <p style={{ color: "red" }}>{errors.name.message}</p>}
       </div>
 
       <div>
-        <label>
+        <label className={s.label}>
           <input
             type="tel"
             placeholder="Number phone"
             {...number_input}
-            className={errors.number && "inp_error"}
+            className={`${errors.number && "inp_error"} ${inputStyle}`}
           />
         </label>
         {errors.number && (
@@ -72,12 +74,12 @@ export default function ShoppingInputs() {
         )}
       </div>
       <div>
-        <label>
+        <label className={s.label}>
           <input
             type="text"
             placeholder="Email"
             {...email_input}
-            className={errors.email && "inp_error"}
+            className={`${errors.email && "inp_error"} ${inputStyle}`}
           />
         </label>
         {errors.email && <p style={{ color: "red" }}>{errors.email.message}</p>}

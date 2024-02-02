@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-import { useDispatch } from "react-redux";
-import { addToCartAction, sendOrderAction } from "../../../store/reducers/cartReducer";
 import s from "./BtnCard.module.css";
 import { Link } from "react-router-dom";
 
@@ -14,14 +12,9 @@ export const ButtonTypes = {
 
 export default function BtnCard({
   type,
-  id,
-  title,
-  price,
-  discont_price,
-  image,
   onSubmit,
 }) {
-  const dispatch = useDispatch();
+
   const [buttonState, setButtonState] = useState("normal");
 
   const handleDiscountSubmit = async (event) => {
@@ -39,7 +32,7 @@ export default function BtnCard({
       )}
 
       {type === ButtonTypes.ORDER && (
-        <button className={s.add_btn}>
+        <button className={s.order_btn}>
           Order
         </button>
       )}

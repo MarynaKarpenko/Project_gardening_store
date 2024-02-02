@@ -94,14 +94,6 @@ export const sendOrder = (body) => {
 };
 
 export const getDiscount = (body) => {
-  const phoneNumber = body.tel_number;
-  console.log(`Discount request for phone number: ${phoneNumber}`);
-  const savedData = localStorage.getItem(phoneNumber);
-
-  if (savedData) {
-    console.log(`Discount already applied for phone number: ${phoneNumber}`);
-    return;
-  }
   fetch(`${BASE_URL}/sale/send`, {
     method: "POST",
     body: JSON.stringify(body),
@@ -110,13 +102,6 @@ export const getDiscount = (body) => {
     },
   })
     .then((res) => res.json())
-    .then((data) => {
-      console.log(`Discount applied for phone number: ${phoneNumber}`);
-      localStorage.setItem(phoneNumber, JSON.stringify(data));
-      alert("You are given a 5% discount!!!");
-    })
-    .catch((error) => {
-      console.error("Error applying discount:", error);
-    });
+    .then(alert("your discount is 5%"));
 };
 

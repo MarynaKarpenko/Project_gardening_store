@@ -7,13 +7,14 @@
     cursor: pointer;
 }
 
-.btn_green, .add_btn{
+.btn_green, .add_btn, .order_btn {
     background: var(--green, #393);
     color: var(--txt-white, #FFF);
 }
 
-.add_btn {
-width: 100%;
+.add_btn,
+.order_btn {
+    width: 100%;
 }
 
 .add_btn:hover {

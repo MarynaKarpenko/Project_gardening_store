@@ -1,0 +1,48 @@
+.inputs_div {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.label input {
+    padding: 16px 32px;
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    outline: none;
+    border-radius: var(--radius-small, 6px);
+}
+
+.style1 .label input {
+    border: 1px solid var(--white, #FFF);
+    background: linear-gradient(261deg, #0B710B 32.63%, #393 98.96%);
+}
+
+.style2 .label input{
+    border: 1px solid var(--grey-divider, #DDD);
+    background: var(--white, #FFF);
+}
+
+.label input::placeholder {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.style1 .label input::placeholder {
+    color: var(--txt-white, #FFF);
+}
+
+.style2 .label input::placeholder {
+    color: var(--txt-grey, #8B8B8B);
+}
+
+.label input:focus {
+    font-weight: 500;
+    font-size: 20px;
+}
+
+.error_text_color {
+    color: red;
+}
