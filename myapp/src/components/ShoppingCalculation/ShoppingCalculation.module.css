@@ -1,4 +1,4 @@
-.container{
+.container {
     padding: 32px;
     border-radius: var(--radius-big, 12px);
     background: var(--light-grey, #F1F3F4);
@@ -9,6 +9,12 @@
     color: var(--txt-black, #282828);
     font-size: 40px;
     font-weight: 700;
+}
+
+.total_items_sum {
+    color: var(--txt-grey, #8B8B8B);
+    font-size: 40px;
+    font-weight: 500;
 }
 
 .total_price {
@@ -37,7 +43,48 @@
     gap: 32px;
 }
 
-.order_btn{
+.order_btn {
     width: 100%;
 }
 
+@media(max-width: 1000px) {
+    .container {
+        padding: 32px 20px 32px 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .form {
+        gap: 20px;
+    }
+
+    .h3_order,
+    .total_p,
+    .total_items_sum {
+        font-size: 32px;
+    }
+
+    .total_sum {
+        font-size: 56px;
+    }
+
+}
+
+@media (max-width: 480px) {
+
+    .h3_order,
+    .total_p,
+    .total_items_sum {
+        font-size: 28px;
+    }
+
+    .total_sum {
+        font-size: 48px;
+    }
+}
+
+@media (max-width: 360px) {
+    .total_sum {
+        font-size: 40px;
+    }
+}

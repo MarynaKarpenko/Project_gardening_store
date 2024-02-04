@@ -7,7 +7,9 @@
     cursor: pointer;
 }
 
-.btn_green, .add_btn, .order_btn {
+.btn_green,
+.add_btn,
+.order_btn {
     background: var(--green, #393);
     color: var(--txt-white, #FFF);
 }
@@ -21,14 +23,32 @@
     background: var(--black, #282828);
 }
 
-/* .card_btn:hover {
+.btn_discount {
+    width: 100%;
+}
+
+.btn_discount:hover {
     background: var(--black, #282828);
     color: var(--txt-white, #FFF);
     transition: 0.3s;
 }
 
-.btn_active {
+.btn_active_discount {
+    width: 100%;
     background: var(--light-grey, #F1F3F4);
     color: var(--green, #393);
-} */
+}
 
+@media(max-width: 480px) {
+    .card_btn button {
+        padding: 12px 20px;
+        font-size: 18px;
+        width: 200px;
+    }
+}
+
+@media(max-width: 360px) {
+    .card_btn button {
+        width: 100%;
+    }
+}

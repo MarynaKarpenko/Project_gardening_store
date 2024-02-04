@@ -37,21 +37,23 @@ export default function ShoppingItem({
         />
         <div className={s.products}>
           <p className={s.product_name}>{title}</p>
-          <div className={s.price_counter}>
-            <div className={s.icon_minus}>
-              <img
-                src={iconMinus}
-                alt="minus"
-                onClick={() => dispatch(cartDecrAction(id))}
-              />
-            </div>
-            <p className={s.counter}>{count}</p>
-            <div className={s.icon_plus}>
-              <img
-                src={iconPlus}
-                alt="plus"
-                onClick={() => dispatch(cartIncrAction(id))}
-              />
+          <div className={s.container}>
+            <div className={s.price_counter}>
+              <div className={s.icon_minus}>
+                <img
+                  src={iconMinus}
+                  alt="minus"
+                  onClick={() => dispatch(cartDecrAction(id))}
+                />
+              </div>
+              <p className={s.counter}>{count}</p>
+              <div className={s.icon_plus}>
+                <img
+                  src={iconPlus}
+                  alt="plus"
+                  onClick={() => dispatch(cartIncrAction(id))}
+                />
+              </div>
             </div>
             <div className={s.price}>
               {discont_price === null ? (

@@ -8,19 +8,25 @@
 .label input {
     padding: 16px 32px;
     width: 100%;
-    height: auto;
+    height: 100%;
     display: flex;
     align-items: center;
     outline: none;
     border-radius: var(--radius-small, 6px);
+    font-size: 20px;
+    font-weight: 500;
 }
 
 .style1 .label input {
+    width: 100%;
+    color: var(--txt-white, #FFF);
     border: 1px solid var(--white, #FFF);
     background: linear-gradient(261deg, #0B710B 32.63%, #393 98.96%);
 }
 
 .style2 .label input{
+    width: 100%;
+    color: var(--txt-grey, #8B8B8B);
     border: 1px solid var(--grey-divider, #DDD);
     background: var(--white, #FFF);
 }
@@ -43,6 +49,49 @@
     font-size: 20px;
 }
 
+.style1 .label input:focus {
+    color: var(--txt-white, #FFF);
+}
+
+.style2 .label input:focus {
+    color: var(--txt-grey, #8B8B8B);
+}
+
 .error_text_color {
     color: red;
+}
+
+@media(max-width: 1000px) {
+    .img_discount {
+        width: 470px;
+        object-fit: cover;
+    }
+
+    .btn_discount {
+        margin-bottom: 20px;
+    }
+}
+
+@media(max-width: 768px) {
+    .form_text {
+        font-size: 56px;
+    }
+
+    .img_discount {
+        width: 352px;
+    }
+}
+
+@media(max-width: 480px) {
+    .img_discount {
+        width: 100%;
+        max-width: none;
+        order: 2;
+    }
+}
+
+@media(max-width: 360px) {
+    .form_text {
+        font-size: 40px;
+    }
 }

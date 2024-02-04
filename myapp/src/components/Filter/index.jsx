@@ -38,7 +38,7 @@ export default function Filter({
           <div className={s.filter_sale}>
             <p>Discounted items</p>
             <label className={s.checkbox_label}>
-              <span
+              {/* <span
                 className={
                   isChecked
                     ? `${s.checked} ${s.checkbox_container}`
@@ -51,7 +51,7 @@ export default function Filter({
                     alt="Checkmark"
                     className={s.checkbox_image}
                   />
-                )}
+                )} */}
                 <input
                   type="checkbox"
                   name="checkbox"
@@ -59,7 +59,7 @@ export default function Filter({
                   onChange={filterBySale}
                   className={s.hidden_checkbox}
                 />
-              </span>
+              {/* </span> */}
             </label>
           </div>
         )}

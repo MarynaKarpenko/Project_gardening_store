@@ -51,9 +51,15 @@
 }
 
 @media(max-width: 480px) {
+    .btn_container {
+        margin-bottom: 24px;
+    }
 
-    .btn_container,
-    line {
+    .categories_h1 {
+        white-space: wrap;
+    }
+
+    .line {
         display: none;
     }
 }

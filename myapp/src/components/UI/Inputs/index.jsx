@@ -66,7 +66,9 @@ export default function Inputs({ styleType }) {
             type="tel"
             placeholder="Number phone"
             {...number_input}
-            className={`${errors.number && "inp_error"} ${inputStyle}`}
+            className={`${errors.number && "inp_error"} ${inputStyle} ${
+              s.full_input
+            }`}
           />
         </label>
         {errors.number && (

@@ -1,6 +1,6 @@
 import React from "react";
 import { useDispatch } from "react-redux";
-import {sendOrder} from "../../Async/request";
+import { sendOrder } from "../../Async/request";
 import s from "./ShoppingCalculation.module.css";
 import BtnCard, { ButtonTypes } from "../UI/BtnCard";
 import Inputs from "../UI/Inputs";
@@ -13,7 +13,7 @@ export default function ShoppingCalculation({ cart_state }) {
     e.target.reset();
   };
 
-    const totalItems = cart_state.reduce((acc, { count }) => acc + count, 0);
+  const totalItems = cart_state.reduce((acc, { count }) => acc + count, 0);
 
   const totalPrice = cart_state.reduce(
     (acc, { price, discont_price, count }) =>
@@ -25,8 +25,7 @@ export default function ShoppingCalculation({ cart_state }) {
     <div className={s.container}>
       <h3 className={s.h3_order}>Order details</h3>
       <div className={s.total_items}>
-        <p className={s.total_items_sum}>{totalItems}</p>
-        <p>items</p>
+        <p className={s.total_items_sum}>{totalItems} items</p>
       </div>
       <div className={s.total_price}>
         <p className={s.total_p}>Total</p>

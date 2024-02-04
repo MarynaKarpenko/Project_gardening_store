@@ -8,6 +8,7 @@ export const ButtonTypes = {
   CHECK_OUT: "CHECK_OUT",
   ORDER: "ORDER",
   GO_HOME: "GO_HOME",
+  SHOPPING: "SHOPPING"
 };
 
 export default function BtnCard({
@@ -26,22 +27,18 @@ export default function BtnCard({
   return (
     <div className={s.card_btn}>
       {type === ButtonTypes.ADD_TO_CART && (
-        <button className={s.add_btn} >
-          Add to cart
-        </button>
+        <button className={s.add_btn}>Add to cart</button>
       )}
 
       {type === ButtonTypes.ORDER && (
-        <button className={s.order_btn}>
-          Order
-        </button>
+        <button className={s.order_btn}>Order</button>
       )}
 
       {type === ButtonTypes.DISCOUNT && (
         <button
           type="submit"
           className={`${s.btn_discount} ${
-            buttonState === "Request Submitted" ? s.btn_active : ""
+            buttonState === "Request Submitted" ? s.btn_active_discount : ""
           }`}
           onClick={handleDiscountSubmit}
           disabled={buttonState !== "normal"}
@@ -51,14 +48,22 @@ export default function BtnCard({
             : "Get a discount"}
         </button>
       )}
+
       {type === ButtonTypes.CHECK_OUT && (
         <Link to={"/sales"}>
           <button className={s.btn_green}>Check out</button>
         </Link>
       )}
+
       {type === ButtonTypes.GO_HOME && (
         <Link to={"/"}>
           <button className={s.btn_green}>Go home</button>
+        </Link>
+      )}
+
+      {type === ButtonTypes.SHOPPING && (
+        <Link to={"/"}>
+          <button className={s.btn_green}>Continue Shopping</button>
         </Link>
       )}
     </div>

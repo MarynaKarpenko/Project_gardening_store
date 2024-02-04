@@ -20,15 +20,25 @@
     text-align: center;
 }
 
-.inform_inputs {
+.inform_img {
     display: flex;
     justify-content: flex-end;
-    gap: 16px;
+    align-items: center;
+    gap: 32px;
 }
 
 .img_discount {
     width: 748px;
     max-width: 100%;
+}
+
+.form_inputs {
+    width: 100%;
+}
+
+.btn_discount{
+    padding-top: 32px;
+    width: 100%;
 }
 
 @media(max-width: 1000px) {
@@ -38,9 +48,25 @@
         padding-right: 20px;
         padding-left: 0;
     }
+
+    .img_discount {
+        width: 470px;
+        object-fit: cover;
+    }
+
+    .btn_discount {
+        margin-bottom: 20px;
+    }
 }
 
 @media(max-width: 768px) {
+    .form_text {
+        font-size: 56px;
+    }
+
+    .img_discount {
+        width: 352px;
+    }
 }
 
 @media(max-width: 480px) {
@@ -50,12 +76,20 @@
         padding: 24px 20px 0px;
     }
 
-    .inform_inputs {
+    .inform_img {
         flex-direction: column;
         align-items: center;
+    }
+
+    .img_discount {
+        width: 100%;
+        max-width: none;
+        order: 2;
     }
 }
 
 @media(max-width: 360px) {
-   
+    .form_text {
+        font-size: 40px;
+    }
 }

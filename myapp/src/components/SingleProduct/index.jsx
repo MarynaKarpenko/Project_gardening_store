@@ -54,15 +54,13 @@ export default function SingleProduct({
       <div className={s.btn_container}>
         <Breadcrumbs breadcrumbs={breadcrumbs} />
       </div>
-
+      <h3 className={s.title_480}>{title}</h3>
       <div className={s.container}>
         <div className={s.image}>
           <img src={`${BASE_URL}/${image}`} alt={title} />
         </div>
-
         <div className={s.info}>
-          <h3>{title}</h3>
-
+          <h3 className={s.title}>{title}</h3>
           <div className={s.price_container}>
             {discont_price ? (
               <div className={s.price_with_discount}>
@@ -99,6 +97,10 @@ export default function SingleProduct({
             <p>{description}</p>
           </div>
         </div>
+      </div>
+      <div className={s.description2}>
+        <h3>Description</h3>
+        <p>{description}</p>
       </div>
     </div>
   );
