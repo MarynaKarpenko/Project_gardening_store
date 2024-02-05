@@ -80,11 +80,11 @@ export default function SingleProduct({
           </div>
           <div className={s.buttons}>
             <div className={s.btn_plus_minus}>
-              <button onClick={handleDecrement} className={s.btn_counter}>
+              <button onClick={handleDecrement} className={s.btn_counter_minus}>
                 <img src={iconMinus} alt="Minus" />
               </button>
               <p className={s.counter}>{counter}</p>
-              <button onClick={handleIncrement} className={s.btn_counter}>
+              <button onClick={handleIncrement} className={s.btn_counter_plus}>
                 <img src={iconPlus} alt="Plus" />
               </button>
             </div>

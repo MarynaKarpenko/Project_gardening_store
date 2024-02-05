@@ -12,10 +12,9 @@
     opacity: 0;
     position: absolute;
     display: flex;
-        justify-content: center;
-        align-items: center;
+    justify-content: center;
+    align-items: center;
     width: 100%;
-
     bottom: 154px;
     transition: 0.3s;
 }
@@ -23,7 +22,6 @@
 .products_wrapper:hover .add_btn {
     opacity: 1;
     transform: 0.3s;
-    
 }
 
 .products_img {
@@ -59,11 +57,12 @@
     overflow: hidden;
     text-overflow: ellipsis;
 }
+
 .products_title_container {
     max-width: 185px;
-    /* Максимальная ширина контейнера с текстом */
     overflow: hidden;
 }
+
 .real_price {
     color: var(--txt-black, #282828);
     font-size: 40px;

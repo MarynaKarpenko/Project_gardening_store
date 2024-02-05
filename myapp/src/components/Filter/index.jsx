@@ -52,13 +52,13 @@ export default function Filter({
                     className={s.checkbox_image}
                   />
                 )} */}
-                <input
-                  type="checkbox"
-                  name="checkbox"
-                  onClick={handleChange}
-                  onChange={filterBySale}
-                  className={s.hidden_checkbox}
-                />
+              <input
+                type="checkbox"
+                name="checkbox"
+                onClick={handleChange}
+                onChange={filterBySale}
+                className={s.hidden_checkbox}
+              />
               {/* </span> */}
             </label>
           </div>

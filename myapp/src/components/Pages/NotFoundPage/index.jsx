@@ -3,7 +3,6 @@ import s from "./NotFoundPage.module.css";
 import BtnCard, { ButtonTypes } from "../../UI/BtnCard";
 
 export default function NotFoundPage() {
-
   return (
     <div className={s.page_not_found}>
       <img src={img_404} alt="Page Not Found" className={s.img_not_found}></img>

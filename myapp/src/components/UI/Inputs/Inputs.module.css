@@ -24,7 +24,7 @@
     background: linear-gradient(261deg, #0B710B 32.63%, #393 98.96%);
 }
 
-.style2 .label input{
+.style2 .label input {
     width: 100%;
     color: var(--txt-grey, #8B8B8B);
     border: 1px solid var(--grey-divider, #DDD);

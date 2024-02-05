@@ -51,7 +51,7 @@ export default function Inputs({ styleType }) {
       <div>
         <label className={s.label}>
           <input
-            type="text"
+            type="name"
             placeholder="Name"
             {...name_input}
             className={`${errors.name && "inp_error"} ${inputStyle}`}
@@ -78,7 +78,7 @@ export default function Inputs({ styleType }) {
       <div>
         <label className={s.label}>
           <input
-            type="text"
+            type="email"
             placeholder="Email"
             {...email_input}
             className={`${errors.email && "inp_error"} ${inputStyle}`}

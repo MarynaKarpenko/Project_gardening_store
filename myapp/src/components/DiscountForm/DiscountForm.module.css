@@ -28,15 +28,14 @@
 }
 
 .img_discount {
-    width: 748px;
-    max-width: 100%;
+    width: 100%;
 }
 
 .form_inputs {
     width: 100%;
 }
 
-.btn_discount{
+.btn_discount {
     padding-top: 32px;
     width: 100%;
 }

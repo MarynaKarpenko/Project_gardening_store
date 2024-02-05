@@ -1,4 +1,4 @@
-import {BASE_URL} from "../config"
+import { BASE_URL } from "../config";
 import {
   loadAllProductsAction,
   loadProductsByCategoryAction,
@@ -104,4 +104,3 @@ export const getDiscount = (body) => {
     .then((res) => res.json())
     .then(alert("your discount is 5%"));
 };
-

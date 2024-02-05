@@ -13,7 +13,7 @@ export default function Breadcrumbs({ breadcrumbs }) {
               breadcrumb.active ? s.activeButton : ""
             }`}
           >
-            <span >{breadcrumb.label}</span>
+            <span>{breadcrumb.label}</span>
           </Link>
           {index < breadcrumbs.length - 1 && (
             <span className={s.breadcrumbLine}></span>

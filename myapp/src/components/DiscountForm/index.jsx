@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import s from "./DiscountForm.module.css";
 import img_discount_form from "../Media/Discount.svg";
 import Inputs from "../UI/Inputs";
@@ -6,19 +6,14 @@ import BtnCard, { ButtonTypes } from "../UI/BtnCard";
 import { getDiscount } from "../../Async/request";
 
 export default function DiscountForm() {
-  const [buttonText, setButtonText] = useState("Get a discount");
-
-  const submit = async (e) => {
+  const submit = (e) => {
     e.preventDefault();
-    const number = {
-      tel_number: e.target.telehpon.value,
+    const data = {
+      name: e.target.name.value,
+      tel_number: e.target.number.value,
+      email: e.target.email.value,
     };
-    setButtonText("Request Submitted");
-    try {
-      await getDiscount(number);
-    } catch (error) {
-    }
-    setButtonText("Get a discount");
+    getDiscount(data);
     e.target.reset();
   };
 
@@ -34,11 +29,7 @@ export default function DiscountForm() {
         <form onSubmit={submit} className={s.form_inputs}>
           <Inputs styleType="style1" />
           <div className={s.btn_discount}>
-            <BtnCard
-              type={ButtonTypes.DISCOUNT}
-              onSubmit={submit}
-              buttonText={buttonText}
-            />
+            <BtnCard type={ButtonTypes.DISCOUNT} />
           </div>
         </form>
       </div>

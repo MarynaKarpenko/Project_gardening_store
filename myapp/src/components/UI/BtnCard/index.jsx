@@ -8,26 +8,60 @@ export const ButtonTypes = {
   CHECK_OUT: "CHECK_OUT",
   ORDER: "ORDER",
   GO_HOME: "GO_HOME",
-  SHOPPING: "SHOPPING"
+  SHOPPING: "SHOPPING",
 };
 
-export default function BtnCard({
-  type,
-  onSubmit,
-}) {
+export default function BtnCard({ type }) {
+  const [isHovered, setHovered] = useState(false);
+  const [isSubmitting, setSubmitting] = useState(false);
+  const [isThirdState, setThirdState] = useState(false);
 
-  const [buttonState, setButtonState] = useState("normal");
-
-  const handleDiscountSubmit = async (event) => {
-    event.preventDefault();
-    setButtonState("Request Submitted");
-    onSubmit(event);
+  const handleMouseEnter = () => setHovered(true);
+  const handleMouseLeave = () => setHovered(false);
+  const handleClick = () => {
+    setSubmitting(true);
+    setThirdState(true);
   };
 
+  let buttonClass = s.card_btn;
+
+  if (type === ButtonTypes.ADD_TO_CART) {
+    buttonClass += ` ${s.add_btn}`;
+  } else if (type === ButtonTypes.ORDER) {
+    buttonClass += ` ${s.order_btn}`;
+  } else if (type === ButtonTypes.DISCOUNT) {
+    buttonClass += ` ${s.btn_discount}`;
+  } else if (
+    type === ButtonTypes.CHECK_OUT ||
+    type === ButtonTypes.GO_HOME ||
+    type === ButtonTypes.SHOPPING
+  ) {
+    buttonClass += ` ${s.btn_green}`;
+  }
+
+  if (isHovered) {
+    buttonClass += ` ${s.hovered}`;
+  }
+
+  if (isSubmitting) {
+    buttonClass += ` ${s.submitting}`;
+  }
+
+  if (isThirdState) {
+    buttonClass += ` ${s.thirdState}`;
+  }
+
   return (
-    <div className={s.card_btn}>
+    <div className={buttonClass}>
       {type === ButtonTypes.ADD_TO_CART && (
-        <button className={s.add_btn}>Add to cart</button>
+        <button
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
+          onClick={handleClick}
+          className={s.add_btn}
+        >
+          {isSubmitting ? "Added" : isHovered ? "Add to cart" : "Add to cart"}
+        </button>
       )}
 
       {type === ButtonTypes.ORDER && (
@@ -36,15 +70,14 @@ export default function BtnCard({
 
       {type === ButtonTypes.DISCOUNT && (
         <button
-          type="submit"
-          className={`${s.btn_discount} ${
-            buttonState === "Request Submitted" ? s.btn_active_discount : ""
-          }`}
-          onClick={handleDiscountSubmit}
-          disabled={buttonState !== "normal"}
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
+          onClick={handleClick}
         >
-          {buttonState === "Request Submitted"
+          {isSubmitting
             ? "Request Submitted"
+            : isHovered
+            ? "Get a discount"
             : "Get a discount"}
         </button>
       )}
