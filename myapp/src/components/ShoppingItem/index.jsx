@@ -21,13 +21,25 @@ export default function ShoppingItem({
 }) {
   const dispatch = useDispatch();
 
+  const handleRemoveFromCart = () => {
+    dispatch(removeCartAction(id));
+  };
+
+  const handleIncrement = () => {
+    dispatch(cartIncrAction(id));
+  };
+
+  const handleDecrement = () => {
+    dispatch(cartDecrAction(id));
+  };
+
   return (
     <div className={s.cart}>
       <img
         src={iconCross}
         className={s.cross_delete}
         alt="cross"
-        onClick={() => dispatch(removeCartAction(id))}
+        onClick={handleRemoveFromCart}
       />
       <div className={s.product_info}>
         <img
@@ -40,19 +52,11 @@ export default function ShoppingItem({
           <div className={s.container}>
             <div className={s.price_counter}>
               <div className={s.icon_minus}>
-                <img
-                  src={iconMinus}
-                  alt="minus"
-                  onClick={() => dispatch(cartDecrAction(id))}
-                />
+                <img src={iconMinus} alt="minus" onClick={handleDecrement} />
               </div>
               <p className={s.counter}>{count}</p>
               <div className={s.icon_plus}>
-                <img
-                  src={iconPlus}
-                  alt="plus"
-                  onClick={() => dispatch(cartIncrAction(id))}
-                />
+                <img src={iconPlus} alt="plus" onClick={handleIncrement} />
               </div>
             </div>
             <div className={s.price}>

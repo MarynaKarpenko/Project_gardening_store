@@ -93,14 +93,22 @@ export const sendOrder = (body) => {
   };
 };
 
-export const getDiscount = (body) => {
-  fetch(`${BASE_URL}/sale/send`, {
-    method: "POST",
-    body: JSON.stringify(body),
-    headers: {
-      "Content-Type": "application/json;charset=utf-8",
-    },
-  })
-    .then((res) => res.json())
-    .then(alert("your discount is 5%"));
+export const getDiscount = async (body) => {
+  try {
+    const response = await fetch(`${BASE_URL}/sale/send`, {
+      method: "POST",
+      body: JSON.stringify(body),
+      headers: {
+        "Content-Type": "application/json;charset=utf-8",
+      },
+    });
+    const result = await response.json();
+    if (response.ok) {
+      alert("Your discount is 5%");
+    } else {
+      console.error("Error:", result);
+    }
+  } catch (error) {
+    console.error("Error:", error);
+  }
 };

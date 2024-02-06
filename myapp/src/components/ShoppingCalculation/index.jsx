@@ -7,7 +7,8 @@ import Inputs from "../UI/Inputs";
 
 export default function ShoppingCalculation({ cart_state }) {
   const dispatch = useDispatch();
-  const send_order = (e) => {
+
+  const sendOrderHandler = (e) => {
     e.preventDefault();
     dispatch(sendOrder({ message: "order send" }));
     e.target.reset();
@@ -34,7 +35,7 @@ export default function ShoppingCalculation({ cart_state }) {
         </div>
       </div>
 
-      <form className={s.form} onSubmit={send_order}>
+      <form className={s.form} onSubmit={sendOrderHandler}>
         <Inputs styleType="style2" />
         <div className={s.order_btn}>
           <BtnCard key="order-btn" type={ButtonTypes.ORDER} />

@@ -48,9 +48,8 @@
 
 .submitting button {
     border-radius: var(--radius-small, 6px);
-    border: 1px solid var(--black, #282828);
-    background: var(--white, #FFF);
-    color: var(--txt-black, #282828);
+    background: var(--light-grey, #F1F3F4);
+    color: var(--green, #393);
 }
 
 @media(max-width: 1000px) {

@@ -4,17 +4,20 @@ import img_discount_form from "../Media/Discount.svg";
 import Inputs from "../UI/Inputs";
 import BtnCard, { ButtonTypes } from "../UI/BtnCard";
 import { getDiscount } from "../../Async/request";
+import { useForm } from "react-hook-form";
 
 export default function DiscountForm() {
-  const submit = (e) => {
-    e.preventDefault();
-    const data = {
-      name: e.target.name.value,
-      tel_number: e.target.number.value,
-      email: e.target.email.value,
-    };
-    getDiscount(data);
-    e.target.reset();
+  const {
+    handleSubmit,
+    register,
+    formState: { errors },
+  } = useForm();
+
+  const onSubmit = async (data) => {
+    console.log(data);
+    if (Object.keys(errors).length === 0) {
+      await getDiscount(data);
+    }
   };
 
   return (
@@ -26,8 +29,8 @@ export default function DiscountForm() {
           alt="Discount form"
           className={s.img_discount}
         />
-        <form onSubmit={submit} className={s.form_inputs}>
-          <Inputs styleType="style1" />
+        <form onSubmit={handleSubmit(onSubmit)} className={s.form_inputs}>
+          <Inputs register={register} errors={errors} styleType="style1" />
           <div className={s.btn_discount}>
             <BtnCard type={ButtonTypes.DISCOUNT} />
           </div>

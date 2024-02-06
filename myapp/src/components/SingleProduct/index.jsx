@@ -96,11 +96,11 @@ export default function SingleProduct({
             <h3>Description</h3>
             <p>{description}</p>
           </div>
+          <div className={s.description2}>
+            <h3>Description</h3>
+            <p>{description}</p>
+          </div>
         </div>
-      </div>
-      <div className={s.description2}>
-        <h3>Description</h3>
-        <p>{description}</p>
       </div>
     </div>
   );
