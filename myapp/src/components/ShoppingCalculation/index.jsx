@@ -7,21 +7,17 @@ import Inputs from "../UI/Inputs";
 
 export default function ShoppingCalculation({ cart_state }) {
   const dispatch = useDispatch();
-
-  const sendOrderHandler = (e) => {
+  const send_order = (e) => {
     e.preventDefault();
     dispatch(sendOrder({ message: "order send" }));
     e.target.reset();
   };
-
   const totalItems = cart_state.reduce((acc, { count }) => acc + count, 0);
-
   const totalPrice = cart_state.reduce(
     (acc, { price, discont_price, count }) =>
       acc + count * (discont_price || price),
     0
   );
-
   return (
     <div className={s.container}>
       <h3 className={s.h3_order}>Order details</h3>
@@ -35,7 +31,7 @@ export default function ShoppingCalculation({ cart_state }) {
         </div>
       </div>
 
-      <form className={s.form} onSubmit={sendOrderHandler}>
+      <form className={s.form} onSubmit={send_order}>
         <Inputs styleType="style2" />
         <div className={s.order_btn}>
           <BtnCard key="order-btn" type={ButtonTypes.ORDER} />
