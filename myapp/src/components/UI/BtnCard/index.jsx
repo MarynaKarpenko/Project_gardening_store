@@ -64,9 +64,9 @@ export default function BtnCard({ type }) {
         </button>
       )}
 
-      {type === ButtonTypes.ORDER && (
+      {/* {type === ButtonTypes.ORDER && (
         <button className={s.order_btn}>Order</button>
-      )}
+      )} */}
 
       {type === ButtonTypes.DISCOUNT && (
         <button

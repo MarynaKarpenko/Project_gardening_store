@@ -6,12 +6,12 @@ import {
   removeCartAction,
 } from "../../store/reducers/cartReducer";
 import { BASE_URL } from "../../config";
-import s from "./ShoppingItem.module.css";
-import iconCross from "../Icons/IconCross.svg";
-import iconMinus from "../Icons/Minus.svg";
-import iconPlus from "../Icons/Plus.svg";
+import s from "./CartItem.module.css";
+import iconCross from "../icons/IconCross.svg";
+import iconMinus from "../icons/Minus.svg";
+import iconPlus from "../icons/Plus.svg";
 
-export default function ShoppingItem({
+export default function CartItem({
   id,
   title,
   price,

@@ -5,7 +5,7 @@ import s from "./Inputs.module.css";
 export default function Inputs({ styleType }) {
   const {
     register,
-    formState: { errors },
+    formState: { errors, isValid},
   } = useForm({ mode: "onChange" });
 
   const inputStyles = [

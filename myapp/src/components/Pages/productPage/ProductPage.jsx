@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { fechSingleProduct } from "../../../Async/request";
-import SingleProduct from "../../SingleProduct";
+import SingleProduct from "../../singleProduct/SingleProduct";
 
 export default function ProductPage() {
   const { productId } = useParams();

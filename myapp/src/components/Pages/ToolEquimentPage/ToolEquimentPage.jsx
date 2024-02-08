@@ -10,8 +10,8 @@ import {
   productsWithDiscountAction,
   sortProductsAction,
 } from "../../../store/reducers/productsReducer";
-import Filter from "../../Filter";
-import ProductsContainer from "../../ProductsContainer";
+import Filter from "../../filter/Filter";
+import ProductsContainer from "../../productsContainer/ProductsContainer";
 import Breadcrumbs from "../../UI/Breadcrumbs";
 import s from "./ToolEquimentPage.module.css";
 

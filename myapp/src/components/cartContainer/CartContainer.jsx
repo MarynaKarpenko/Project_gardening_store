@@ -1,11 +1,11 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import ShoppingCalculation from "../ShoppingCalculation";
-import ShoppingItem from "../ShoppingItem";
+import CartCalculation from "../cartCalculation/CartCalculation";
+import CartItem from "../cartItem/CartItem";
 import Breadcrumbs from "../UI/Breadcrumbs";
-import s from "./ShoppingContainer.module.css";
+import s from "./CartContainer.module.css";
 
-export default function ShoppingContainer() {
+export default function CartContainer() {
   const cart_state = useSelector((state) => state.cart);
   const breadcrumbs = [{ label: "Back to the store", path: "/products" }];
 
@@ -19,13 +19,13 @@ export default function ShoppingContainer() {
       <div className={s.flex_container}>
         <div className={s.cart}>
           {cart_state.map((el) => (
-            <ShoppingItem key={el.id} {...el} />
+            <CartItem key={el.id} {...el} />
           ))}
         </div>
         {cart_state.length === 0 ? (
           ""
         ) : (
-          <ShoppingCalculation cart_state={cart_state} />
+          <CartCalculation cart_state={cart_state} />
         )}
       </div>
     </div>

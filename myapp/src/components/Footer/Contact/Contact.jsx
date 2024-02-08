@@ -1,6 +1,6 @@
 import React from "react";
-import iconInst from "../../Icons/IconsInst.svg";
-import iconWatsApp from "../../Icons/IconsWatsApp.svg";
+import iconInst from "../../icons/IconsInst.svg";
+import iconWatsApp from "../../icons/IconsWatsApp.svg";
 import s from "./Contact.module.css";
 
 const commonStyles = {

@@ -1,9 +1,9 @@
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
 import { useSelector } from "react-redux";
-import logo from "../Icons/logo.svg";
-import iconShop from "../Icons/IconShop.svg";
-import BurgerMenu from "./BurgerMenu";
+import logo from "../icons/logo.svg";
+import iconShop from "../icons/IconShop.svg";
+import BurgerMenu from "./burgerMenu/BurgerMenu";
 import s from "./Header.module.css";
 
 export default function Header() {

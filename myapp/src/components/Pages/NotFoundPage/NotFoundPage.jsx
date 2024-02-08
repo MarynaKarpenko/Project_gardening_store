@@ -1,4 +1,4 @@
-import img_404 from "../../Media/404.svg";
+import img_404 from "../../media/404.svg";
 import s from "./NotFoundPage.module.css";
 import BtnCard, { ButtonTypes } from "../../UI/BtnCard";
 

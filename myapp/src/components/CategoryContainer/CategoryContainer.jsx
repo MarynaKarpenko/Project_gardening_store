@@ -1,5 +1,5 @@
 import s from "./CategoryContainer.module.css";
-import CategoryItem from "../CategoryItem";
+import CategoryItem from "../categoryItem/CategoryItem";
 
 export default function CategoryContainer({ categories }) {
   return (

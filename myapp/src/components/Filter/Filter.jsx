@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import s from "./Filter.module.css";
-import green from "../Media/Check.svg";
+import green from "../media/Check.svg";
 
 export default function Filter({
   filterBySale,
   sort,
   filterByPrice,
+  filterByNewProduct,
   sale,
   handleChange,
 }) {

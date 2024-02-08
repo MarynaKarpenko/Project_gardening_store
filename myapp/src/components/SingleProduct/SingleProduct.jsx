@@ -7,8 +7,8 @@ import {
   cartIncrAction,
 } from "../../store/reducers/cartReducer";
 import s from "./SingleProduct.module.css";
-import iconPlus from "../Icons/Plus.svg";
-import iconMinus from "../Icons/Minus.svg";
+import iconPlus from "../icons/Plus.svg";
+import iconMinus from "../icons/Minus.svg";
 import Breadcrumbs from "../UI/Breadcrumbs";
 import BtnCard, { ButtonTypes } from "../UI/BtnCard";
 

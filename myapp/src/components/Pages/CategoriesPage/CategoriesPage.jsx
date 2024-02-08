@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { fechCategories } from "../../../Async/request";
-import CategoryContainer from "../../CategoryContainer";
+import CategoryContainer from "../../categoryContainer/CategoryContainer";
 import s from "./Categories.module.css";
 import Breadcrumbs from "../../UI/Breadcrumbs";
 

@@ -6,8 +6,8 @@ import {
   sortProductsAction,
 } from "../../../store/reducers/productsReducer";
 import Breadcrumbs from "../../UI/Breadcrumbs";
-import Filter from "../../Filter";
-import ProductsContainer from "../../ProductsContainer";
+import Filter from "../../filter/Filter";
+import ProductsContainer from "../../productsContainer/ProductsContainer";
 import s from "./DiscountsPage.module.css";
 
 export default function DiscountsPage() {

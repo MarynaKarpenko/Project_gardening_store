@@ -1,6 +1,6 @@
-import Contact from "./Contact";
+import Contact from "./contact/Contact";
 import s from "./Footer.module.css";
-import Map from "./Map";
+import Map from "./map/Map";
 
 export default function Footer() {
   return (

@@ -1,6 +1,6 @@
 import React from "react";
 import s from "./DiscountForm.module.css";
-import img_discount_form from "../Media/Discount.svg";
+import img_discount_form from "../media/Discount.svg";
 import Inputs from "../UI/Inputs";
 import BtnCard, { ButtonTypes } from "../UI/BtnCard";
 import { getDiscount } from "../../Async/request";

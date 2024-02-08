@@ -1,11 +1,12 @@
 import React from "react";
 import { useDispatch } from "react-redux";
 import { sendOrder } from "../../Async/request";
-import s from "./ShoppingCalculation.module.css";
+import s from "./CartCalculation.module.css";
 import BtnCard, { ButtonTypes } from "../UI/BtnCard";
 import Inputs from "../UI/Inputs";
+import CheckautForm from "../UI/checkautForm/CheckautForm"
 
-export default function ShoppingCalculation({ cart_state }) {
+export default function CartCalculation({ cart_state }) {
   const dispatch = useDispatch();
   const send_order = (e) => {
     e.preventDefault();
@@ -30,13 +31,13 @@ export default function ShoppingCalculation({ cart_state }) {
           <p className={s.total_sum}>${totalPrice.toFixed(2)}</p>
         </div>
       </div>
-
-      <form className={s.form} onSubmit={send_order}>
+      <CheckautForm classInput={s.input} classBtn={s.btn} txtBtn="Order" />
+      {/* <form className={s.form} onSubmit={send_order}>
         <Inputs styleType="style2" />
         <div className={s.order_btn}>
           <BtnCard key="order-btn" type={ButtonTypes.ORDER} />
         </div>
-      </form>
+      </form> */}
     </div>
   );
 }

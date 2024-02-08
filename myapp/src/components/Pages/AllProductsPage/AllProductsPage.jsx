@@ -8,8 +8,8 @@ import {
   sortProductsAction,
 } from "../../../store/reducers/productsReducer";
 import Breadcrumbs from "../../UI/Breadcrumbs";
-import ProductsContainer from "../../ProductsContainer";
-import Filter from "../../Filter/index";
+import ProductsContainer from "../../productsContainer/ProductsContainer";
+import Filter from "../../filter/Filter";
 import s from "./AllProductsPage.module.css";
 
 export default function AllProductsPage() {

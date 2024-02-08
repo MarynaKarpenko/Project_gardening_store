@@ -36,12 +36,24 @@
     font-weight: 700;
 }
 
+.input{
+    color: var(--txt-black, #282828);
+    border: 1px solid var(--grey-divider, #ddd);
+}
+
+.btn{
+    justify-content: center;
+    background-color: var(--green, #393);
+    color: var(--txt-white, #fff);
+}
+
+/* 
 .form {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     gap: 32px;
-}
+} */
 
 .order_btn {
     width: 100%;

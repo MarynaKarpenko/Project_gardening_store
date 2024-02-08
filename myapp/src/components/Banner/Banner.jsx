@@ -1,5 +1,5 @@
 import s from "./Banner.module.css";
-import Amazing_img from "../Media/Amazing.svg";
+import Amazing_img from "../media/Amazing.svg";
 import BtnCard, { ButtonTypes } from "../UI/BtnCard";
 
 export default function Banner() {

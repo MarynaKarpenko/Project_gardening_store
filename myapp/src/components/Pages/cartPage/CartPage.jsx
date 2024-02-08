@@ -1,16 +1,17 @@
 import React from "react";
-import ShoppingContainer from "../../ShoppingContainer";
+import CartContainer from "../../cartContainer/CartContainer";
 import BtnCard, { ButtonTypes } from "../../UI/BtnCard";
 import { useSelector } from "react-redux";
-import s from "./ShoppingCartPage.module.css";
+import s from "./CartPage.module.css";
+import CheckautForm from "../../UI/checkautForm/CheckautForm";
 
-export default function ShoppingCartPage() {
+export default function CartPage() {
   const cartState = useSelector((state) => state.cart);
   const isCartEmpty = cartState.length === 0;
 
   return (
     <div>
-      <ShoppingContainer />
+      <CartContainer />
       <div className={s.empty_cart}>
         {isCartEmpty ? (
           <div className={s.btn}>
@@ -19,7 +20,9 @@ export default function ShoppingCartPage() {
               <BtnCard type={ButtonTypes.SHOPPING} />
             </div>
           </div>
-        ) : null}
+        ) : (
+          ""
+        )}
       </div>
       {/* <div className={`${s.modal} ${active && s.active}`}>
         <div active={active} setActive={setActive}>

@@ -2,10 +2,10 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fechCategories, fechSalesProducts } from "../../../Async/request";
 import s from "./MainPage.module.css";
-import Banner from "../../Banner";
-import DiscountForm from "../../DiscountForm";
-import ProductsContainer from "../../ProductsContainer";
-import CategoryContainer from "../../CategoryContainer";
+import Banner from "../../banner/Banner";
+import DiscountForm from "../../discountForm/DiscountForm";
+import ProductsContainer from "../../productsContainer/ProductsContainer";
+import CategoryContainer from "../../categoryContainer/CategoryContainer";
 import Breadcrumbs from "../../UI/Breadcrumbs";
 
 export default function MainPage() {
