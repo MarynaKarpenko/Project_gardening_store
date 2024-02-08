@@ -1,60 +1,72 @@
 .form_wrapper {
-    height: auto;
-    padding: 32px 32px 0px;
     margin-top: 80px;
-    margin-bottom: 80px;
-    display: flex;
+    padding: 32px 32px 0px;
+    display: inline-flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
+    gap: 24px;
+    width: 100%;
     border-radius: var(--radius-big, 12px);
     background: linear-gradient(261deg, #0B710B 32.63%, #393 98.96%);
-    gap: 24px;
     overflow: hidden;
 }
 
 .form_text {
-    color: var(--txt-white, #FFF);
-    font-weight: 700;
     font-size: 64px;
+    font-weight: 700;
     text-align: center;
+    line-height: 110%;
+    color: var(--txt-white, #FFF);
 }
 
-.inform_img {
+.inform {
     display: flex;
     justify-content: flex-end;
-    align-items: center;
+    align-items: flex-start;
+    align-self: stretch;
     gap: 32px;
 }
 
-.img_discount {
+.discount_img {
     width: 100%;
+    object-fit: cover;
 }
 
-.form_inputs {
-    width: 100%;
+.discount_input {
+    background-color: transparent;
+    color: var(--txt-white, #FFF);
 }
 
-.btn_discount {
-    padding-top: 32px;
-    width: 100%;
+.discount_input::placeholder {
+    color: var(--txt-white, #FFF);
 }
+
+.discount_btn{
+    background: var(--white, #FFF);
+    color: var(--txt-black, #282828);
+}
+
+.discount_btn:hover {
+    background: var(--black, #282828);
+    color: var(--txt-white, #FFF);
+    transition: 0.3s;
+    border: none;
+}
+
+/* .submitting{
+    background: var(--light-grey, #F1F3F4);
+    color: var(--green, #393);
+} */
 
 @media(max-width: 1000px) {
     .form_wrapper {
         margin-top: 60px;
-        margin-bottom: 60px;
         padding-right: 20px;
         padding-left: 0;
     }
 
-    .img_discount {
-        width: 470px;
-        object-fit: cover;
-    }
-
-    .btn_discount {
-        margin-bottom: 20px;
+    .inform {
+        gap: 20px;
     }
 }
 
@@ -62,27 +74,21 @@
     .form_text {
         font-size: 56px;
     }
-
-    .img_discount {
-        width: 352px;
-    }
 }
 
 @media(max-width: 480px) {
     .form_wrapper {
         margin-top: 56px;
-        margin-bottom: 56px;
         padding: 24px 20px 0px;
     }
 
-    .inform_img {
+    .inform {
         flex-direction: column;
         align-items: center;
+        gap: 0;
     }
 
-    .img_discount {
-        width: 100%;
-        max-width: none;
+    .discount_img {
         order: 2;
     }
 }

@@ -1,8 +1,8 @@
 import React from "react";
 import { useForm } from "react-hook-form";
-import s from "./CheckautForm.module.css"
+import s from "./CheckautForm.module.css";
 
-function CheckautForm({classInput, classBtn, txtBtn}) {
+export default function CheckautForm({ classInput, classBtn, txtBtn }) {
   const {
     register,
     reset,
@@ -10,8 +10,8 @@ function CheckautForm({classInput, classBtn, txtBtn}) {
     formState: { errors, isValid },
   } = useForm({ mode: "onBlur" });
 
-  const onSubmit = (data) => { 
-    reset()
+  const onSubmit = (data) => {
+    reset();
     console.log(data);
   };
 
@@ -56,11 +56,10 @@ function CheckautForm({classInput, classBtn, txtBtn}) {
           <p className={s.error_message}>{errors.email?.message}</p>
         )}
       </label>
+
       <button className={`${classBtn} ${s.btn}`} disabled={!isValid}>
-        Order
+        {txtBtn}
       </button>
     </form>
   );
 }
-
-export default CheckautForm;

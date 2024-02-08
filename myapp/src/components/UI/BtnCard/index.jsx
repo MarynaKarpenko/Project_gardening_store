@@ -68,7 +68,7 @@ export default function BtnCard({ type }) {
         <button className={s.order_btn}>Order</button>
       )} */}
 
-      {type === ButtonTypes.DISCOUNT && (
+      {/* {type === ButtonTypes.DISCOUNT && (
         <button
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
@@ -80,7 +80,7 @@ export default function BtnCard({ type }) {
             ? "Get a discount"
             : "Get a discount"}
         </button>
-      )}
+      )} */}
 
       {type === ButtonTypes.CHECK_OUT && (
         <Link to={"/sales"}>

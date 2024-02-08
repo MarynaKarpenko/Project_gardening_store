@@ -19,7 +19,7 @@
     width: 100%;
 }
 
-.order_btn {
+/* .order_btn {
     width: 100%;
 }
 
@@ -34,7 +34,7 @@
     color: var(--txt-black, #282828);
     font-size: 20px;
     font-weight: 600;
-}
+} */
 
 .add_btn:hover {
     background: var(--black, #282828);
