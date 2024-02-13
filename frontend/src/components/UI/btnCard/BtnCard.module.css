@@ -1,0 +1,37 @@
+.card_btn button {
+    padding: 16px 56px;
+    border-radius: var(--radius-small, 6px);
+    font-weight: 600;
+    font-size: 20px;
+    border: none;
+    cursor: pointer;
+}
+
+.btn_green,
+.add_btn {
+    background: var(--green, #393);
+    border-radius: var(--radius-small, 6px);
+    color: var(--txt-white, #FFF);
+}
+
+.add_btn{
+    width: 100%;
+}
+
+.add_btn:hover {
+    background: var(--black, #282828);
+    opacity: 1;
+    transform: 0.3s;
+}
+
+.hovered button {
+    background: var(--black, #282828);
+    color: var(--txt-white, #FFF);
+    transition: 0.3s;
+}
+
+.submitting button {
+    border-radius: var(--radius-small, 6px);
+    background: var(--light-grey, #F1F3F4);
+    color: var(--green, #393);
+}

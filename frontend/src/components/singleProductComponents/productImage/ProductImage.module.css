@@ -1,0 +1,24 @@
+.image {
+    width: 100%;
+    height: 574px;
+}
+
+.image img {
+    width: 100%;
+    height: 100%;
+    border-radius: var(--radius-big, 12px);
+    overflow: hidden;
+    object-fit: cover;
+}
+
+@media(max-width: 768px) {
+    .image {
+        height: 100%;
+    }
+}
+
+@media(max-width: 480px) {
+    .image img {
+        position: relative;
+    }
+}
