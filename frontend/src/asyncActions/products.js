@@ -6,7 +6,7 @@ import {
 } from "../store/reducers/productsReducer";
 import { sendOrderAction } from "../store/reducers/cartReducer";
 import { loadCategoriesAction } from "../store/reducers/categoriesReducer";
-import { loadNameOfCategoryAction } from "../store/reducers/categoryReducer";
+import { loadNameOfCategoryAction } from "../store/reducers/productsReducer";
 import { loadSingleProductAction } from "../store/reducers/singleProductReducer";
 import { saveCart } from "../components/cartComponents/cartLocalStorage/CartLocalStorage";
 
@@ -116,6 +116,25 @@ export const getDiscount = async (body) => {
   }
 };
 
+// export const sendOrder = (body) => {
+//   return async (dispatch) => {
+//     try {
+//       const response = await fetch(`${BASE_URL}/order/send`, {
+//         method: "POST",
+//         body: JSON.stringify(body),
+//         headers: {
+//           "Content-Type": "application/json;charset=utf-8",
+//         },
+//       });
+//       const data = await response.json();
+//       dispatch(sendOrderAction(data));
+//       alert("Order is accepted");
+//     } catch (error) {
+//       console.error("Error sending order:", error);
+//     }
+//   };
+// };
+
 export const sendOrder = (body) => {
   return async (dispatch) => {
     try {
@@ -129,6 +148,8 @@ export const sendOrder = (body) => {
       const data = await response.json();
       dispatch(sendOrderAction(data));
       alert("Order is accepted");
+
+      saveCart([]);
     } catch (error) {
       console.error("Error sending order:", error);
     }

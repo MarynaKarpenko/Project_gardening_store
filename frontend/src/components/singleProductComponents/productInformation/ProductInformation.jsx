@@ -6,7 +6,7 @@ import BtnCard, { ButtonTypes } from "../../UI/btnCard/BtnCard";
 import { addToCartAction } from "../../../store/reducers/cartReducer";
 import { useDispatch, useSelector } from "react-redux";
 
-const ProductInformation = ({ el }) => {
+export const ProductInformation = ({ el }) => {
   const basketCart = useSelector((state) => state.cart);
   const product = basketCart.find((element) => element.id == el.id);
   // const count = product && product.count;
@@ -39,5 +39,3 @@ const ProductInformation = ({ el }) => {
     </div>
   );
 };
-
-export default ProductInformation;

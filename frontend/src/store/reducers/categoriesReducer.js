@@ -1,4 +1,4 @@
-const LOAD_CATEGORIES = "[CATEGORIES_CONTAINER] LOAD_CATEGORIES";
+const LOAD_CATEGORIES = "LOAD_CATEGORIES";
 
 export const categoriesReducer = (state = [], action) => {
   return action.type === LOAD_CATEGORIES ? action.payload : state;

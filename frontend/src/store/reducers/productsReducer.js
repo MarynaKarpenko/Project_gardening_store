@@ -2,7 +2,7 @@ const LOAD_ALL_PRODUCTS = "[ALL_PRODUCTS_PAGE] LOAD_ALL_PRODUCTS";
 const PRODUCTS_WITH_DISCOUNT_ALL = "[ALL_PRODUCTS_PAGE] PRODUCTS_WITH_DISCOUNT";
 const FILTER_BY_PRICE_ALL = "[ALL_PRODUCTS_PAGE] FILTER_BY_PRICE";
 const PRODUCTS_SORT_ALL = "[ALL_PRODUCTS_PAGE] PRODUCTS_SORT";
-const FILTER_BY_NEW_PRODUCT = "[ALL_PRODUCTS_PAGE] FILTER_BY_NEW_PRODUCT";
+// const FILTER_BY_NEW_PRODUCT = "[ALL_PRODUCTS_PAGE] FILTER_BY_NEW_PRODUCT";
 
 const LOAD_PRODUCTS_BY_CATEGORY = "[CATEGORIES_PAGE] LOAD_PRODUCTS_BY_CATEGORY";
 const PRODUCTS_WITH_DISCOUNT_CATEGORY = "[CATEGORIES_PAGE] PRODUCTS_WITH_DISCOUNT";
@@ -13,6 +13,8 @@ const FILTER_BY_PRICE_CATEGORY = "[CATEGORIES_PAGE] FILTER_BY_PRICE";
 const LOAD_PRODUCTS = "[DISCOUNTS_PAGE] LOAD_PRODUCTS";
 const FILTER_BY_PRICE_DISCOUNTS = "[DISCOUNTS_PAGE] FILTER_BY_PRICE";
 const PRODUCTS_SORT_DISCOUNTS = "[DISCOUNTS_PAGE] PRODUCTS_SORT_DISCOUNTS";
+
+const LOAD_NAME = "[TOOL_EQUIPMENT_PAGE] LOAD_NAME";
 
 const realPrice = ({ price, discont_price }) => {
   if (discont_price === null) {
@@ -103,6 +105,9 @@ export const productsReducer = (state = [], action) => {
   }
 };
 
+export const categoryReducer = (state = [], action) =>
+  action.type === LOAD_NAME ? action.payload : state;
+
 export const loadAllProductsAction = (payload) => ({
   type: LOAD_PRODUCTS,
   payload,
@@ -135,5 +140,10 @@ export const filterByPriceAction = (payload) => ({
 
 export const sortProductsAction = (payload) => ({
   type: PRODUCTS_SORT_DISCOUNTS,
+  payload,
+});
+
+export const loadNameOfCategoryAction = (payload) => ({
+  type: LOAD_NAME,
   payload,
 });

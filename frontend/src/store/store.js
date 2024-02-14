@@ -4,7 +4,7 @@ import { categoriesReducer } from "./reducers/categoriesReducer";
 import { productsReducer } from "./reducers/productsReducer";
 import { singleProductReducer } from "./reducers/singleProductReducer";
 import { cartReducer } from "./reducers/cartReducer";
-import { categoryReducer } from "./reducers/categoryReducer";
+import { categoryReducer } from "./reducers/productsReducer";
 
 const rootReducer = combineReducers({
   productsByCategory: productsReducer,
