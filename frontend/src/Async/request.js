@@ -119,4 +119,3 @@ export const clearCartAction = () => {
   saveCart([]);
   return action;
 };
-

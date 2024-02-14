@@ -1,19 +1,21 @@
 .product_wrapper {
-    margin: 0 40px 0 40px;
+  /* width: 1000px;
+  height: 1000px; */
+  margin: 0 40px 0 40px;
 }
 
 .btn_container {
-    display: flex;
-    align-items: center;
-    margin-top: 40px;
-    margin-bottom: 40px;
+  display: flex;
+  align-items: center;
+  margin-top: 40px;
+  margin-bottom: 40px;
 }
 
 .container {
-    display: grid;
-    grid-template-columns: 59% 1fr;
-    width: 100%;
-    gap: 32px;
+  display: grid;
+  grid-template-columns: 59% 1fr;
+  width: 100%;
+  gap: 32px;
 }
 
 /* .image {
@@ -94,64 +96,64 @@
 } */
 
 .description2 {
-    display: none;
+  display: none;
 }
 
 .title_480 {
+  display: none;
+}
+
+@media (max-width: 1000px) {
+  .product_wrapper {
+    margin: 0 20px 0 20px;
+  }
+
+  .container {
+    grid-template-columns: 50% 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .btn_container {
     display: none;
-}
-
-@media(max-width: 1000px) {
-    .product_wrapper {
-        margin: 0 20px 0 20px;
-    }
-
-    .container {
-        grid-template-columns: 50% 1fr;
-    }
-}
-
-@media(max-width: 768px) {
-.btn_container {
-    display: none;
-}
-.container {
+  }
+  .container {
     gap: 20px;
-}
-    .description2 {
-        display: block;
-        width: 100%;
-    }
+  }
+  .description2 {
+    display: block;
+    width: 100%;
+  }
 
-    .description2 h3 {
-        padding-top: 40px;
-        padding-bottom: 16px;
-    }
-}
-
-@media(max-width: 480px) {
-    .container {
-        position: relative;
-    }
-
-    .title_480 {
-        display: block;
-        padding-top: 32px;
-        padding-bottom: 20px;
-        font-size: 28px;
-    }
-
-    .description2 h3 {
-        padding-top: 20px;
-    }
-
-    .description2 p {
-        font-size: 14px;
-    }
+  .description2 h3 {
+    padding-top: 40px;
+    padding-bottom: 16px;
+  }
 }
 
-@media(max-width: 360px) {
-    .container {
-        grid-template-columns: 1fr;
-    }
+@media (max-width: 480px) {
+  .container {
+    position: relative;
+  }
+
+  .title_480 {
+    display: block;
+    padding-top: 32px;
+    padding-bottom: 20px;
+    font-size: 28px;
+  }
+
+  .description2 h3 {
+    padding-top: 20px;
+  }
+
+  .description2 p {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 360px) {
+  .container {
+    grid-template-columns: 1fr;
+  }
 }

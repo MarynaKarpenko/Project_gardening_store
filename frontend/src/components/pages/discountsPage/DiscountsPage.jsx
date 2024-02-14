@@ -1,12 +1,9 @@
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { fechSalesProducts } from "../../../Async/request";
-import {
-  filterByPriceAction,
-  sortProductsAction,
-} from "../../../store/reducers/productsReducer";
+import { filterByPriceAction, sortProductsAction } from "../../../store/reducers/productsReducer";
 import Breadcrumbs from "../../UI/breadcrumbs/Breadcrumbs";
-import Filter from "../../UI/filter/Filter";
+import Filter from "../../UI/filters/MainFilter";
 import ProductsContainer from "../../productsComponents/productsContainer/ProductsContainer";
 import s from "./DiscountsPage.module.css";
 

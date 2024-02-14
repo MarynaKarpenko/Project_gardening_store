@@ -4,10 +4,8 @@ const FILTER_BY_PRICE_ALL = "[ALL_PRODUCTS_PAGE] FILTER_BY_PRICE";
 const PRODUCTS_SORT_ALL = "[ALL_PRODUCTS_PAGE] PRODUCTS_SORT";
 const FILTER_BY_NEW_PRODUCT = "[ALL_PRODUCTS_PAGE] FILTER_BY_NEW_PRODUCT";
 
-
 const LOAD_PRODUCTS_BY_CATEGORY = "[CATEGORIES_PAGE] LOAD_PRODUCTS_BY_CATEGORY";
-const PRODUCTS_WITH_DISCOUNT_CATEGORY =
-  "[CATEGORIES_PAGE] PRODUCTS_WITH_DISCOUNT";
+const PRODUCTS_WITH_DISCOUNT_CATEGORY = "[CATEGORIES_PAGE] PRODUCTS_WITH_DISCOUNT";
 const PRODUCTS_WITH_DISCOUNT = "[CATEGORIES_PAGE] PRODUCTS_WITH_DISCOUNT";
 const PRODUCTS_SORT_CATEGORY = "[CATEGORIES_PAGE] PRODUCTS_SORT_CATEGORY";
 const FILTER_BY_PRICE_CATEGORY = "[CATEGORIES_PAGE] FILTER_BY_PRICE";
@@ -89,16 +87,14 @@ export const productsReducer = (state = [], action) => {
       const { min_value: minValDis, max_value: maxValDis } = action.payload;
       return state.map((el) => ({
         ...el,
-        show_by_price:
-          el.discont_price >= minValDis && el.discont_price <= maxValDis,
+        show_by_price: el.discont_price >= minValDis && el.discont_price <= maxValDis,
       }));
 
     case PRODUCTS_SORT_DISCOUNTS:
       return [...state].sort((a, b) => {
-        if (+action.payload === 1)
-          return realDiscountPrice(a) - realDiscountPrice(b);
-        if (+action.payload === 2)
-          return realDiscountPrice(b) - realDiscountPrice(a);
+        // if (+action.payload == 0) return state;
+        if (+action.payload === 1) return realDiscountPrice(a) - realDiscountPrice(b);
+        if (+action.payload === 2) return realDiscountPrice(b) - realDiscountPrice(a);
         if (+action.payload === 3) return a.title.localeCompare(b.title);
         return 0;
       });
@@ -141,5 +137,3 @@ export const sortProductsAction = (payload) => ({
   type: PRODUCTS_SORT_DISCOUNTS,
   payload,
 });
-
-

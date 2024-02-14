@@ -8,7 +8,7 @@ export default function ProductsContainer({ products }) {
       {products
         .filter((el) => el.show_by_discount && el.show_by_price)
         .map((item) => (
-          <ProductItem key={item.id} {...item} />
+          <ProductItem key={item.id} el={item} />
         ))}
     </div>
   );

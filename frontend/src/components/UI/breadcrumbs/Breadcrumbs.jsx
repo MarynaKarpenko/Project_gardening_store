@@ -9,15 +9,11 @@ export default function Breadcrumbs({ breadcrumbs }) {
         <React.Fragment key={index}>
           <Link
             to={breadcrumb.path}
-            className={`${s.btn_cads} ${
-              breadcrumb.active ? s.activeButton : ""
-            }`}
+            className={`${s.btn_cads} ${breadcrumb.active ? s.activeButton : ""}`}
           >
             <span>{breadcrumb.label}</span>
           </Link>
-          {index < breadcrumbs.length - 1 && (
-            <span className={s.breadcrumbLine}></span>
-          )}
+          {index < breadcrumbs.length - 1 && <span className={s.breadcrumbLine}></span>}
         </React.Fragment>
       ))}
     </div>

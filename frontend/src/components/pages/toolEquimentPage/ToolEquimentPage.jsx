@@ -1,16 +1,13 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
-import {
-  fechNameOfCategory,
-  fechProductsByCategory,
-} from "../../../Async/request";
+import { fechNameOfCategory, fechProductsByCategory } from "../../../Async/request";
 import {
   filterByPriceAction,
   productsWithDiscountAction,
   sortProductsAction,
 } from "../../../store/reducers/productsReducer";
-import Filter from "../../UI/filter/Filter";
+import Filter from "../../UI/filters/MainFilter";
 import ProductsContainer from "../../productsComponents/productsContainer/ProductsContainer";
 import Breadcrumbs from "../../UI/breadcrumbs/Breadcrumbs";
 import s from "./ToolEquimentPage.module.css";
@@ -25,8 +22,7 @@ export default function ToolEquipmentPage() {
   const products_state = useSelector((state) => state.productsByCategory);
   const title = useSelector((state) => state.nameOfCategory.title);
 
-  const filterBySale = (e) =>
-    dispatch(productsWithDiscountAction(e.target.checked));
+  const filterBySale = (e) => dispatch(productsWithDiscountAction(e.target.checked));
 
   const sort = (e) => {
     dispatch(sortProductsAction(e.target.value));
@@ -51,12 +47,7 @@ export default function ToolEquipmentPage() {
         <Breadcrumbs breadcrumbs={breadcrumbs} />
       </div>
       <h1 className={s.products_name}>{title}</h1>
-      <Filter
-        filterBySale={filterBySale}
-        sale={false}
-        sort={sort}
-        filterByPrice={filterByPrice}
-      />
+      <Filter filterBySale={filterBySale} sale={false} sort={sort} filterByPrice={filterByPrice} />
       <ProductsContainer products={products_state} />
     </div>
   );

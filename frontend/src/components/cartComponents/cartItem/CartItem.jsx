@@ -14,42 +14,38 @@ export default function CartItem({ array }) {
   const handleRemoveFromCart = (id) => {
     dispatch(removeCartAction(id));
   };
-   
 
   return (
-    <>
+    <div className={s.carts_container}>
       {array.map((el) => (
         <div key={el.id} className={s.cart}>
-          <img
-            src={iconCross}
-            className={s.cross_delete}
-            alt="cross"
-            onClick={() => handleRemoveFromCart(el.id)}
-          />
+          <img src={`${BASE_URL}/${el.image}`} alt="img" className={s.shopping_img} />
+
           <div className={s.product_info}>
-            <img
-              src={`${BASE_URL}/${el.image}`}
-              alt="img"
-              className={s.shopping_img}
-            />
-            <div className={s.products}>
+            <div className={s.title_delete}>
               <Link to={`/product/${el.id}`} className={s.products_link}>
-                <p className={s.product_name}>{el.title}</p>
+                {el.title}
               </Link>
-              <div className={s.container}>
-                <Counter id={el.id} count={el.count} />
-                <Price
-                  price={el.price}
-                  discont_price={el.discont_price}
-                  realPriceClass={s.real_price}
-                  oldPriceClass={s.old_price}
-                  saleValueClass={s.sale_value}
-                />
-              </div>
+
+              <img
+                src={iconCross}
+                className={s.cross_delete}
+                alt="cross"
+                onClick={() => handleRemoveFromCart(el.id)}
+              />
+            </div>
+            <div className={s.container}>
+              <Counter el={el} />
+              <Price
+                el={el}
+                realPriceClass={s.real_price}
+                oldPriceClass={s.old_price}
+                saleValueClass={s.sale_value}
+              />
             </div>
           </div>
         </div>
       ))}
-    </>
+    </div>
   );
 }

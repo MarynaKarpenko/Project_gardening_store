@@ -7,33 +7,27 @@ import { addToCartAction } from "../../../store/reducers/cartReducer";
 import { useDispatch } from "react-redux";
 import Price from "../../UI/price/Price";
 
-export default function ProductItem({ id, title, price, discont_price, image }) {
+export default function ProductItem({ el }) {
   const dispatch = useDispatch();
 
   const handleAddToCart = (e) => {
     e.preventDefault();
-    dispatch(addToCartAction({ id, title, price, discont_price, image }));
+    dispatch(addToCartAction(el));
   };
 
   return (
     <div className={s.products_wrapper}>
-      <Link to={`/product/${id}`} className={s.products_link}>
-
-          <img
-            src={`${BASE_URL}${image}`}
-            alt={title}
-            className={s.products_img}
-          />
+      <Link to={`/product/${el.id}`} className={s.products_link}>
+        <img src={`${BASE_URL}${el.image}`} alt={el.title} className={s.products_img} />
       </Link>
       <div className={s.add_btn} onClick={handleAddToCart}>
         <BtnCard type={ButtonTypes.ADD_TO_CART} />
       </div>
       <div className={s.products_information}>
-        <h3 className={s.products_title}>{title}</h3>
+        <h3 className={s.products_title}>{el.title}</h3>
 
         <Price
-          price={price}
-          discont_price={discont_price}
+          el={el}
           realPriceClass={s.real_price}
           oldPriceClass={s.old_price}
           saleValueClass={s.sale_value}
@@ -41,4 +35,4 @@ export default function ProductItem({ id, title, price, discont_price, image }) 
       </div>
     </div>
   );
-};
+}

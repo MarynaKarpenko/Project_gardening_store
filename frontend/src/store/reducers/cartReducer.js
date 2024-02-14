@@ -25,6 +25,7 @@ export const sendOrderAction = (payload) => ({
 
 const checkProduct = (state, payload) => {
   const target_product = state.find((el) => el.id === payload.id);
+
   if (target_product) {
     target_product.count++;
     return [...state];
@@ -37,7 +38,6 @@ export const cartReducer = (state = [], action) => {
   if (action.type === ADD_TO_CART) {
     return checkProduct(state, action.payload);
   } else if (action.type === REMOVE_CART) {
-    console.log(action.payload);
     return state.filter(({ id }) => id !== action.payload);
   } else if (action.type === CART_INCREMENT) {
     const updatedState = state.map((item) =>
@@ -57,7 +57,6 @@ export const cartReducer = (state = [], action) => {
       return state;
     }
   } else if (action.type === SEND_ORDER) {
-    console.log(action.payload);
     return [];
   } else {
     return state;

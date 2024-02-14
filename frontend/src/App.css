@@ -1,49 +1,50 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap");
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Montserrat', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
 }
 
 :root {
-    --txt-black: #282828;
-    --txt-white: #fff;
-    --green: #393;
-    --light-grey: #f1f3f4;
-    --radius-small: 6px;
-    --radius-big: 12px;
-    --grey-divider: #ddd;
+  --txt-black: #282828;
+  --txt-white: #fff;
+  --green: #393;
+  --light-grey: #f1f3f4;
+  --radius-small: 6px;
+  --radius-big: 12px;
+  --grey-divider: #ddd;
 }
 
 .app_wrapper {
-    max-width: 1440px;
-    margin: 0 auto;
-    overflow-x: hidden;
-    position: relative;
+  box-sizing: border-box;
+  max-width: 1440px;
+  margin: 0 auto;
+  /* overflow-x: hidden; */
+  position: relative;
 }
 
 h1 {
-    color: var(--txt-black, #282828);
-    font-weight: 700;
-    font-size: 64px;
+  color: var(--txt-black, #282828);
+  font-weight: 700;
+  font-size: 64px;
 }
 
-@media(max-width: 780px) {
-    h1 {
-        font-size: 56px;
-    }
+@media (max-width: 780px) {
+  h1 {
+    font-size: 56px;
+  }
 }
 
-@media(max-width: 480px) {
-    h1 {
-        font-size: 48px;
-    }
+@media (max-width: 480px) {
+  h1 {
+    font-size: 48px;
+  }
 }
 
-@media(max-width: 360px) {
-    h1 {
-        font-size: 40px;
-    }
+@media (max-width: 360px) {
+  h1 {
+    font-size: 40px;
+  }
 }

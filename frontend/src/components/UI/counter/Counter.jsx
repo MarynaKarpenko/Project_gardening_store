@@ -1,36 +1,22 @@
-import React, { useState } from "react";
+import React from "react";
 import { useDispatch } from "react-redux";
-import {
-  cartDecrAction,
-  cartIncrAction,
-} from "../../../store/reducers/cartReducer";
+import { cartDecrAction, cartIncrAction } from "../../../store/reducers/cartReducer";
 import iconMinus from "../../media/icons/Minus.svg";
 import iconPlus from "../../media/icons/Plus.svg";
 import s from "./Counter.module.css";
 
-export default function Counter({ id, count }) {
+export default function Counter({ el }) {
   const dispatch = useDispatch();
-  const [counter, setCounter] = useState(count || 1);
 
   const handleIncrement = () => {
-    setCounter((prevCounter) => prevCounter + 1);
-    dispatch(cartIncrAction(id));
+    dispatch(cartIncrAction(el && el.id));
   };
 
   const handleDecrement = () => {
-    if (count > 1) {
-      setCounter((prevCounter) => prevCounter - 1);
-      dispatch(cartDecrAction(id));
+    if (el.count > 1) {
+      dispatch(cartDecrAction(el && el.id));
     }
   };
-
-  // const handleIncrement = () => {
-  //   dispatch(cartIncrAction(id));
-  // };
-
-  // const handleDecrement = () => {
-  //   dispatch(cartDecrAction(id));
-  // };
 
   return (
     <div className={s.container}>
@@ -38,7 +24,7 @@ export default function Counter({ id, count }) {
         <div className={s.icon_minus} onClick={handleDecrement}>
           <img src={iconMinus} alt="minus" />
         </div>
-        <p className={s.counter}>{count}</p>
+        <p className={s.counter}>{(el && el.count) || 0}</p>
         <div className={s.icon_plus} onClick={handleIncrement}>
           <img src={iconPlus} alt="plus" />
         </div>

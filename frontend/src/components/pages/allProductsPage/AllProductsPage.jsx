@@ -8,7 +8,7 @@ import {
 } from "../../../store/reducers/productsReducer";
 import Breadcrumbs from "../../UI/breadcrumbs/Breadcrumbs";
 import ProductsContainer from "../../productsComponents/productsContainer/ProductsContainer";
-import Filter from "../../UI/filter/Filter";
+import Filter from "../../UI/filters/MainFilter";
 import s from "./AllProductsPage.module.css";
 
 const AllProductsPage = () => {
@@ -23,8 +23,7 @@ const AllProductsPage = () => {
 
   const handleChange = () => setChecked((prevChecked) => !prevChecked);
 
-  const filterBySale = (e) =>
-    dispatch(allProductsWithDiscountAction(e.target.checked));
+  const filterBySale = (e) => dispatch(allProductsWithDiscountAction(e.target.checked));
 
   const filterByPrice = (e) => {
     e.preventDefault();
