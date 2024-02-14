@@ -2,7 +2,13 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import s from "./CheckoutForm.module.css";
 
-export default function CheckoutForm({ setSendingOrder, classInput, classBtn, txtBtn }) {
+export default function CheckoutForm({
+  setSendingOrder,
+  handleDiscountSubmit,
+  classInput,
+  classBtn,
+  txtBtn,
+}) {
   const {
     register,
     reset,
@@ -10,9 +16,11 @@ export default function CheckoutForm({ setSendingOrder, classInput, classBtn, tx
     formState: { errors, isValid },
   } = useForm({ mode: "onBlur" });
 
-  const onSubmit = () => {
+  const onSubmit = (formData) => {
     reset();
-      setSendingOrder && setSendingOrder(true);
+    console.log(formData);
+    setSendingOrder && setSendingOrder(true);
+    handleDiscountSubmit && handleDiscountSubmit();
   };
 
   return (
@@ -26,7 +34,9 @@ export default function CheckoutForm({ setSendingOrder, classInput, classBtn, tx
           placeholder="Name"
           className={`${classInput} ${s.input}`}
         />
-        {errors?.name && <p className={s.error_message}>{errors.name?.message}</p>}
+        {errors?.name && (
+          <p className={s.error_message}>{errors.name?.message}</p>
+        )}
 
         <input
           {...register("phone number", {
@@ -38,7 +48,9 @@ export default function CheckoutForm({ setSendingOrder, classInput, classBtn, tx
           placeholder="Phone number"
           className={`${classInput} ${s.input}`}
         />
-        {errors?.number && <p className={s.error_message}>{errors.number?.message}</p>}
+        {errors?.number && (
+          <p className={s.error_message}>{errors.number?.message}</p>
+        )}
 
         <input
           {...register("email", {
@@ -48,7 +60,9 @@ export default function CheckoutForm({ setSendingOrder, classInput, classBtn, tx
           placeholder="Email"
           className={`${classInput} ${s.input}`}
         />
-        {errors?.email && <p className={s.error_message}>{errors.email?.message}</p>}
+        {errors?.email && (
+          <p className={s.error_message}>{errors.email?.message}</p>
+        )}
       </label>
 
       <button className={`${classBtn} ${s.btn}`} disabled={!isValid}>
