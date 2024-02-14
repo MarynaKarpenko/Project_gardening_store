@@ -1,7 +1,7 @@
 import React from "react";
 import { useDispatch } from "react-redux";
 import s from "./CartModalWindow.module.css";
-import iconCross from "../../media/icons/IconCross.svg";
+import iconModalCross from "../../media/icons/ModalCross.svg";
 import { sendOrderAction } from "../../../store/reducers/cartReducer";
 
 export default function CartModalWindow({ sendingOrder, setSendingOrder }) {
@@ -13,11 +13,17 @@ export default function CartModalWindow({ sendingOrder, setSendingOrder }) {
   };
 
   return (
-    <div className={sendingOrder ? `${s.modal_container} ` : `${s.modal_close} `}>
+    <div
+      className={sendingOrder ? `${s.modal_container} ` : `${s.modal_close} `}
+    >
       <div className={s.modal_window}>
         <div className={s.txt_container}>
           <h4 className={s.title}>Congratulations!</h4>
-          <img src={iconCross} onClick={() => closeWindow()} className={s.btn_close} />
+          <img
+            src={iconModalCross}
+            onClick={() => closeWindow()}
+            className={s.btn_close}
+          />
         </div>
         <p className={s.modal_txt}>
           Your order has been successfully placed on the website.

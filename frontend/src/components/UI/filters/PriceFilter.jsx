@@ -1,7 +1,7 @@
 import React from "react";
 import s from "./Filter.module.css";
 
-function PriceFilter({ filterByPrice }) {
+export default function PriceFilter({ filterByPrice }) {
   return (
     <form className={s.filter_form}>
       <p>Price</p>
@@ -11,4 +11,3 @@ function PriceFilter({ filterByPrice }) {
   );
 }
 
-export default PriceFilter;

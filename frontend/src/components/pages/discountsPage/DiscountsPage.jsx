@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
-import { fechSalesProducts } from "../../../Async/request";
+import { fetchSalesProducts } from "../../../asyncActions/products";
 import { filterByPriceAction, sortProductsAction } from "../../../store/reducers/productsReducer";
 import Breadcrumbs from "../../UI/breadcrumbs/Breadcrumbs";
 import Filter from "../../UI/filters/MainFilter";
@@ -10,7 +10,7 @@ import s from "./DiscountsPage.module.css";
 export default function DiscountsPage() {
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(fechSalesProducts);
+    dispatch(fetchSalesProducts);
   }, []);
   const products = useSelector((state) => state.productsWithdiscount);
 

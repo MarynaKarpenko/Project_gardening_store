@@ -1,7 +1,7 @@
 import React from "react";
 import s from "./Filter.module.css";
 
-function DiscountFilter({ handleChange, filterBySale }) {
+export default function DiscountFilter({ handleChange, filterBySale }) {
   return (
     <label className={s.checkbox_label}>
       <input
@@ -17,4 +17,3 @@ function DiscountFilter({ handleChange, filterBySale }) {
   );
 }
 
-export default DiscountFilter;

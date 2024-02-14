@@ -16,7 +16,7 @@
     flex-direction: column;
     align-items: self-start;
     white-space: nowrap;
-    gap: 36px;
+    row-gap: 36px;
     background: #fff;
     position: absolute;
     top: 60;

@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
-import { fechCategories } from "../../../Async/request";
+import { fetchCategories } from "../../../asyncActions/products";
 import CategoryContainer from "../../categoriesComponents/categoryContainer/CategoryContainer";
 import s from "./Categories.module.css";
 import Breadcrumbs from "../../UI/breadcrumbs/Breadcrumbs";
@@ -10,7 +10,7 @@ export default function CategoriesPage() {
   const categories = useSelector((state) => state.categories);
 
   useEffect(() => {
-    dispatch(fechCategories);
+    dispatch(fetchCategories);
   }, []);
 
   const breadcrumbs = [

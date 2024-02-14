@@ -1,8 +1,8 @@
 import React from "react";
 import { useForm } from "react-hook-form";
-import s from "./CheckautForm.module.css";
+import s from "./CheckoutForm.module.css";
 
-export default function CheckautForm({ setSendingOrder, classInput, classBtn, txtBtn }) {
+export default function CheckoutForm({ setSendingOrder, classInput, classBtn, txtBtn }) {
   const {
     register,
     reset,
@@ -12,7 +12,7 @@ export default function CheckautForm({ setSendingOrder, classInput, classBtn, tx
 
   const onSubmit = () => {
     reset();
-    setSendingOrder(true);
+      setSendingOrder && setSendingOrder(true);
   };
 
   return (

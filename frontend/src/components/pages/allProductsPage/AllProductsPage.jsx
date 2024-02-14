@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { fechAllProducts } from "../../../Async/request";
+import { fetchAllProducts } from "../../../asyncActions/products";
 import {
   allProductsWithDiscountAction,
   filterByPriceAction,
@@ -16,7 +16,7 @@ const AllProductsPage = () => {
   const [checked, setChecked] = useState(false);
 
   useEffect(() => {
-    dispatch(fechAllProducts);
+    dispatch(fetchAllProducts);
   }, []);
 
   const { allProducts: all_products_state } = useSelector((state) => state);

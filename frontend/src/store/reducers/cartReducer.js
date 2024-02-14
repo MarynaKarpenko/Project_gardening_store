@@ -2,26 +2,7 @@ const ADD_TO_CART = "[PRODUCT_ITEM] ADD_TO_CART";
 const REMOVE_CART = "[CART_ITEM] REMOVE_CART";
 const CART_INCREMENT = "[CART_ITEM] INKREMENT";
 const CART_DECREMENT = "[CART_ITEM] CART_DECREMENT";
-const SEND_ORDER = "[CART_CALCULATION] SEND_ORDER ";
-
-export const addToCartAction = (payload) => ({
-  type: ADD_TO_CART,
-  payload,
-});
-
-export const removeCartAction = (payload) => ({
-  type: REMOVE_CART,
-  payload,
-});
-
-export const cartIncrAction = (payload) => ({ type: CART_INCREMENT, payload });
-
-export const cartDecrAction = (payload) => ({ type: CART_DECREMENT, payload });
-
-export const sendOrderAction = (payload) => ({
-  type: SEND_ORDER,
-  payload,
-});
+const SEND_ORDER = "[CART_ORDER] SEND_ORDER ";
 
 const checkProduct = (state, payload) => {
   const target_product = state.find((el) => el.id === payload.id);
@@ -62,3 +43,22 @@ export const cartReducer = (state = [], action) => {
     return state;
   }
 };
+
+export const addToCartAction = (payload) => ({
+  type: ADD_TO_CART,
+  payload,
+});
+
+export const removeCartAction = (payload) => ({
+  type: REMOVE_CART,
+  payload,
+});
+
+export const cartIncrAction = (payload) => ({ type: CART_INCREMENT, payload });
+
+export const cartDecrAction = (payload) => ({ type: CART_DECREMENT, payload });
+
+export const sendOrderAction = (payload) => ({
+  type: SEND_ORDER,
+  payload,
+});

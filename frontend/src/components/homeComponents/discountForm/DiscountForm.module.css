@@ -53,6 +53,12 @@
     border: none;
 }
 
+/* .discount_btn:active {
+    color: var(--green, #393);
+    border-radius: var(--radius-small, 6px);
+    background: var(--light-grey, #F1F3F4);
+} */
+
 @media(max-width: 1000px) {
     .form_wrapper {
         margin-top: 60px;

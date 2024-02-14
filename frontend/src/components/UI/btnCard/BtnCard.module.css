@@ -24,6 +24,13 @@
     transform: 0.3s;
 }
 
+/* .add_btn:active{
+    background: var(--light-grey, #F1F3F4);
+        color: #282828;
+        border-radius: var(--radius-small, 6px);
+            outline: 1px solid var(--black, #282828);
+} */
+
 .hovered button {
     background: var(--black, #282828);
     color: var(--txt-white, #FFF);

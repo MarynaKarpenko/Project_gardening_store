@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
-import { fechNameOfCategory, fechProductsByCategory } from "../../../Async/request";
+import { fetchNameOfCategory, fetchProductsByCategory } from "../../../asyncActions/products";
 import {
   filterByPriceAction,
   productsWithDiscountAction,
@@ -16,8 +16,8 @@ export default function ToolEquipmentPage() {
   const { name } = useParams();
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(fechProductsByCategory(name));
-    dispatch(fechNameOfCategory(name));
+    dispatch(fetchProductsByCategory(name));
+    dispatch(fetchNameOfCategory(name));
   }, []);
   const products_state = useSelector((state) => state.productsByCategory);
   const title = useSelector((state) => state.nameOfCategory.title);

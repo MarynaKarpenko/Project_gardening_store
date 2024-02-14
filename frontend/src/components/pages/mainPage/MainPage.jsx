@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { fechCategories, fechSalesProducts } from "../../../Async/request";
+import { fetchCategories, fetchSalesProducts } from "../../../asyncActions/products";
 import s from "./MainPage.module.css";
 import Banner from "../../homeComponents/banner/Banner";
 import DiscountForm from "../../homeComponents/discountForm/DiscountForm";
@@ -11,8 +11,8 @@ import TitleAndBreadCrumbs from "../../UI/titleAndBreadcrumbs/TitleAndBreadCrumb
 export default function MainPage() {
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(fechCategories);
-    dispatch(fechSalesProducts);
+    dispatch(fetchCategories);
+    dispatch(fetchSalesProducts);
   }, []);
   const categories_state = useSelector((state) => state.categories);
 

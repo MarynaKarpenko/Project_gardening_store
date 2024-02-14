@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import s from "./CartCalculation.module.css";
-import CheckautForm from "../../UI/checkautForm/CheckautForm";
+import s from "./CartOrder.module.css";
+import CheckoutForm from "../../UI/checkoutForm/CheckoutForm";
 import CartModalWindow from "../cartModalWindow/CartModalWindow";
 
-export default function CartCalculation({ basketCart }) {
+export default function CartOrder({ basketCart }) {
   const [sendingOrder, setSendingOrder] = useState(false);
   const totalPrice =
     basketCart &&
@@ -24,7 +24,7 @@ export default function CartCalculation({ basketCart }) {
           <p className={s.total_sum}>${totalPrice.toFixed(2)}</p>
         </div>
       </div>
-      <CheckautForm
+      <CheckoutForm
         setSendingOrder={setSendingOrder}
         classInput={s.input}
         classBtn={s.btn}

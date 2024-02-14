@@ -2,9 +2,9 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import s from "./SingleProduct.module.css";
 import Breadcrumbs from "../../UI/breadcrumbs/Breadcrumbs";
+import { BASE_URL } from "../../../config";
 import ProductInformation from "../productInformation/ProductInformation";
-import ProductImage from "../productImage/ProductImage";
-import { fechSingleProduct } from "../../../Async/request";
+import { fetchSingleProduct } from "../../../asyncActions/products";
 import { useParams } from "react-router-dom";
 
 export default function SingleProduct() {
@@ -12,7 +12,7 @@ export default function SingleProduct() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(fechSingleProduct(productId));
+    dispatch(fetchSingleProduct(productId));
   }, []);
 
   const product = useSelector((state) => state.singleProduct);
@@ -21,7 +21,11 @@ export default function SingleProduct() {
     { label: "Main page", path: "/" },
     { label: "Categories", path: "/categories" },
     { label: "All products", path: "/products" },
-    { label: `${product.length && product[0].title}`, path: `/product/${productId}`, active: true },
+    {
+      label: `${product.length && product[0].title}`,
+      path: `/product/${productId}`,
+      active: true,
+    },
   ];
 
   return (
@@ -34,7 +38,9 @@ export default function SingleProduct() {
             </div>
             <h3 className={s.title_480}>{el.title}</h3>
             <div className={s.container}>
-              <ProductImage el={el} />
+              <div className={s.image}>
+                <img src={`${BASE_URL}/${el.image}`} alt={el.title} />
+              </div>
               <ProductInformation el={el} />
             </div>
             <div className={s.description2}>

@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 import s from "./CartPage.module.css";
 import EmptyCart from "../../cartComponents/emptyCart/EmptyCart";
 import CartItem from "../../cartComponents/cartItem/CartItem";
-import CartCalculation from "../../cartComponents/cartCalculation/CartCalculation";
+import CartOrder from "../../cartComponents/cartOrder/CartOrder";
 import TitleAndBreadCrumbs from "../../UI/titleAndBreadcrumbs/TitleAndBreadCrumbs";
 
 export default function CartPage() {
@@ -22,7 +22,7 @@ export default function CartPage() {
         {isCartEmpty ? <EmptyCart /> : <CartItem array={basketCart && basketCart} />}
         {!isCartEmpty && (
           <div>
-            <CartCalculation basketCart={basketCart} />
+            <CartOrder basketCart={basketCart} />
           </div>
         )}
       </div>

@@ -1,7 +1,7 @@
 import React from "react";
 import s from "./DiscountForm.module.css";
 import img_discount_form from "../../media/images/Discount.svg";
-import CheckautForm from "../../UI/checkautForm/CheckautForm";
+import CheckoutForm from "../../UI/checkoutForm/CheckoutForm";
 
 export default function DiscountForm() {
 
@@ -15,7 +15,7 @@ export default function DiscountForm() {
           className={s.discount_img}
         />
 
-        <CheckautForm
+        <CheckoutForm
           classInput={s.discount_input}
           classBtn={s.discount_btn}
           txtBtn="Get a discount"
