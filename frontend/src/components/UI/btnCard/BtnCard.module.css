@@ -38,6 +38,7 @@
 }
 
 @media(max-width: 480px) {
+
     .add_btn,
     .btn_green {
         font-size: 18px;
@@ -45,5 +46,9 @@
 
     .card_btn .add_btn {
         padding: var(--radius-big, 12px) 20px;
+    }
+
+    .card_btn .btn_green {
+        padding: 12px 52px;
     }
 }

@@ -5,17 +5,19 @@
     gap: 32px;
     width: 100%;
 }
-.info h3, 
-.description{
+
+.info h3,
+.description {
     color: var(--txt-black, #282828);
 }
 
-.info h3, 
+.info h3,
 .real_price {
     font-weight: 700;
 }
+
 .info h3 {
-    font-size: 40px;  
+    font-size: 40px;
 }
 
 .description h3 {
@@ -36,6 +38,7 @@
 .buttons {
     display: flex;
     align-items: center;
+    gap: 32px;
     width: 100%;
 }
 
@@ -67,28 +70,29 @@
 
 @media(max-width: 768px) {
     .real_price {
-            font-size: 56px;
-        }
-    
-        .old_price,
-        .info h3 {
-            font-size: 32px;
-        }
-    
-        .info,
-        .buttons {
-            gap: 20px;
-        }
-    
-        .buttons {
-            flex-direction: column;
-            align-items: flex-start;
-        }
-    
-        .description {
-            display: none;
-        }
+        font-size: 56px;
+    }
+
+    .old_price,
+    .info h3 {
+        font-size: 32px;
+    }
+
+    .info,
+    .buttons {
+        gap: 20px;
+    }
+
+    .buttons {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .description {
+        display: none;
+    }
 }
+
 @media(max-width: 480px) {
     .real_price {
         padding-right: 16px;
@@ -124,5 +128,6 @@
     .info,
     .buttons {
         align-items: center;
+        gap: var(--radius-big, 12px);
     }
 }

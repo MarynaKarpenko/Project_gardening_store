@@ -18,6 +18,7 @@ export default function ModalWindow({ showModal, setShowModal }) {
           <h4 className={s.title}>Congratulations!</h4>
           <img
             src={iconModalCross}
+            alt="Close modal"
             onClick={() => closeModal()}
             className={s.btn_close}
           />

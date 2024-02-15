@@ -21,6 +21,7 @@ export default function CartModalWindow({ sendingOrder, setSendingOrder }) {
           <h4 className={s.title}>Congratulations!</h4>
           <img
             src={iconModalCross}
+            alt="Close modal"
             onClick={() => closeWindow()}
             className={s.btn_close}
           />

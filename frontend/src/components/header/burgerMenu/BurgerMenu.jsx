@@ -23,7 +23,7 @@ export default function BurgerMenu() {
       <div className={s.icons_menu_cross_div} onClick={toggleMenu}>
         <img
           src={menuOpen ? crossIcon : burgerIcon}
-          alt=""
+          alt="Cross"
           className={s.burger_icon}
         />
       </div>

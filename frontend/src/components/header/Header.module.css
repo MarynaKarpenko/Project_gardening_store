@@ -94,11 +94,19 @@
   .logo {
     width: 44px;
     height: 44px;
+
   }
 
   .icon_shop {
     width: 32px;
     height: 32px;
+  }
+
+  .cart span {
+    width: 17.333px;
+    height: 17.333px;
+    font-size: 8px;
+    left: -5px;
   }
 
   .shop_menu {

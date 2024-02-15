@@ -11,7 +11,7 @@ import ProductsContainer from "../../productsComponents/productsContainer/Produc
 import Filter from "../../UI/filters/MainFilter";
 import s from "./AllProductsPage.module.css";
 
-const AllProductsPage = () => {
+export default function AllProductsPage() {
   const dispatch = useDispatch();
   const [checked, setChecked] = useState(false);
 
@@ -19,7 +19,7 @@ const AllProductsPage = () => {
     dispatch(fetchAllProducts);
   }, []);
 
-  const { allProducts: all_products_state } = useSelector((state) => state);
+  const allProducts = useSelector((state) => state.allProducts);
 
   const handleChange = () => setChecked((prevChecked) => !prevChecked);
 
@@ -53,9 +53,8 @@ const AllProductsPage = () => {
         sale={false}
         handleChange={handleChange}
       />
-      <ProductsContainer products={all_products_state} />
+      <ProductsContainer products={allProducts} />
     </div>
   );
 };
 
-export default AllProductsPage;

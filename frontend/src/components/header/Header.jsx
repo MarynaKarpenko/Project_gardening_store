@@ -22,7 +22,7 @@ export default function Header() {
       <div className={s.header_wrapper}>
         <div>
           <Link to={"/"}>
-            <img src={logo} alt="" className={s.logo} />
+            <img src={logo} alt="Logo" className={s.logo} />
           </Link>
         </div>
 
@@ -31,7 +31,9 @@ export default function Header() {
             <Link
               key={to}
               to={to}
-              className={`${s.link} ${location.pathname === to ? s.active_link : ""}`}
+              className={`${s.link} ${
+                location.pathname === to ? s.active_link : ""
+              }`}
             >
               {text}
             </Link>
@@ -41,8 +43,12 @@ export default function Header() {
         <div className={s.shop_menu}>
           <div className={s.cart}>
             <Link to={"/cart"}>
-              <img src={iconShop} alt="" className={s.icon_shop} />
-              {productsInCart.length > 0 ? <span>{productsInCart.length}</span> : ""}
+              <img src={iconShop} alt="Cart" className={s.icon_shop} />
+              {productsInCart.length > 0 ? (
+                <span>{productsInCart.length}</span>
+              ) : (
+                ""
+              )}
             </Link>
           </div>
 

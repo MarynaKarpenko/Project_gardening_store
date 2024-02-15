@@ -26,7 +26,9 @@
 
 .add_btn {
     position: absolute;
-    width: 100%;
+    left: 10px;
+    right: 10px;
+    width: calc(100% - 20px);
     bottom: 154px;
     opacity: 0;
     transition: 0.3s;

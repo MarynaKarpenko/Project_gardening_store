@@ -10,7 +10,7 @@ export const ButtonTypes = {
   SHOPPING: "SHOPPING",
 };
 
-export default function BtnCard({ type, txtBtn, classBtn }) {
+export default function BtnCard({ type }) {
   const [isSubmitting, setSubmitting] = useState(false);
 
   const handleClick = () => {

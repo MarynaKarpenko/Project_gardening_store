@@ -21,7 +21,7 @@ export default function ProductItem({ el }) {
         <img src={`${BASE_URL}${el.image}`} alt={el.title} className={s.products_img} />
       </Link>
       <div className={s.add_btn} onClick={handleAddToCart}>
-        <BtnCard type={ButtonTypes.ADD_TO_CART} />
+        <BtnCard type={ButtonTypes.ADD_TO_CART}  />
       </div>
       <div className={s.products_information}>
         <h3 className={s.products_title}>{el.title}</h3>

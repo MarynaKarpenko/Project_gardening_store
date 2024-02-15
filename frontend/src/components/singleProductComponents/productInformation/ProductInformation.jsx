@@ -1,14 +1,14 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { addToCartAction } from "../../../store/actions/actions";
 import s from "./ProductInformation.module.css";
 import Price from "../../UI/price/Price";
 import Counter from "../../UI/counter/Counter";
 import BtnCard, { ButtonTypes } from "../../UI/btnCard/BtnCard";
-import { addToCartAction } from "../../../store/actions/actions";
 
 const ProductInformation = ({ el }) => {
   const basketCart = useSelector((state) => state.cart);
-  const product = basketCart.find((element) => element.id == el.id);
+  const product = basketCart.find((element) => element.id === el.id);
   // const count = product && product.count;
   const dispatch = useDispatch();
 

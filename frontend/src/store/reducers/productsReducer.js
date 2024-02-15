@@ -15,7 +15,7 @@ import {
 const realPrice = ({ price, discont_price }) =>
   discont_price === null ? price : discont_price;
 
-const realDiscountPrice = ({ discont_price }) => discont_price;
+// const realDiscountPrice = ({ discont_price }) => discont_price;
 
 export const productsReducer = (state = [], action) => {
   switch (action.type) {
