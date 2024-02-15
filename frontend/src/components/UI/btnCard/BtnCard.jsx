@@ -4,9 +4,7 @@ import { Link } from "react-router-dom";
 
 export const ButtonTypes = {
   ADD_TO_CART: "ADD_TO_CART",
-  DISCOUNT: "DISCOUNT",
   CHECK_OUT: "CHECK_OUT",
-  ORDER: "ORDER",
   GO_HOME: "GO_HOME",
   SHOPPING: "SHOPPING",
 };

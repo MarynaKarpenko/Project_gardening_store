@@ -1,10 +1,8 @@
-const LOAD_CATEGORIES = "LOAD_CATEGORIES";
+import { LOAD_CATEGORIES, LOAD_NAME } from "../actions/actions";
 
 export const categoriesReducer = (state = [], action) => {
   return action.type === LOAD_CATEGORIES ? action.payload : state;
 };
 
-export const loadCategoriesAction = (payload) => ({
-  type: LOAD_CATEGORIES,
-  payload,
-});
+export const categoryReducer = (state = [], action) =>
+  action.type === LOAD_NAME ? action.payload : state;

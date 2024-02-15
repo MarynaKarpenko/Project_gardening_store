@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import s from "./ProductsItem.module.css";
 import { BASE_URL } from "../../../config";
 import BtnCard, { ButtonTypes } from "../../UI/btnCard/BtnCard";
-import { addToCartAction } from "../../../store/reducers/cartReducer";
+import { addToCartAction } from "../../../store/actions/actions";
 import { useDispatch } from "react-redux";
 import Price from "../../UI/price/Price";
 

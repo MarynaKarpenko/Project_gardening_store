@@ -6,7 +6,7 @@ import NotFoundPage from "./components/pages/notFoundPage/NotFoundPage";
 import ProductPage from "./components/pages/productPage/ProductPage";
 import CartPage from "./components/pages/cartPage/CartPage";
 import AllProductsPage from "./components/pages/allProductsPage/AllProductsPage";
-import ToolEquipmentPage from "./components/pages/toolEquimentPage/ToolEquimentPage";
+import ToolEquipmentPage from "./components/pages/toolEquipmentPage/ToolEquipmentPage";
 import MainPage from "./components/pages/mainPage/MainPage";
 import Layout from "./components/layout/Layout";
 

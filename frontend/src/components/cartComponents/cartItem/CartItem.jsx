@@ -1,6 +1,6 @@
 import React from "react";
 import { useDispatch } from "react-redux";
-import { removeCartAction } from "../../../store/reducers/cartReducer";
+import { removeCartAction } from "../../../store/actions/actions";
 import { BASE_URL } from "../../../config";
 import s from "./CartItem.module.css";
 import iconCross from "../../media/icons/IconCross.svg";

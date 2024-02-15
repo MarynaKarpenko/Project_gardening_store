@@ -18,7 +18,7 @@ export default function MainPage() {
 
   const categories = categories_state.filter(({ id }) => id <= 4);
 
-  const salesProducts = useSelector((state) => state.productsWithdiscount);
+  const salesProducts = useSelector((state) => state.productsWithDiscount);
 
   const getRandom = () =>
     Math.round(Math.random() * (salesProducts.length - 1));

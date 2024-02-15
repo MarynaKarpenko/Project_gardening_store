@@ -2,7 +2,7 @@ import React from "react";
 import { useDispatch } from "react-redux";
 import s from "./CartModalWindow.module.css";
 import iconModalCross from "../../media/icons/ModalCross.svg";
-import { sendOrderAction } from "../../../store/reducers/cartReducer";
+import { sendOrderAction } from "../../../store/actions/actions";
 
 export default function CartModalWindow({ sendingOrder, setSendingOrder }) {
   const dispatch = useDispatch();

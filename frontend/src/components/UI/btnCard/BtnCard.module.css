@@ -1,44 +1,31 @@
-.card_btn button {
-    padding: 16px 56px;
-    border-radius: var(--radius-small, 6px);
+.add_btn,
+.btn_green {
     font-weight: 600;
     font-size: 20px;
     border: none;
     cursor: pointer;
-}
-
-.btn_green,
-.add_btn {
     background: var(--green, #393);
     border-radius: var(--radius-small, 6px);
     color: var(--txt-white, #FFF);
 }
 
-.add_btn{
+.card_btn .btn_green {
+    padding: 16px 56px;
+}
+
+.card_btn .add_btn {
+    padding: 16px 32px;  
     width: 100%;
 }
 
 .add_btn:hover {
     background: var(--black, #282828);
-    opacity: 1;
     transform: 0.3s;
-}
-
-/* .add_btn:active{
-    background: var(--light-grey, #F1F3F4);
-        color: #282828;
-        border-radius: var(--radius-small, 6px);
-            outline: 1px solid var(--black, #282828);
-} */
-
-.hovered button {
-    background: var(--black, #282828);
-    color: var(--txt-white, #FFF);
-    transition: 0.3s;
 }
 
 .submitting button {
     border-radius: var(--radius-small, 6px);
     background: var(--light-grey, #F1F3F4);
-    color: var(--green, #393);
-}
+    outline: 1px solid var(--black, #282828);
+    color: #282828;
+} 

@@ -1,6 +1,6 @@
 import React from "react";
 import { useDispatch } from "react-redux";
-import { cartDecrAction, cartIncrAction } from "../../../store/reducers/cartReducer";
+import { cartDecrAction, cartIncrAction } from "../../../store/actions/actions";
 import iconMinus from "../../media/icons/Minus.svg";
 import iconPlus from "../../media/icons/Plus.svg";
 import s from "./Counter.module.css";

@@ -6,11 +6,11 @@ import {
   filterByPriceAction,
   productsWithDiscountAction,
   sortProductsAction,
-} from "../../../store/reducers/productsReducer";
+} from "../../../store/actions/actions";
 import Filter from "../../UI/filters/MainFilter";
 import ProductsContainer from "../../productsComponents/productsContainer/ProductsContainer";
 import Breadcrumbs from "../../UI/breadcrumbs/Breadcrumbs";
-import s from "./ToolEquimentPage.module.css";
+import s from "./ToolEquipmentPage.module.css";
 
 export default function ToolEquipmentPage() {
   const { name } = useParams();

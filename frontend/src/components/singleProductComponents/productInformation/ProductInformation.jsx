@@ -1,12 +1,12 @@
 import React from "react";
+import { useDispatch, useSelector } from "react-redux";
 import s from "./ProductInformation.module.css";
 import Price from "../../UI/price/Price";
 import Counter from "../../UI/counter/Counter";
 import BtnCard, { ButtonTypes } from "../../UI/btnCard/BtnCard";
-import { addToCartAction } from "../../../store/reducers/cartReducer";
-import { useDispatch, useSelector } from "react-redux";
+import { addToCartAction } from "../../../store/actions/actions";
 
-export const ProductInformation = ({ el }) => {
+const ProductInformation = ({ el }) => {
   const basketCart = useSelector((state) => state.cart);
   const product = basketCart.find((element) => element.id == el.id);
   // const count = product && product.count;
@@ -39,3 +39,5 @@ export const ProductInformation = ({ el }) => {
     </div>
   );
 };
+
+export default ProductInformation;
