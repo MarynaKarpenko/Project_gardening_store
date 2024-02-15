@@ -5,11 +5,13 @@ import CheckoutForm from "../../UI/checkoutForm/CheckoutForm";
 import ModalWindow from "../discountForm/modalWindow/ModalWindow";
 
 export default function DiscountForm() {
-   const [showModal, setShowModal] = useState(false);
+  const [showModal, setShowModal] = useState(false);
+  const [buttonText, setButtonText] = useState("Get a discount");
 
-   const handleDiscountSubmit = () => {
-     setShowModal(true);
-   };
+  const handleDiscountSubmit = () => {
+    setShowModal(true);
+    setButtonText("Request Submitted");
+  };
 
   return (
     <div className={s.form_wrapper}>
@@ -22,18 +24,14 @@ export default function DiscountForm() {
         />
 
         <CheckoutForm
-          setShowModal={setShowModal}
-          handleDiscountSubmit={handleDiscountSubmit}
-          showModal={showModal}
+          handleDiscountSubmit={
+            handleDiscountSubmit}
           classInput={s.discount_input}
           classBtn={s.discount_btn}
-          txtBtn="Get a discount"
+          txtBtn={buttonText}
         />
       </div>
-      <ModalWindow
-        showModal={showModal}
-        setShowModal={setShowModal}
-      />
+      <ModalWindow showModal={showModal} setShowModal={setShowModal} />
     </div>
   );
 }

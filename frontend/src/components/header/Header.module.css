@@ -1,7 +1,7 @@
 .header_container {
   position: sticky;
   top: 0;
-  z-index: 10;
+  z-index: 6;
   border-bottom: 1px solid var(--grey-divider, #ddd);
   background: #fff;
 }

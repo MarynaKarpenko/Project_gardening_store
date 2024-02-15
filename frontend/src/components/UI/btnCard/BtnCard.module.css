@@ -4,8 +4,9 @@
     font-size: 20px;
     border: none;
     cursor: pointer;
-    background: var(--green, #393);
+    line-height: 130%;
     border-radius: var(--radius-small, 6px);
+    background: var(--green, #393);
     color: var(--txt-white, #FFF);
 }
 
@@ -14,7 +15,7 @@
 }
 
 .card_btn .add_btn {
-    padding: 16px 32px;  
+    padding: 16px 32px;
     width: 100%;
 }
 
@@ -23,9 +24,26 @@
     transform: 0.3s;
 }
 
-.submitting button {
+.submitted button {
     border-radius: var(--radius-small, 6px);
     background: var(--light-grey, #F1F3F4);
     outline: 1px solid var(--black, #282828);
     color: #282828;
-} 
+}
+
+@media(max-width: 1000px) {
+    .card_btn .add_btn {
+        padding: 16px 20px;
+    }
+}
+
+@media(max-width: 480px) {
+    .add_btn,
+    .btn_green {
+        font-size: 18px;
+    }
+
+    .card_btn .add_btn {
+        padding: var(--radius-big, 12px) 20px;
+    }
+}

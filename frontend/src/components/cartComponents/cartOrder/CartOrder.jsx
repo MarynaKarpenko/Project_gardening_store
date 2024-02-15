@@ -3,7 +3,7 @@ import s from "./CartOrder.module.css";
 import CheckoutForm from "../../UI/checkoutForm/CheckoutForm";
 import CartModalWindow from "../cartModalWindow/CartModalWindow";
 
-export default function CartOrder({ basketCart }) {
+export default function CartOrder({ basketCart, classBtn }) {
   const [sendingOrder, setSendingOrder] = useState(false);
   const totalPrice =
     basketCart &&

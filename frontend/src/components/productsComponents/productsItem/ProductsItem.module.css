@@ -32,7 +32,7 @@
     transition: 0.3s;
 }
 
-.add_btn:hover {
+.products_wrapper:hover .add_btn {
     opacity: 1;
     transform: 0.3s;
 }

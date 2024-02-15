@@ -64,7 +64,6 @@ export default function CheckoutForm({
           <p className={s.error_message}>{errors.email?.message}</p>
         )}
       </label>
-
       <button className={`${classBtn} ${s.btn}`} disabled={!isValid}>
         {txtBtn}
       </button>

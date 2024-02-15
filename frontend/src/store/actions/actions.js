@@ -19,7 +19,6 @@ export const CART_INCREMENT = "INCREMENT";
 export const CART_DECREMENT = "CART_DECREMENT";
 export const SEND_ORDER = "SEND_ORDER ";
 
-
 export const loadAllProductsAction = (payload) => ({
   type: LOAD_PRODUCTS,
   payload,

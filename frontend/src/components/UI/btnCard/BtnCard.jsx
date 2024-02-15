@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import s from "./BtnCard.module.css";
+import classNames from "classnames";
 import { Link } from "react-router-dom";
 
 export const ButtonTypes = {
@@ -9,52 +10,32 @@ export const ButtonTypes = {
   SHOPPING: "SHOPPING",
 };
 
-export default function BtnCard({ type }) {
-  const [isHovered, setHovered] = useState(false);
+export default function BtnCard({ type, txtBtn, classBtn }) {
   const [isSubmitting, setSubmitting] = useState(false);
-  const [isThirdState, setThirdState] = useState(false);
 
-  const handleMouseEnter = () => setHovered(true);
-  const handleMouseLeave = () => setHovered(false);
   const handleClick = () => {
-    setSubmitting(true);
-    setThirdState(true);
+    if (type === ButtonTypes.ADD_TO_CART) {
+      setSubmitting(true);
+      setTimeout(() => {
+        setSubmitting(false);
+      }, 2000);
+    } 
   };
 
-  let buttonClass = s.card_btn;
-
-  if (type === ButtonTypes.ADD_TO_CART) {
-    buttonClass += ` ${s.add_btn}`;
-  } else if (
-    type === ButtonTypes.CHECK_OUT ||
-    type === ButtonTypes.GO_HOME ||
-    type === ButtonTypes.SHOPPING
-  ) {
-    buttonClass += ` ${s.btn_green}`;
-  }
-
-  if (isHovered) {
-    buttonClass += ` ${s.hovered}`;
-  }
-
-  if (isSubmitting) {
-    buttonClass += ` ${s.submitting}`;
-  }
-
-  if (isThirdState) {
-    buttonClass += ` ${s.thirdState}`;
-  }
+  const buttonClass = classNames(s.card_btn, {
+    [s.add_btn]: type === ButtonTypes.ADD_TO_CART,
+    [s.submitted]: isSubmitting,
+    [s.btn_green]:
+      type === ButtonTypes.CHECK_OUT ||
+      type === ButtonTypes.GO_HOME ||
+      type === ButtonTypes.SHOPPING,
+  });
 
   return (
     <div className={buttonClass}>
       {type === ButtonTypes.ADD_TO_CART && (
-        <button
-          onMouseEnter={handleMouseEnter}
-          onMouseLeave={handleMouseLeave}
-          onClick={handleClick}
-          className={s.add_btn}
-        >
-          {isSubmitting ? "Added" : isHovered ? "Add to cart" : "Add to cart"}
+        <button onClick={handleClick} className={s.add_btn}>
+          {isSubmitting ? "Added" : "Add to cart"}
         </button>
       )}
 
