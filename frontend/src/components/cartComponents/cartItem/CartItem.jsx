@@ -19,7 +19,11 @@ export default function CartItem({ array }) {
     <div className={s.carts_container}>
       {array.map((el) => (
         <div key={el.id} className={s.cart}>
-          <img src={`${BASE_URL}/${el.image}`} alt="img" className={s.shopping_img} />
+          <img
+            src={`${BASE_URL}/${el.image}`}
+            alt="img"
+            className={s.shopping_img}
+          />
 
           <div className={s.product_info}>
             <div className={s.title_delete}>

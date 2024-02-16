@@ -24,8 +24,7 @@ export default function DiscountForm() {
         />
 
         <CheckoutForm
-          handleDiscountSubmit={
-            handleDiscountSubmit}
+          handleDiscountSubmit={handleDiscountSubmit}
           classInput={s.discount_input}
           classBtn={s.discount_btn}
           txtBtn={buttonText}

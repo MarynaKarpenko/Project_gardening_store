@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, {useEffect} from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchAllProducts } from "../../../asyncActions/products";
 import {
@@ -13,7 +13,6 @@ import s from "./AllProductsPage.module.css";
 
 export default function AllProductsPage() {
   const dispatch = useDispatch();
-  const [checked, setChecked] = useState(false);
 
   useEffect(() => {
     dispatch(fetchAllProducts);
@@ -21,14 +20,12 @@ export default function AllProductsPage() {
 
   const allProducts = useSelector((state) => state.allProducts);
 
-  const handleChange = () => setChecked((prevChecked) => !prevChecked);
-
   const filterBySale = (e) => dispatch(allProductsWithDiscountAction(e.target.checked));
 
   const filterByPrice = (e) => {
     e.preventDefault();
     const { min_price, max_price } = e.target.parentElement;
-    const min_value = min_price.value || 0;
+    const min_value = min_price.value || 1;
     const max_value = max_price.value || Infinity;
     dispatch(filterByPriceAction({ min_value, max_value }));
   };
@@ -51,7 +48,6 @@ export default function AllProductsPage() {
         filterByPrice={filterByPrice}
         sort={sort}
         sale={false}
-        handleChange={handleChange}
       />
       <ProductsContainer products={allProducts} />
     </div>

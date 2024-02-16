@@ -25,9 +25,9 @@ export default function CartPage() {
       <div className={s.flex_container}>
         {isCartEmpty ? <EmptyCart /> : <CartItem array={basketCart && basketCart} />}
         {!isCartEmpty && (
-          <div>
+          // <div className={s.order_container}>
             <CartOrder basketCart={basketCart} />
-          </div>
+          // </div>
         )}
       </div>
     </div>

@@ -4,11 +4,11 @@ import PriceFilter from "./PriceFilter";
 import DiscountFilter from "./DiscountFilter";
 import SortFilter from "./SortFilter";
 
-export default function MainFilter({ filterBySale, sort, filterByPrice, sale, handleChange }) {
+export default function MainFilter({ filterBySale, sort, filterByPrice, sale }) {
   return (
     <div className={s.filter_wrapper}>
       <PriceFilter filterByPrice={filterByPrice} />
-      {!sale && <DiscountFilter handleChange={handleChange} filterBySale={filterBySale} />}
+      {!sale && <DiscountFilter filterBySale={filterBySale} />}
       <SortFilter sort={sort} />
     </div>
   );

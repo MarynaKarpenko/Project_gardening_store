@@ -3,10 +3,6 @@ import iconInst from "../../media/icons/IconsInst.svg";
 import iconWatsApp from "../../media/icons/IconsWatsApp.svg";
 import s from "./Contact.module.css";
 
-const commonStyles = {
-  contact: s.contact,
-};
-
 const socials = [
   {
     name: "Instagram",
@@ -34,14 +30,14 @@ export default function Contact() {
         title="Socials"
         content={socials.map((social) => (
           <a key={social.name} href={social.link}>
-            <img src={social.icon} alt={social.name} className={s.instagram} />
+            <img src={social.icon} alt={social.name} className={s.icons} />
           </a>
         ))}
       />
       <ContactInfoItem
         title="Address"
         content={
-          <a href="geo:0,0?q=Linkstraße 2, 8 OG, 10 785, Berlin, Deutschland">
+          <a href="https://www.google.de/maps/place/Linkstra%C3%9Fe+2,+10785+Berlin/@52.5079222,13.3566415,15z/data=!3m1!4b1!4m6!3m5!1s0x47a851cbdeaf3909:0xff2aef2e44148447!8m2!3d52.5079236!4d13.3750954!16s%2Fg%2F11c5ny_m0t?entry=ttu">
             Linkstraße 2, 8 OG, 10 785, Berlin, Deutschland
           </a>
         }

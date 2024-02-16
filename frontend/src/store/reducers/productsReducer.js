@@ -45,6 +45,8 @@ export const productsReducer = (state = [], action) => {
     case PRODUCTS_SORT_DISCOUNTS:
       return [...state].sort((a, b) => {
         switch (+action.payload) {
+          case 0: 
+          return state;
           case 1:
             return realPrice(a) - realPrice(b);
           case 2:

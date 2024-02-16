@@ -3,12 +3,13 @@ import s from "./CartOrder.module.css";
 import CheckoutForm from "../../UI/checkoutForm/CheckoutForm";
 import CartModalWindow from "../cartModalWindow/CartModalWindow";
 
-export default function CartOrder({ basketCart, classBtn }) {
+export default function CartOrder({ basketCart }) {
   const [sendingOrder, setSendingOrder] = useState(false);
   const totalPrice =
     basketCart &&
     basketCart.reduce(
-      (acc, { price, discont_price, count }) => acc + count * (discont_price || price),
+      (acc, { price, discont_price, count }) =>
+        acc + count * (discont_price || price),
       0
     );
 
@@ -30,7 +31,10 @@ export default function CartOrder({ basketCart, classBtn }) {
         classBtn={s.btn}
         txtBtn="Order"
       />
-      <CartModalWindow setSendingOrder={setSendingOrder} sendingOrder={sendingOrder} />
+      <CartModalWindow
+        setSendingOrder={setSendingOrder}
+        sendingOrder={sendingOrder}
+      />
     </div>
   );
 }

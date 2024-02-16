@@ -1,5 +1,5 @@
 .map_div {
-    margin-top: 32px;
+    padding-top: 32px;
     border-radius: var(--radius-big, 12px);
     overflow: hidden;
 }
@@ -13,7 +13,7 @@
 
 @media(max-width: 1000px) {
     .map_div {
-        margin-top: 20px;
+        padding-top: 20px;
     }
 
     .map_div iframe {

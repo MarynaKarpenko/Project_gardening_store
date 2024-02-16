@@ -73,12 +73,6 @@
   white-space: nowrap;
 }
 
-.filter_form input,
-.sort select {
-  border-radius: var(--radius-small, 6px);
-  border: 1px solid var(--grey-divider, #ddd);
-}
-
 .filter_form input {
   width: 112px;
   padding: 8px 16px;
@@ -96,6 +90,24 @@
   font-size: 16px;
   font-weight: 500;
   color: var(--txt-black, #282828);
+}
+
+.filter_form input,
+.sort select {
+  border-radius: var(--radius-small, 6px);
+  border: 1px solid var(--grey-divider, #ddd);
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.filter_form input:focus,
+.select:focus {
+  outline: none;
+  color: #282828;
 }
 
 @media (max-width: 768px) {

@@ -39,7 +39,7 @@ export const cartReducer = (state = initialState, action) => {
     case CART_INCREMENT:
       const updatedStateIncrement = state.map((item) =>
         item.id === action.payload && item.count !== undefined
-          ? { ...item, count: (item.count || 0) + 1 }
+          ? { ...item, count: (item.count || 1) + 1 }
           : item
       );
       saveCart(updatedStateIncrement);
@@ -48,7 +48,7 @@ export const cartReducer = (state = initialState, action) => {
       const updatedStateDecrement = state.map((item) => {
         if (item.id === action.payload) {
           const updatedItem = { ...item };
-          updatedItem.count = Math.max((item.count || 0) - 1, 0);
+          updatedItem.count = Math.max((item.count || 1) - 1);
           return updatedItem;
         }
         return item;

@@ -8,6 +8,7 @@ export default function SortFilter({ sort }) {
       <select
         defaultValue={{ value: "default" }}
         onChange={sort}
+        className={s.select}
       >
         <option value="0">by default</option>
         <option value="1">price: low-high</option>
