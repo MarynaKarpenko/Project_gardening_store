@@ -3,8 +3,8 @@
     align-items: center;
     justify-content: center;
     justify-content: space-between;
-    margin-top: 80px;
-    margin-bottom: 40px;
+    padding-top: 80px;
+    padding-bottom: 40px;
 }
 
 .title {
@@ -20,8 +20,8 @@
 
 @media(max-width: 1000px) {
     .title_container {
-        margin-top: 60px;
-        margin-bottom: 32px;
+        padding-top: 60px;
+        padding-bottom: 32px;
     }
 }
 
@@ -34,8 +34,8 @@
 
 @media(max-width: 480px) {
     .title_container {
-        margin-top: 56px;
-        margin-bottom: 24px;
+        padding-top: 56px;
+        padding-bottom: 24px;
     }
 
     .line {

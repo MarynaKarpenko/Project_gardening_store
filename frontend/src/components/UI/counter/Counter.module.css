@@ -1,6 +1,5 @@
 .price_counter {
   display: flex;
-  /* flex-direction: row; */
 }
 
 .icon_minus,
@@ -29,12 +28,6 @@
   border-top: 1px solid var(--grey-divider, #ddd);
   border-bottom: 1px solid var(--grey-divider, #ddd);
 }
-
-/* @media (max-width: 768px) {
-  .icon_plus {
-    margin-right: 12px;
-  }
-} */
 
 @media (max-width: 480px) {
   .counter,

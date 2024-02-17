@@ -1,5 +1,5 @@
 .cart_wrapper {
-  margin: 0 40px 0 40px;
+  padding: 0 40px 0 40px;
 }
 
 .flex_container {
@@ -11,13 +11,13 @@
 }
 
 .title_container {
-  margin-top: 40px;
-  margin-bottom: 40px;
+  padding-top: 40px;
+  padding-bottom: 40px;
 }
 
 @media (max-width: 1000px) {
   .cart_wrapper {
-    margin: 0 20px 0 20px;
+    padding: 0 20px 0 20px;
   }
 
   .flex_container {
@@ -30,8 +30,8 @@
 
 @media (max-width: 768px) {
   .title_container {
-    margin-top: 32px;
-    margin-bottom: 32px;
+    padding-top: 32px;
+    padding-bottom: 32px;
   }
 
   .flex_container {
@@ -45,6 +45,6 @@
 
 @media (max-width: 480px) {
   .title_container {
-    margin-bottom: 24px;
+    padding-bottom: 24px;
   }
 }

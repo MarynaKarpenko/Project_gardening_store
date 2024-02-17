@@ -1,7 +1,5 @@
 .map_div {
     padding-top: 32px;
-    border-radius: var(--radius-big, 12px);
-    overflow: hidden;
 }
 
 .map_div iframe {
@@ -9,6 +7,7 @@
     height: 350px;
     border: 0;
     overflow: hidden;
+    border-radius: var(--radius-big, 12px);
 }
 
 @media(max-width: 1000px) {

@@ -1,5 +1,5 @@
 .categories_div {
-    margin: 0 40px 0 40px;
+    padding: 0 40px 0 40px;
 }
 
 .products_name {
@@ -9,13 +9,13 @@
 .btn_container {
     display: flex;
     align-items: center;
-    margin-top: 40px;
-    margin-bottom: 40px;
+    padding-top: 40px;
+    padding-bottom: 40px;
 }
 
 @media(max-width: 1000px) {
     .categories_div {
-        margin: 0 20px 0 20px;
+        padding: 0 20px 0 20px;
     }
 
     .products_name {
