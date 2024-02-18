@@ -24,7 +24,7 @@ export default function Counter({ el }) {
         <div className={s.icon_minus} onClick={handleDecrement}>
           <img src={iconMinus} alt="minus" />
         </div>
-        <p className={s.counter}>{(el && el.count) || 0}</p>
+        <p className={s.counter}>{(el && el.count) || 1}</p>
         <div className={s.icon_plus} onClick={handleIncrement}>
           <img src={iconPlus} alt="plus" />
         </div>
