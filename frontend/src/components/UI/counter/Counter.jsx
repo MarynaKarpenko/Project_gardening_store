@@ -6,6 +6,7 @@ import iconPlus from "../../media/icons/Plus.svg";
 import s from "./Counter.module.css";
 
 export default function Counter({ el }) {
+
   const dispatch = useDispatch();
 
   const handleIncrement = () => {

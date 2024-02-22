@@ -104,12 +104,6 @@ input::-webkit-inner-spin-button {
   margin: 0;
 }
 
-.filter_form input:focus,
-.select:focus {
-  outline: none;
-  color: #282828;
-}
-
 @media (max-width: 1000px) {
   .filter_wrapper {
     display: flex;

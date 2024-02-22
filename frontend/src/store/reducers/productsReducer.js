@@ -15,13 +15,14 @@ import {
 const realPrice = ({ price, discont_price }) =>
   discont_price === null ? price : discont_price;
 
-// const realDiscountPrice = ({ discont_price }) => discont_price;
+  let originalState = [];
 
 export const productsReducer = (state = [], action) => {
   switch (action.type) {
     case LOAD_ALL_PRODUCTS:
     case LOAD_PRODUCTS_BY_CATEGORY:
     case LOAD_PRODUCTS:
+      originalState = action.payload;
       return action.payload;
 
     case PRODUCTS_WITH_DISCOUNT_ALL:
@@ -43,10 +44,12 @@ export const productsReducer = (state = [], action) => {
     case PRODUCTS_SORT_ALL:
     case PRODUCTS_SORT_CATEGORY:
     case PRODUCTS_SORT_DISCOUNTS:
+    if (+action.payload === 0) {
+        return originalState;
+      }
+
       return [...state].sort((a, b) => {
         switch (+action.payload) {
-          case 0: 
-          return state;
           case 1:
             return realPrice(a) - realPrice(b);
           case 2:
