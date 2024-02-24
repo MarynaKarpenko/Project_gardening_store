@@ -22,6 +22,16 @@ export default function BtnCard({ type }) {
     } 
   };
 
+  const scrollToDiscount = () => {
+    const discountSection = document.getElementById("discount");
+    if (discountSection) {
+      window.scrollTo({
+        top: discountSection.offsetTop,
+        behavior: "smooth",
+      });
+    }
+  };
+
   const buttonClass = classNames(s.card_btn, {
     [s.add_btn]: type === ButtonTypes.ADD_TO_CART,
     [s.submitted]: isSubmitting,
@@ -31,18 +41,22 @@ export default function BtnCard({ type }) {
       type === ButtonTypes.SHOPPING,
   });
 
+  const addBtnClass = classNames(s.add_btn, {
+    [s.disabled_hover]: isSubmitting && type === ButtonTypes.ADD_TO_CART,
+  });
+
   return (
     <div className={buttonClass}>
       {type === ButtonTypes.ADD_TO_CART && (
-        <button onClick={handleClick} className={s.add_btn}>
+        <button onClick={handleClick} className={addBtnClass}>
           {isSubmitting ? "Added" : "Add to cart"}
         </button>
       )}
 
       {type === ButtonTypes.CHECK_OUT && (
-        <Link to={"/sales"}>
-          <button className={s.btn_green}>Check out</button>
-        </Link>
+        <button onClick={scrollToDiscount} className={s.btn_green}>
+          Check out
+        </button>
       )}
 
       {type === ButtonTypes.GO_HOME && (

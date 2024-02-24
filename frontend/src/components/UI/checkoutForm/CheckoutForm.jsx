@@ -39,17 +39,17 @@ export default function CheckoutForm({
         )}
 
         <input
-          {...register("phone number", {
+          {...register("phone", {
             required: "File is required!",
             minLength: { value: 13, message: "Minimum number length 13" },
             maxLength: { value: 13, message: "Maximum number length 13" },
           })}
-          type="phone number"
+          type="tel"
           placeholder="Phone number"
           className={`${classInput} ${s.input}`}
         />
-        {errors?.number && (
-          <p className={s.error_message}>{errors.number?.message}</p>
+        {errors?.phone && (
+          <p className={s.error_message}>{errors.phone?.message}</p>
         )}
 
         <input
