@@ -38,13 +38,11 @@ export default function SingleProduct() {
             </div>
             <h3 className={s.title_480}>{el.title}</h3>
             <div className={s.container}>
-              {/* <div> */}
                 <img
                   src={`${BASE_URL}/${el.image}`}
                   alt={el.title}
                   className={s.image}
                 />
-              {/* </div> */}
               <ProductInformation el={el} />
             </div>
             <div className={s.description2}>
